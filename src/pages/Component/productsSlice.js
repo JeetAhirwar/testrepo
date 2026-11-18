@@ -1,0 +1,227 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+// AWS API (Uncomment when AWS backend deployment is ready):
+// const API_BASE = "https://api.eduhawk.in";
+
+// Render API (Currently active):
+const API_BASE = "https://edu-hawk-server.onrender.com";
+
+// Fetch All Products
+export const fetchProducts = createAsyncThunk(
+  "products/fetchProducts",
+  async (_, { getState, rejectWithValue }) => {
+    try {
+      /*
+      // When AWS API is ready, switch to:
+      // const res = await fetch("https://api.eduhawk.in/api/product");
+      */
+
+      const { activeCategory, searchQuery, currentPage, itemsPerPage } =
+        getState().products;
+      const params = new URLSearchParams({
+        page: String(currentPage),
+        limit: String(itemsPerPage),
+      });
+
+      if (activeCategory !== "All") params.set("category", activeCategory);
+      if (searchQuery) params.set("search", searchQuery);
+
+      // Render Paginated API
+      const res = await fetch(
+        `${API_BASE}/api/product/paginated?${params.toString()}`,
+      );
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} – ${res.statusText}`);
+      }
+
+      const json = await res.json();
+      return {
+        products: Array.isArray(json?.data) ? json.data : [],
+        pagination: json?.pagination ?? {},
+      };
+    } catch (err) {
+      return rejectWithValue(err.message || "Failed to load products");
+    }
+  },
+);
+
+export const fetchCategories = createAsyncThunk(
+  "products/fetchCategories",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await fetch(`${API_BASE}/api/blogcategory`);
+      if (!res.ok) throw new Error(`HTTP ${res.status} - ${res.statusText}`);
+
+      const json = await res.json();
+      return (json?.data ?? [])
+        .map((category) => category?.name)
+        .filter(Boolean);
+    } catch (err) {
+      return rejectWithValue(err.message || "Failed to load categories");
+    }
+  },
+);
+
+// Fetch Single Product by slug or ID with fallback support
+export const fetchProductBySlugOrId = createAsyncThunk(
+  "products/fetchProductBySlugOrId",
+  async (value, { rejectWithValue }) => {
+    const target = value?.toString?.().trim();
+    if (!target) {
+      return rejectWithValue("Invalid blog identifier");
+    }
+
+    const endpointCandidates = [
+      `${API_BASE}/api/blog/${target}`,
+      `${API_BASE}/api/product/${target}`,
+      `${API_BASE}/api/product/slug/${target}`,
+    ];
+
+    const fetchCandidate = async (url) => {
+      try {
+        const res = await fetch(url);
+        if (res.status === 404) return null;
+        if (!res.ok) throw new Error(`HTTP ${res.status} – ${res.statusText}`);
+        return res;
+      } catch {
+        return null;
+      }
+    };
+
+    try {
+      for (const url of endpointCandidates) {
+        const res = await fetchCandidate(url);
+        if (!res) continue;
+
+        const json = await res.json();
+        const product = json?.data ?? json;
+        if (product && (product._id || product.name)) {
+          return product;
+        }
+      }
+      throw new Error("Product not found");
+    } catch (err) {
+      return rejectWithValue(err.message || "Failed to fetch product");
+    }
+  },
+);
+
+const initialState = {
+  products: [],
+  currentProduct: null,
+  relatedPosts: [],
+  status: "idle",
+  detailStatus: "idle",
+  error: null,
+  categories: ["All"],
+  activeCategory: "All",
+  searchQuery: "",
+  currentPage: 1,
+  itemsPerPage: 9,
+  totalItems: 0,
+  totalPages: 1,
+};
+
+const productsSlice = createSlice({
+  name: "products",
+  initialState,
+  reducers: {
+    setActiveCategory: (state, action) => {
+      state.activeCategory = action.payload;
+      state.currentPage = 1;
+    },
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload.trim();
+      state.currentPage = 1;
+    },
+    setCurrentPage: (state, action) => {
+      state.currentPage = Number(action.payload);
+    },
+    resetFilters: (state) => {
+      state.activeCategory = "All";
+      state.searchQuery = "";
+      state.currentPage = 1;
+    },
+    clearCurrentProduct: (state) => {
+      state.currentProduct = null;
+      state.relatedPosts = [];
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      // Fetch All Products
+      .addCase(fetchProducts.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(fetchProducts.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        const items = action.payload.products || [];
+        state.products = items;
+
+        if (action.payload.pagination && action.payload.pagination.total !== undefined) {
+          state.totalItems = action.payload.pagination.total;
+          state.totalPages = action.payload.pagination.totalPages || 1;
+        } else {
+          state.totalItems = items.length;
+          state.totalPages = Math.ceil(items.length / state.itemsPerPage) || 1;
+        }
+      })
+      .addCase(fetchProducts.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      })
+      .addCase(fetchCategories.fulfilled, (state, action) => {
+        state.categories = ["All", ...new Set(action.payload)];
+      })
+
+      // Fetch Single Product by Slug or ID
+      .addCase(fetchProductBySlugOrId.pending, (state) => {
+        state.detailStatus = "loading";
+        state.error = null;
+      })
+      .addCase(fetchProductBySlugOrId.fulfilled, (state, action) => {
+        state.detailStatus = "succeeded";
+        state.currentProduct = action.payload;
+      })
+      .addCase(fetchProductBySlugOrId.rejected, (state, action) => {
+        state.detailStatus = "failed";
+        state.error = action.payload;
+      });
+  },
+});
+
+export const {
+  setActiveCategory,
+  setSearchQuery,
+  setCurrentPage,
+  resetFilters,
+  clearCurrentProduct,
+} = productsSlice.actions;
+
+// ====================== SELECTORS ======================
+export const selectProducts = (state) => state.products.products;
+export const selectCurrentProduct = (state) => state.products.currentProduct;
+export const selectDetailStatus = (state) => state.products.detailStatus;
+export const selectCategories = (state) => state.products.categories;
+export const selectActiveCategory = (state) => state.products.activeCategory;
+export const selectSearchQuery = (state) => state.products.searchQuery;
+export const selectProductsStatus = (state) => state.products.status;
+export const selectProductsError = (state) => state.products.error;
+export const selectCurrentPage = (state) => state.products.currentPage;
+export const selectItemsPerPage = (state) => state.products.itemsPerPage;
+export const selectTotalItems = (state) => state.products.totalItems;
+export const selectTotalPages = (state) => state.products.totalPages;
+
+// Visible Products Selector
+export const selectVisibleProducts = (state) => {
+  return {
+    items: state.products.products,
+    totalItems: state.products.totalItems,
+    totalPages: state.products.totalPages,
+    currentPage: state.products.currentPage,
+  };
+};
+
+export default productsSlice.reducer;

@@ -1,0 +1,1925 @@
+import { useState, useEffect, useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import icon1 from "../Images/icons/ux-design_2998253.svg";
+import icon2 from "../Images/icons/selling_12091247.svg";
+import icon3 from "../Images/icons/ux-design_2998253.svg";
+import icon4 from "../Images/icons/selling_12091247.svg";
+import personalized from "../assets/personalized.webp";
+import support from "../assets/support.webp";
+import checkup from "../assets/checkup.webp";
+import charges from "../assets/charges.webp";
+import Kathmandu from "../../src/Images/Kathmandu.webp";
+import Eduhawk from "../assets/Eduhawk.webp"; // ← adjust path if needed
+import heroRussia from "../Images/hero/hero-russia.webp";
+import heroGeorgia from "../Images/hero/hero-georgia.webp";
+import heroKazakhstan from "../Images/hero/hero-kazakhstan.webp";
+import heroTrusted from "../Images/hero/hero-trusted.webp";
+import { X, ChevronDown, User, Mail, Phone, MapPin, GraduationCap, Globe, ArrowRight, Star, Award, CheckCircle2, Sparkles, MessageCircle } from "lucide-react";
+
+import univercity from "../Images/university-image/singapore.webp";
+import topRanking1 from "../Images/Peking University Health Science Center.webp";
+import topRanking2 from "../Images/Russia/Altai State Medical University.jpg";
+import topRanking3 from "../Images/Tsinghua University School of Medicine.webp";
+import topRanking4 from "../Images/Kazakhstan/West Kazakhstan Marat Ospanov State Medical University.webp";
+import topRanking5 from "../Images/Saint Petersburg State Medical University (Pavlov First Saint Petersburg State Medical University).jpeg";
+import topRanking6 from "../Images/Pirogov Russian National Research Medical University (RNRMU).webp";
+import topRanking7 from "../Images/University of Santo Tomas Faculty of Medicine and Surgery.webp";
+import topRanking8 from "../Images/University of the Philippines Manila, College of Medicine.jpeg";
+
+import globalImage from "../Images/home_page_Image/class room.webp";
+import globalImage2 from "../Images/home_page_Image/class room 2.webp";
+import { Link } from "react-router-dom";
+import SeoHead from "../component/SeoHead.jsx";
+import homeData from "../data/home.json";
+import russiaFlag from "../Images/country flag png/Russia.svg";
+import georgiaFlag from "../Images/country flag png/Georgia.svg";
+import uzbekistanFlag from "../Images/country flag png/Uzbekistan-Flag.svg";
+import kazakhstanFlag from "../Images/country flag png/Kazakhstan.svg";
+import kyrgyzstanFlag from "../Images/country flag png/Kyrgyzstan.svg";
+import nepalFlag from "../Images/country flag png/Nepal.svg";
+import bangladeshFlag from "../Images/country flag png/Bangladesh-Flag-PNG-Isolated-HD.webp";
+import egyptFlag from "../Images/country flag png/Egypt.svg";
+
+const COUNTRY_FLAGS = {
+  Russia: { flag: russiaFlag, code: "RU" },
+  Georgia: { flag: georgiaFlag, code: "GE" },
+  Uzbekistan: { flag: uzbekistanFlag, code: "UZ" },
+  Kazakhstan: { flag: kazakhstanFlag, code: "KZ" },
+  Kyrgyzstan: { flag: kyrgyzstanFlag, code: "KG" },
+  Nepal: { flag: nepalFlag, code: "NP" },
+  Bangladesh: { flag: bangladeshFlag, code: "BD" },
+  Egypt: { flag: egyptFlag, code: "EG" },
+};
+
+
+const NAV_LINKS = ["Home", "About", "Services", "Countries", "Contact"];
+
+const HERO_SLIDE_IMAGES = [heroRussia, heroGeorgia, heroKazakhstan, heroTrusted];
+
+const HERO_SLIDES = (homeData.heroSlides || []).map((slide, idx) => ({
+  ...slide,
+  image: slide.image || HERO_SLIDE_IMAGES[idx % HERO_SLIDE_IMAGES.length],
+}));
+
+const COUNTRIES = homeData.countries || [];
+const TESTIMONIALS = homeData.testimonials || [];
+const FAQ_ITEMS = homeData.faq || [];
+const mbbsOptions = homeData.mbbsOptions || [];
+
+const EMPTY_MODAL_FORM = {
+  name: "",
+  email: "",
+  phone: "",
+  city: "",
+  neetStatus: "",
+  country: "",
+};
+
+const EMPTY_CONTACT_FORM = {
+  name: "",
+  email: "",
+  phone: "",
+  city: "",
+  country: "",
+  neetStatus: "",
+  message: "",
+};
+
+export default function HeroSection() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState("Home");
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const [modalForm, setModalForm] = useState(EMPTY_MODAL_FORM);
+  const [modalErrors, setModalErrors] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+  const [isModalSubmitting, setIsModalSubmitting] = useState(false);
+
+  const [contactForm, setContactForm] = useState(EMPTY_CONTACT_FORM);
+  const [contactErrors, setContactErrors] = useState({});
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+  const [exploreMenuOpen, setExploreMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  const exploreMenuRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+  // Toast Notification Functions
+  const showSuccess = (message) => {
+    toast.success(message, {
+      position: "top-center",
+      autoClose: 4500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+    });
+  };
+
+  const showError = (message) => {
+    toast.error(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  };
+
+  // Shared API call
+  const submitToApi = async (payload) => {
+    const res = await fetch("https://api.eduhawk.in/api/query/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return res.json();
+  };
+
+  const validateModalForm = (form) => {
+    const errors = {};
+
+    if (!form.name.trim()) {
+      errors.name = "Name is required.";
+    } else if (form.name.trim().length < 2) {
+      errors.name = "Name must be at least 2 characters.";
+    }
+
+    if (!form.email.trim()) {
+      errors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      errors.email = "Enter a valid email address.";
+    }
+
+    if (!form.phone.trim()) {
+      errors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(form.phone.replace(/\D/g, ""))) {
+      errors.phone = "Phone number must be 10 digits.";
+    }
+
+    if (!form.city) errors.city = "Please select your city.";
+    if (!form.neetStatus) errors.neetStatus = "Please select your NEET status.";
+    if (!form.country) errors.country = "Please select your country.";
+
+    return errors;
+  };
+
+  const validateContactForm = (form) => {
+    const errors = {};
+
+    if (!form.name.trim()) {
+      errors.name = "Name is required.";
+    } else if (form.name.trim().length < 2) {
+      errors.name = "Name must be at least 2 characters.";
+    }
+
+    if (!form.email.trim()) {
+      errors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      errors.email = "Enter a valid email address.";
+    }
+
+    if (!form.phone.trim()) {
+      errors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(form.phone.replace(/\D/g, ""))) {
+      errors.phone = "Phone number must be 10 digits.";
+    }
+
+    if (!form.city) errors.city = "Please select your city.";
+    if (!form.country) errors.country = "Please select your country.";
+    if (!form.neetStatus) errors.neetStatus = "Please select your NEET status.";
+    if (!form.message.trim()) {
+      errors.message = "Message is required.";
+    } else if (form.message.trim().length < 10) {
+      errors.message = "Message must be at least 10 characters.";
+    }
+
+    return errors;
+  };
+
+  const updateModalField = (field, value) => {
+    setModalForm((prev) => ({ ...prev, [field]: value }));
+    setModalErrors((prev) => ({ ...prev, [field]: "" }));
+  };
+
+  const updateContactField = (field, value) => {
+    setContactForm((prev) => ({ ...prev, [field]: value }));
+    setContactErrors((prev) => ({ ...prev, [field]: "" }));
+  };
+
+  // Modal Submit Handler
+  const handleModalSubmit = async (e) => {
+    e.preventDefault();
+    const errors = validateModalForm(modalForm);
+    setModalErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      showError("Please fill in all required fields correctly.");
+      return;
+    }
+
+    setIsModalSubmitting(true);
+    try {
+      const data = await submitToApi(modalForm);
+      if (data.success) {
+        showSuccess(
+          "Form Submitted Successfully! Our team will contact you soon.",
+        );
+        setModalForm(EMPTY_MODAL_FORM);
+        setModalErrors({});
+        setIsOpen(false);
+      } else {
+        showError(data.message || "Submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      showError(
+        "Something went wrong. Please check your connection and try again.",
+      );
+    } finally {
+      setIsModalSubmitting(false);
+    }
+  };
+
+  // Contact Form Submit Handler
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    const errors = validateContactForm(contactForm);
+    setContactErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      showError("Please fill in all required fields correctly.");
+      return;
+    }
+
+    setIsContactSubmitting(true);
+    try {
+      const payload = {
+        name: contactForm.name,
+        email: contactForm.email,
+        phone: contactForm.phone,
+        city: contactForm.city,
+        country: contactForm.country,
+        neetStatus: contactForm.neetStatus,
+        message: contactForm.message,
+      };
+      const data = await submitToApi(payload);
+      if (data.success) {
+        showSuccess(
+          "Message sent successfully! We'll contact you within 24 hours.",
+        );
+        setContactForm(EMPTY_CONTACT_FORM);
+        setContactErrors({});
+      } else {
+        showError(data.message || "Submission failed. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      showError("Something went wrong. Please try again later.");
+    } finally {
+      setIsContactSubmitting(false);
+    }
+  };
+
+  // Hero Carousel Auto Slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        exploreMenuRef.current &&
+        !exploreMenuRef.current.contains(event.target)
+      ) {
+        setExploreMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <>
+      <SeoHead
+        title="MBBS Abroad Guidance | Indian Students Admission 2026"
+        description="Study MBBS abroad with expert guidance, affordable fees, and trusted admission support in Russia, Georgia, Uzbekistan, Kazakhstan & Kyrgyzstan."
+        keywords="study mbbs abroad, mbbs abroad, mbbs admission abroad, mbbs counselling, medical education abroad, overseas education, foreign medical universities, guidance, lakhs study mbbs, study mbbs"
+        path="/"
+        ogType="website"
+      >
+        {/* LCP hint: the first hero slide is the homepage LCP element.
+            Preload it so the browser starts fetching before JS discovers it. */}
+        <link rel="preload" as="image" href={heroRussia} fetchPriority="high" />
+      </SeoHead>
+
+      <div className="min-h-screen bg-white font-sans overflow-x-hidden w-full">
+        {/* Toast Container */}
+        <ToastContainer />
+
+        {/* Page heading — first heading in DOM order, visually hidden */}
+        <h1 className="sr-only">MBBS Abroad Counselling for Indian Students</h1>
+
+        {/* POPUP MODAL */}
+        {isOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 sm:p-6 backdrop-blur-xs">
+            <div className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden flex flex-col border border-slate-100">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-30 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 hover:bg-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all duration-200 cursor-pointer"
+                aria-label="Close"
+              >
+                <X size={20} strokeWidth={2.5} />
+              </button>
+
+              <div className="flex flex-col lg:flex-row h-full overflow-hidden">
+                {/* LEFT – benefits panel (modernized atmospheric card) */}
+                <div className="relative lg:w-5/12 bg-gradient-to-br from-[#071d38] via-[#0f3560] to-[#0c4077] text-white p-7 sm:p-8 flex flex-col justify-between hidden lg:flex overflow-hidden">
+                  {/* Atmospheric Glow Highlights */}
+                  <div className="absolute -top-20 -left-20 w-52 h-52 bg-teal-400/15 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute -bottom-20 -right-20 w-52 h-52 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
+
+                  <div className="relative z-10">
+                    {/* Logo in Frosted Glass Container */}
+                    <div className="mb-5 rounded-2xl border border-white/15 bg-white/10 p-3.5 shadow-lg backdrop-blur-md">
+                      <img
+                        src={Eduhawk}
+                        alt="MBBS Abroad"
+                        width={244}
+                        height={72}
+                        className="mx-auto h-13 w-auto object-contain brightness-110 drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
+                  srcSet={`${Eduhawk} 1x, ${Eduhawk} 2x`}
+                  sizes="100vw"
+                />
+                    </div>
+
+                    {/* Admissions Badge */}
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-400/15 border border-teal-300/25 text-teal-300 text-[11px] font-semibold uppercase tracking-wider mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                      2026-27 Admissions Open
+                    </div>
+
+                    <h2 className="text-2xl sm:text-[26px] font-extrabold mb-2.5 leading-tight tracking-tight text-white drop-shadow-sm">
+                      Your MBBS Abroad Journey Starts Here
+                    </h2>
+                    <p className="text-teal-100/90 text-xs sm:text-sm mb-5 leading-relaxed font-normal">
+                      Trusted by 1000+ Indian students • Transparent process •
+                      NMC-recognized universities only
+                    </p>
+
+                    <ul className="space-y-3.5 text-xs sm:text-sm">
+                      <li className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 shadow-sm backdrop-blur-xs">
+                          <img
+                            src={personalized}
+                            loading="lazy"
+                            alt="Free Expert Counselling"
+                            width={246}
+                            height={197}
+                            className="w-4.5 h-4.5 brightness-0 invert"
+                  srcSet={`${personalized} 1x, ${personalized} 2x`}
+                  sizes="100vw"
+                />
+                        </div>
+                        <span className="text-slate-100 font-medium">Free expert 1-on-1 counselling</span>
+                      </li>
+
+                      <li className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 shadow-sm backdrop-blur-xs">
+                          <img
+                            src={checkup}
+                            loading="lazy"
+                            alt="Best University Match"
+                            width={200}
+                            height={200}
+                            className="w-4.5 h-4.5 brightness-0 invert"
+                  srcSet={`${checkup} 1x, ${checkup} 2x`}
+                  sizes="100vw"
+                />
+                        </div>
+                        <span className="text-slate-100 font-medium">
+                          Best university match as per your NEET &amp; budget
+                        </span>
+                      </li>
+
+                      <li className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 shadow-sm backdrop-blur-xs">
+                          <img
+                            src={support}
+                            loading="lazy"
+                            alt="End-to-End Support"
+                            width={512}
+                            height={512}
+                            className="w-4.5 h-4.5 brightness-0 invert"
+                  srcSet={`${support} 1x, ${support} 2x`}
+                  sizes="100vw"
+                />
+                        </div>
+                        <span className="text-slate-100 font-medium">
+                          End-to-end support: visa, travel, FMGE guidance
+                        </span>
+                      </li>
+
+                      <li className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 shadow-sm backdrop-blur-xs">
+                          <img
+                            src={charges}
+                            loading="lazy"
+                            alt="Transparent Process"
+                            width={512}
+                            height={512}
+                            className="w-4.5 h-4.5 brightness-0 invert"
+                  srcSet={`${charges} 1x, ${charges} 2x`}
+                  sizes="100vw"
+                />
+                        </div>
+                        <span className="text-slate-100 font-medium">No hidden charges – 100% transparent</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Trust Footer in Left Panel */}
+                  <div className="relative z-10 pt-3.5 border-t border-white/15 flex items-center justify-between text-xs text-teal-200/90">
+                    <div className="flex items-center gap-1.5 font-medium">
+                      <span className="text-amber-400">★★★★★</span>
+                      <span className="text-white font-semibold">4.9/5</span>
+                      <span className="text-teal-200/60 text-[11px]">(1000+ Reviews)</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[11px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/20 px-2.5 py-0.5 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      100% NMC Verified
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT – form (enhanced modern UI inputs, button and labels) */}
+                <div className="flex-1 overflow-y-auto modal-no-scrollbar px-6 py-6 sm:px-9 sm:py-6 flex flex-col justify-center bg-slate-50/50">
+                  <div className="lg:hidden text-center mb-4">
+                    <h2 className="text-2xl font-bold text-slate-800 mb-1">
+                      MBBS Abroad Counselling
+                    </h2>
+                    <p className="text-slate-500 text-sm">
+                      Free • Expert • Trusted by 1000+ students
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleModalSubmit} className="space-y-3 sm:space-y-3.5">
+                    {/* Full Name & Email in 2 columns */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                      <div>
+                        <label htmlFor="modal-name" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                          Full Name <span className="text-rose-500 font-bold">*</span>
+                        </label>
+                        <div className="relative group">
+                          <User size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors pointer-events-none" />
+                          <input
+                            id="modal-name" type="text"
+                            name="name"
+                            placeholder="Enter your full name"
+                            value={modalForm.name}
+                            onChange={(e) =>
+                              updateModalField("name", e.target.value)
+                            }
+                            className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 text-sm shadow-xs transition-all duration-200 hover:border-slate-300 focus:border-teal-600 focus:ring-4 focus:ring-teal-500/10 outline-none"
+                          />
+                        </div>
+                        {modalErrors.name && (
+                          <p className="mt-1 text-xs text-rose-500">
+                            {modalErrors.name}
+                          </p>
+                        )}
+                      </div>
+
+                      <div>
+                        <label htmlFor="modal-email" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                          Email <span className="text-rose-500 font-bold">*</span>
+                        </label>
+                        <div className="relative group">
+                          <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors pointer-events-none" />
+                          <input
+                            id="modal-email" type="email"
+                            name="email"
+                            placeholder="your.email@gmail.com"
+                            value={modalForm.email}
+                            onChange={(e) =>
+                              updateModalField("email", e.target.value)
+                            }
+                            className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 text-sm shadow-xs transition-all duration-200 hover:border-slate-300 focus:border-teal-600 focus:ring-4 focus:ring-teal-500/10 outline-none"
+                          />
+                        </div>
+                        {modalErrors.email && (
+                          <p className="mt-1 text-xs text-rose-500">
+                            {modalErrors.email}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Phone Number - full width */}
+                    <div>
+                      <label htmlFor="modal-phone" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Phone Number (+91) <span className="text-rose-500 font-bold">*</span>
+                      </label>
+                      <div className="relative group">
+                        <Phone size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors pointer-events-none" />
+                        <input
+                          id="modal-phone" type="tel"
+                          name="phone"
+                          placeholder="+91 9630736070"
+                          value={modalForm.phone}
+                          onChange={(e) =>
+                            updateModalField("phone", e.target.value)
+                          }
+                          className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 text-sm shadow-xs transition-all duration-200 hover:border-slate-300 focus:border-teal-600 focus:ring-4 focus:ring-teal-500/10 outline-none"
+                        />
+                      </div>
+                      {modalErrors.phone && (
+                        <p className="mt-1 text-xs text-rose-500">
+                          {modalErrors.phone}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Current City - full width */}
+                    <div>
+                      <label htmlFor="modal-city" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Current City <span className="text-rose-500 font-bold">*</span>
+                      </label>
+                      <div className="relative group">
+                        <MapPin size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors pointer-events-none" />
+                        <select
+                          id="modal-city" name="city"
+                          value={modalForm.city}
+                          onChange={(e) =>
+                            updateModalField("city", e.target.value)
+                          }
+                          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm shadow-xs transition-all duration-200 hover:border-slate-300 focus:border-teal-600 focus:ring-4 focus:ring-teal-500/10 outline-none appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled className="text-slate-400">
+                            Select city
+                          </option>
+                          {[
+                            "Indore",
+                            "Bhopal",
+                            "Delhi",
+                            "Mumbai",
+                            "Pune",
+                            "Other",
+                          ].map((c) => (
+                            <option key={c} value={c}>{c}</option>
+                          ))}
+                        </select>
+                        <ChevronDown size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                      </div>
+                      {modalErrors.city && (
+                        <p className="mt-1 text-xs text-rose-500">
+                          {modalErrors.city}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* NEET Status - full width */}
+                    <div>
+                      <label htmlFor="modal-neet" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        NEET Status <span className="text-rose-500 font-bold">*</span>
+                      </label>
+                      <div className="relative group">
+                        <GraduationCap size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors pointer-events-none" />
+                        <select
+                          id="modal-neet" name="neetStatus"
+                          value={modalForm.neetStatus}
+                          onChange={(e) =>
+                            updateModalField("neetStatus", e.target.value)
+                          }
+                          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm shadow-xs transition-all duration-200 hover:border-slate-300 focus:border-teal-600 focus:ring-4 focus:ring-teal-500/10 outline-none appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled className="text-slate-400">
+                            Select NEET status
+                          </option>
+                          {["Qualified", "Not Qualified"].map((status) => (
+                            <option key={status} value={status}>
+                              {status}
+                            </option>
+                          ))}
+                        </select>
+                        <ChevronDown size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                      </div>
+                      {modalErrors.neetStatus && (
+                        <p className="mt-1 text-xs text-rose-500">
+                          {modalErrors.neetStatus}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Interested Country - full width */}
+                    <div>
+                      <label htmlFor="modal-country" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Interested Country
+                      </label>
+                      <div className="relative group">
+                        <Globe size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors pointer-events-none" />
+                        <select
+                          id="modal-country" name="country"
+                          value={modalForm.country}
+                          onChange={(e) =>
+                            updateModalField("country", e.target.value)
+                          }
+                          className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm shadow-xs transition-all duration-200 hover:border-slate-300 focus:border-teal-600 focus:ring-4 focus:ring-teal-500/10 outline-none appearance-none cursor-pointer"
+                        >
+                          <option value="" disabled className="text-slate-400">
+                            Select country
+                          </option>
+                          {[
+                            "Russia",
+                            "Georgia",
+                            "Kazakhstan",
+                            "Kyrgyzstan",
+                            "Uzbekistan",
+                            "Philippines",
+                            "Nepal",
+                            "Bangladesh",
+                          ].map((c) => (
+                            <option key={c} value={c}>{c}</option>
+                          ))}
+                        </select>
+                        <ChevronDown size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                      </div>
+                      {modalErrors.country && (
+                        <p className="mt-1 text-xs text-rose-500">
+                          {modalErrors.country}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Premium CTA Button with Shimmer & Animated Arrow */}
+                    <button
+                      type="submit"
+                      disabled={isModalSubmitting}
+                      className={`group relative w-full py-3.5 px-6 rounded-xl font-bold text-base sm:text-lg text-white shadow-lg transition-all duration-300 mt-2 flex items-center justify-center gap-2 overflow-hidden ${
+                        isModalSubmitting
+                          ? "bg-slate-400 cursor-not-allowed opacity-75"
+                          : "bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 hover:from-teal-500 hover:via-teal-600 hover:to-cyan-600 shadow-teal-900/20 hover:shadow-teal-600/30 hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                      }`}
+                    >
+                      {/* Shimmer light effect sweep */}
+                      <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        {isModalSubmitting ? (
+                          <>
+                            <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Submitting...
+                          </>
+                        ) : (
+                          <>
+                            <span>Get Free Counselling Now</span>
+                            <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
+                          </>
+                        )}
+                      </span>
+                    </button>
+
+                    <p className="text-center text-xs sm:text-sm text-teal-700 font-semibold mt-2">
+                      Worth ₹4,999 – 100% Free Today!
+                    </p>
+                    <p className="text-center text-xs text-slate-500 mt-1">
+                      By submitting, you agree to our Terms &amp; Privacy Policy
+                    </p>
+                  </form>
+
+                  <div className="mt-2 text-center text-xs text-slate-500">
+                    <p>Secure &amp; Confidential • We never spam</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* HERO CAROUSEL */}
+        <section className="relative">
+          <div className="relative w-full min-h-[580px] sm:min-h-[640px] lg:h-[78vh] lg:min-h-[660px] overflow-hidden">
+            {HERO_SLIDES.map((slide, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === currentHeroSlide ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  width={1920}
+                  height={1281}
+                  sizes="100vw"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : undefined}
+                  decoding={index === 0 ? "sync" : "async"}
+                  className="w-full h-full object-cover brightness-[0.85] aspect-auto"
+                  srcSet={`${slide.image} 1x, ${slide.image} 2x`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/30" />
+                <div className="absolute inset-0 flex items-center justify-center px-5 sm:px-10 pb-20 sm:pb-24">
+                  <div className="text-center max-w-5xl mx-auto">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold mb-3 sm:mb-5 shadow-xl">
+                      <span className="text-amber-400">★★★★★</span>
+                      <span className="text-amber-300 font-bold">4.9/5 Rating</span>
+                      <span className="hidden sm:inline text-white/90">• 1000+ Placed • NMC &amp; WHO Recognized</span>
+                    </div>
+
+                    <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-3 md:mb-5 drop-shadow-2xl">
+                      Your MBBS Abroad Journey
+                      <br />
+                      <span className="text-[#d4a853]">{slide.title}</span>
+                    </h2>
+                    <p className="text-sm sm:text-base md:text-lg text-white/95 font-medium mb-5 md:mb-7 max-w-3xl mx-auto drop-shadow-lg">
+                      {slide.subtitle}
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                      <button
+                        type="button"
+                        onClick={() => setIsOpen(true)}
+                        className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl shadow-2xl hover:shadow-3xl hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm cursor-pointer"
+                      >
+                        <span>{slide.cta || "Get Free Counselling"}</span>
+                        <ArrowRight size={16} />
+                      </button>
+                      <a
+                        href="#destinations"
+                        className="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md font-semibold px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl transition-all duration-300 text-xs sm:text-sm cursor-pointer"
+                      >
+                        <span>Explore Countries</span>
+                        <ChevronDown size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Slide Indicators positioned safely above the floating stats card */}
+            <div className="absolute bottom-26 sm:bottom-30 md:bottom-34 left-0 right-0 flex justify-center gap-2.5 z-20 pointer-events-auto">
+              {HERO_SLIDES.map((slide, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to slide ${i + 1}: ${slide.country || ""}`}
+                  onClick={() => setCurrentHeroSlide(i)}
+                  className={`h-2 rounded-full transition-all duration-400 shadow-md ${
+                    i === currentHeroSlide
+                      ? "w-7 bg-[#d4a853] ring-2 ring-[#d4a853]/60"
+                      : "w-2 bg-white/60 hover:bg-white/90"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* BANNER SECTION WITH FLOATING STATS CARD (Exactly 50% on Hero Image, 50% on Blue Banner, styled like About page) */}
+        <section className="bg-gradient-to-br from-[#0a2342] via-[#1a4a7a] to-[#0d3460] pt-0 pb-20 md:pb-28 px-5 sm:px-8 lg:px-12 text-center relative overflow-visible">
+          {/* STATS BAR: Exactly like About page, compact sleek height, 50/50 split */}
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-30 -translate-y-1/2 -mb-8 sm:-mb-10">
+            <div className="bg-white border border-[#d4a853]/30 rounded-2xl sm:rounded-3xl shadow-2xl py-4.5 px-4 sm:py-5 sm:px-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+              {(homeData.stats || [
+                { n: "1000+", l: "Students Placed Globally" },
+                { n: "20+", l: "Countries Covered" },
+                { n: "200+", l: "Partner Medical Universities" },
+                { n: "100%", l: "Visa & Admission Success" },
+              ]).map((s, i) => (
+                <div key={i} className="flex flex-col items-center justify-center text-center p-1 sm:p-2 group">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#d4a853] tracking-tight leading-none group-hover:scale-105 transition-transform">
+                    {s.n}
+                  </div>
+                  <div className="text-[#0a2342] font-bold text-[11px] sm:text-xs md:text-sm uppercase tracking-wider mt-1.5 sm:mt-2">
+                    {s.l}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Decorative background glow circles contained so they never overflow the viewport */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-20 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#d4a853]/10" />
+            <div className="absolute -bottom-20 -left-20 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-[#d4a853]/5" />
+          </div>
+
+          <div className="max-w-5xl mx-auto relative">
+            <p className="text-[#d4a853] uppercase tracking-wider text-sm md:text-base font-medium mb-6">
+              🏥 NMC-Recognized Universities Abroad
+            </p>
+
+            <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 md:mb-8">
+              Your MBBS Abroad Journey
+              <br />
+              <span className="text-[#d4a853]">Starts with Right Guidance</span>
+            </h2>
+
+            <p className="text-white/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-12 font-light leading-relaxed">
+              Trusted MBBS abroad consultants for Indian students. Transparent
+              counselling, no hidden charges, and end-to-end support from
+              application to post-arrival.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-8">
+              <Link to="/landingpage" className="inline-block bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-10 py-4 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto cursor-pointer">Book Free Counselling →</Link>
+
+              <div
+                ref={exploreMenuRef}
+                className="relative w-full sm:w-auto hover:cursor-pointer"
+                onMouseEnter={() => setExploreMenuOpen(true)}
+              >
+                <Link
+                  to="/allcollege"
+                  className="inline-flex justify-center items-center border-2 border-[#d4a853]/60 text-white px-10 py-4 rounded-lg font-medium hover:bg-[#d4a853]/10 hover:border-[#d4a853] transition-all duration-300 text-sm sm:text-base w-full sm:w-auto"
+                >
+                  Explore Countries
+                </Link>
+
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 sm:w-64 max-w-[90vw] rounded-2xl border border-white/15 bg-slate-950/95 p-3 shadow-2xl backdrop-blur-xl transition-all duration-200 z-30 ${
+                    exploreMenuOpen ? "block opacity-100" : "hidden opacity-0"
+                  }`}
+                >
+                  <Link
+                    to="/allcollege"
+                    onClick={() => setExploreMenuOpen(false)}
+                    className="block w-full rounded-2xl bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] text-center font-semibold px-4 py-3 mb-3 transition hover:shadow-lg"
+                  >
+                    MBBS India
+                  </Link>
+                  <Link
+                    to="/mbbs-abroad/russia"
+                    onClick={() => setExploreMenuOpen(false)}
+                    className="block w-full rounded-2xl border border-white/20 bg-white/5 text-white text-center font-semibold px-4 py-3 transition hover:bg-white/10 hover:shadow-lg"
+                  >
+                    MBBS Abroad
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TOP MBBS DESTINATIONS GRID (Dynamic - auto-hides if empty in CMS) */}
+        {COUNTRIES && COUNTRIES.length > 0 && (
+        <section id="destinations" className="py-16 md:py-24 px-5 sm:px-8 lg:px-12 bg-gradient-to-b from-white via-slate-50 to-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-200">
+                <Globe size={14} className="text-amber-700" />
+                Popular Study Hubs
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a2342] leading-tight mb-4">
+                Top MBBS Abroad Destinations for Indian Students
+              </h2>
+              <p className="text-gray-600 text-base sm:text-lg">
+                Compare premier medical universities, transparent fee structures, and NMC-compliant curriculums across top overseas education destinations.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {COUNTRIES.map((country, idx) => (
+                <div
+                  key={country.name || idx}
+                  className="group relative bg-white rounded-2xl border border-slate-200/80 shadow-md hover:shadow-2xl hover:border-amber-400/80 transition-all duration-300 p-6 flex flex-col justify-between hover:-translate-y-1.5"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2.5">
+                        {COUNTRY_FLAGS[country.name] ? (
+                          <img
+                            src={COUNTRY_FLAGS[country.name].flag}
+                            alt={`${country.name} flag`}
+                            width={36}
+                            height={24}
+                            className="w-9 h-6 sm:w-10 sm:h-6.5 object-cover rounded shadow-xs border border-slate-200/90"
+                          />
+                        ) : (
+                          <span className="text-2xl">{country.flag}</span>
+                        )}
+                        <span className="text-xs font-extrabold text-slate-700 bg-slate-100/90 px-2 py-0.5 rounded-md border border-slate-200 uppercase tracking-wider">
+                          {COUNTRY_FLAGS[country.name]?.code || (country.name || "").slice(0, 2).toUpperCase()}
+                        </span>
+                      </div>
+                      {country.tag && (
+                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200/70">
+                          {country.tag}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#0a2342] group-hover:text-amber-600 transition-colors mb-2">
+                      MBBS in {country.name}
+                    </h3>
+                    <div className="space-y-2 mb-6 text-sm">
+                      <div className="flex items-center justify-between py-1.5 border-b border-slate-100">
+                        <span className="text-slate-500 font-medium">Estimated Package</span>
+                        <span className="font-bold text-slate-900">{country.fee || "Contact for fees"}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-1.5 border-b border-slate-100">
+                        <span className="text-slate-500 font-medium">Available Seats</span>
+                        <span className="font-semibold text-emerald-600 flex items-center gap-1">
+                          <CheckCircle2 size={14} />
+                          {country.seats || "Seats Available"}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between py-1.5">
+                        <span className="text-slate-500 font-medium">Recognition</span>
+                        <span className="font-semibold text-slate-700">NMC &amp; WHO Approved</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link
+                    to={country.link || `/mbbs-abroad/${(country.name || "").toLowerCase()}`}
+                    className="w-full py-3 px-4 rounded-xl font-bold text-sm text-center bg-slate-900 text-white group-hover:bg-gradient-to-r group-hover:from-[#d4a853] group-hover:to-[#e0b76b] group-hover:text-[#0a2342] transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <span>View Universities &amp; Fees</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                to="/allcollege"
+                className="inline-flex items-center gap-2 text-base font-bold text-[#0a2342] hover:text-amber-600 transition-colors border-b-2 border-amber-400 pb-1"
+              >
+                <span>View All Medical Colleges Worldwide</span>
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {/* ABOUT SECTION - (kept as in original) */}
+        <section className="py-8 md:py-10 px-5 sm:px-6 lg:px-10 bg-[#faf8f4]">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <div className="w-14 bg-gradient-to-r from-[#d4a853] to-[#f0c070] mb-4 h-1" />
+              <p className="text-[#d4a853] uppercase tracking-widest text-xs font-medium mb-3">
+                Who We Are
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-[#0a2342] leading-tight mb-5">
+                MBBS counselling &amp;
+                <br />
+                consultancy services.
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4 text-base">
+                <strong className="text-[#0a2342] font-semibold hover:text-[#426a91] transition-colors duration-200">
+                  <a
+                    href="https://eduhawk.in/about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Edu-Hawk Worldwide
+                  </a>
+                </strong>{" "}
+                is a professional team of experienced education advisors
+                specializing in MBBS counselling abroad services. We guide
+                Indian students toward admission in NMC-recognized medical
+                universities through transparent &amp; ethical counselling.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-base">
+                As trusted overseas{" "}
+                <Link to="/mbbs-abroad/italy">
+                  <strong>medical education </strong>
+                </Link>
+  consultants, we provide
+                personalized guidance based on your academic profile, budget,
+                and long-term career goals — ensuring the right country,
+                university, and eligibility for practice in India.
+              </p>
+              <p className="text-gray-700 leading-relaxed text-base">
+                We believe MBBS abroad should be a{" "}
+                <em>planned and safe decision</em>, supported by correct
+                guidance, honest counselling — no hidden charges, only genuine
+                information.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center">
+              {[
+                {
+                  icon: (
+                    <img
+                      src={personalized}
+                      loading="lazy"
+                      alt="Personalized Counselling"
+                      width={246}
+                      height={197}
+                      className="w-12 h-12"
+                  srcSet={`${personalized} 1x, ${personalized} 2x`}
+                  sizes="100vw"
+                />
+                  ),
+                  title: "Personalized Counselling",
+                  desc: "Guidance matched to your profile & budget",
+                },
+                {
+                  icon: (
+                    <img
+                      src={checkup}
+                      loading="lazy"
+                      alt="NMC Recognized"
+                      width={200}
+                      height={200}
+                      className="w-12 h-12"
+                  srcSet={`${checkup} 1x, ${checkup} 2x`}
+                  sizes="100vw"
+                />
+                  ),
+                  title: "NMC Recognized Only",
+                  desc: "Only recognized universities recommended",
+                },
+                {
+                  icon: (
+                    <img
+                      src={charges}
+                      loading="lazy"
+                      alt="No Hidden Charges"
+                      width={512}
+                      height={512}
+                      className="w-12 h-12"
+                  srcSet={`${charges} 1x, ${charges} 2x`}
+                  sizes="100vw"
+                />
+                  ),
+                  title: "No Hidden Charges",
+                  desc: "100% transparent fee structure",
+                },
+                {
+                  icon: (
+                    <img
+                      src={support}
+                      loading="lazy"
+                      alt="End-to-End Support"
+                      width={512}
+                      height={512}
+                      className="w-12 h-12"
+                  srcSet={`${support} 1x, ${support} 2x`}
+                  sizes="100vw"
+                />
+                  ),
+                  title: "End-to-End Support",
+                  desc: "Application to post-arrival assistance",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl p-5 border border-[#e8d5b0]/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center max-w-xs w-full"
+                >
+                  <div className="flex justify-center mb-3">{item.icon}</div>
+                  <h3 className="font-bold text-[#0a2342] mb-2 text-base">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT WE PROVIDE SECTION */}
+        <div className="container mx-auto px-4 py-12 md:py-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="md:col-span-4">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-sm mx-auto md:max-w-none">
+                <img
+                  src={univercity}
+                  loading="lazy"
+                  alt="MBBS Admission Abroad"
+                  width={3264}
+                  height={2448}
+                  className="w-full h-48 object-cover"
+                  srcSet={`${univercity} 1x, ${univercity} 2x`}
+                  sizes="100vw"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    MBBS Admission in Abroad
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Expert Assistance for MBBS Admission in Renowned Abroad
+                    Institutions.
+                  </p>
+                  <a
+                    href="/contact"
+                    className="inline-block bg-blue-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-800 transition"
+                  >
+                    Get In Touch
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-8">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="bg-blue-950 text-white text-center py-4 font-semibold text-lg">
+                  WHAT WE PROVIDE
+                </div>
+                <div className="p-6">
+                  <blockquote className="text-gray-700 italic mb-6">
+                    <p className="mb-4">
+                      With our assistance, you can bid farewell to the
+                      complexities often associated with
+                      <strong className="text-[#0a2342] font-semibold hover:text-[#426a91] transition-colors duration-200 p-2">
+                        <Link
+                          to="/study-abroad"
+                          className="hover:text-[#426a91] transition-colors duration-200"
+                        >
+                          MBBS admission abroad
+                        </Link>
+                      </strong>
+                      We streamline the entire process, sparing you from any
+                      unnecessary hassle and ensuring a seamless experience
+                      every step of the way.
+                    </p>
+                    <footer className="text-gray-500 text-sm not-italic">
+                      Trust us to be your reliable partner in realizing your
+                      aspirations for MBBS admission in foreign universities.
+                      Let's embark on this transformative journey together.{" "}
+                      <cite className="font-medium">— EDU HAWK</cite>
+                    </footer>
+                  </blockquote>
+                  <ul className="space-y-3 text-gray-700">
+                    {[
+                      "Discover Global Opportunities: Pursue MBBS Education Beyond Borders",
+                      "Expert Guidance for Your MBBS Journey: Navigate the Admission Process with Ease",
+                      "Benefits of Studying Abroad: Enhance Your Medical Education Experience",
+                      "Unlocking Doors to Medical Excellence: Your Key to College Admission Success",
+                      "Counseling Compass: Directing You Towards Your Medical School Destiny",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="text-blue-600 mr-3">→</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* SERVICES SECTION */}
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4 md:px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {[
+                {
+                  icon: icon1,
+                  alt: "Application Process",
+                  title: "Application Process",
+                  desc: "We believe that your entire MBBS journey is our responsibility—from the beginning until you settle in your new college. We provide complete student assistance, including application support, invitation letters, pre-departure briefings, and post-arrival support. Our goal is not just admission but helping students choose the right pathways and prepare for FMGE/NExT eligibility in India. We provide one-to-one personalised guidance to every student, understanding that each student has different goals and needs...",
+                },
+                {
+                  icon: icon2,
+                  alt: "Perfect Counselling",
+                  title: "Perfect Counselling",
+                  desc: "Begin your journey towards your dreams with Edu Hawk Worldwide, your trusted partner for MBBS abroad. If you are planning to study MBBS abroad, our expert MBBS abroad counselling team guides you at every step. We help you choose the right country and university based on your budget, NEET score, and career goals. Our MBBS abroad counseling also supports you with admissions, the visa process, education loans, and insurance guidance. With proper planning and transparent advice, you can confidently study MBBS abroad and build a successful medical career. Your dream of MBBS abroad begins here with the right guidance.",
+                },
+                {
+                  icon: icon3,
+                  alt: "Accurate Information",
+                  title: "Accurate Information",
+                  desc: "At Edu Hawk Worldwide, we are committed to providing accurate and reliable information for students planning to study abroad. We carefully collect verified details about universities, including campus environment, eligibility criteria, qualifications, application process, admission requirements, and arrival procedures. Our team uses trusted sources to ensure every piece of information is clear and up-to-date. We understand that choosing the right university is a big decision, so we focus on transparency and clarity. With complete and precise guidance, we help you make confident and informed choices for your educational journey.",
+                },
+                {
+                  icon: icon4,
+                  alt: "Proper Assistance",
+                  title: "Proper Assistance",
+                  desc: "At Edu Hawk Worldwide, we provide complete support for students planning to study MBBS abroad. Our expert MBBS abroad counselling ensures you receive step-by-step guidance throughout the process. From helping you study MBBS abroad to final university enrollment, we stay with you at every stage. Our services for MBBS abroad include admission assistance, visa processing, travel arrangements, scholarship guidance, and accommodation support. Through professional MBBS abroad counselling, we also guide you during departure and arrival procedures so your transition is smooth. If you face any challenge while planning to study MBBS abroad, our expert is always ready to support you. Your success in MBBS abroad is our top priority.",
+                },
+              ].map((item, i) => (
+                <div key={i} className="text-center md:text-left">
+                  <img
+                    src={item.icon}
+                    loading="lazy"
+                    alt={item.alt}
+                    width={512}
+                    height={512}
+                    className="w-24 h-24 mx-auto md:mx-0 mb-6"
+                  srcSet={`${item.icon} 1x, ${item.icon} 2x`}
+                  sizes="100vw"
+                />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* TOP MEDICAL COLLEGES */}
+        {/* <div className="container mx-auto px-4 py-16">
+          <h4 className="text-3xl font-bold text-center text-gray-800 mb-10">
+            TOP MEDICAL COLLEGES
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Peking University Health Science Center",
+                img: topRanking1,
+              },
+              {
+                name: "Shanghai Jiao Tong University School of Medicine",
+                img: topRanking2,
+              },
+              {
+                name: "Tsinghua University School of Medicine",
+                img: topRanking3,
+              },
+              {
+                name: "First Moscow State Medical University (Sechenov)",
+                img: topRanking4,
+              },
+              {
+                name: "Saint Petersburg State Medical University",
+                img: topRanking5,
+              },
+              {
+                name: "Pirogov Russian National Research Medical University",
+                img: topRanking6,
+              },
+              {
+                name: "University of Santo Tomas Faculty of Medicine",
+                img: topRanking7,
+              },
+              {
+                name: "University of the Philippines Manila, College of Medicine",
+                img: topRanking8,
+              },
+            ].map((college, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src={college.img}
+                  alt={college.name}
+                  width={400}
+                  height={224}
+                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <a
+                      href="#"
+                      className="text-white font-medium text-sm block hover:underline"
+                    >
+                      {college.name}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div> */}
+        <div className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+            TOP MEDICAL COLLEGES
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Altai State Medical University",
+                img: topRanking2,
+                path: "/mbbs-abroad/russia",
+              },
+              {
+                name: "Dhaka National Medical College",
+                img: "https://educationvibes.in/uploads/university_banner/mbbs_abroad/dhaka-national-medical-college.webp",
+                path: "/mbbs-abroad/bangladesh",
+              },
+              {
+                name: "Kathmandu Medical College",
+                img: Kathmandu,
+                path: "/mbbs-abroad/nepal",
+              },
+              {
+                name: "International Medical College",
+                img: "https://upload.wikimedia.org/wikipedia/commons/b/b9/International_higher_school_of_medicine_central_campus.jpg",
+                path: "/mbbs-abroad/kyrgyzstan",
+              },
+              {
+                name: "West Kazakhstan Marat Ospanov State Medical University",
+                img: topRanking4,
+                path: "/mbbs-abroad/kazakhstan",
+              },
+              {
+                name: "Samarkand State Medical Institute",
+                img: "https://www.moksh16.com/uploads/images/samarkand1.webp",
+                path: "/mbbs-abroad/uzbekistan",
+              },
+              {
+                name: "Tajik National University",
+                img: "https://upload.wikimedia.org/wikipedia/commons/3/36/Tajik_National_University_%28Main_Building%29.jpg",
+                path: "/mbbs-abroad/tajikistan",
+              },
+              {
+                name: "Assiut University",
+                img: "https://oktamam.com/wp-content/uploads/2024/03/assiut-university.png",
+                path: "/mbbs-abroad/egypt",
+              },
+            ].map((college, index) => (
+              <Link
+                key={index}
+                to={college.path}
+                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 block"
+              >
+                <img
+                  src={college.img}
+                  loading="lazy"
+                  alt={college.name}
+                  width={400}
+                  height={224}
+                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  srcSet={`${college.img} 1x, ${college.img} 2x`}
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <p className="text-white font-medium text-sm hover:underline line-clamp-2">
+                      {college.name}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        {/* CLASSROOM CARDS */}
+        <section className="py-12 md:py-16 bg-gray-50">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              {[
+                {
+                  img: globalImage,
+                  alt: "Medical university classroom",
+                  title: "Edu Hawk: Your Bridge to Global Education",
+                  desc: "Embarking on a journey to study MBBS abroad is a life-changing decision...",
+                },
+                {
+                  img: globalImage2,
+                  alt: "Modern medical lecture hall",
+                  title:
+                    "Redefining Application Excellence: The Edu Hawk Advantage",
+                  desc: "What truly sets Edu Hawk apart is our commitment to excellence...",
+                },
+              ].map((card, i) => (
+                <div
+                  key={i}
+                  className="group bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                >
+                  <div className="relative overflow-hidden h-64 md:h-80">
+                    <img
+                      src={card.img}
+                      loading="lazy"
+                      alt={card.alt}
+                      width={800}
+                      height={512}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 aspect-auto"
+                  srcSet={`${card.img} 1x, ${card.img} 2x`}
+                  sizes="100vw"
+                />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60" />
+                  </div>
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                      {card.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-base">
+                      {card.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FEES TABLE */}
+        <section className="py-10 md:py-14 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-8 text-center md:text-left">
+              Other MBBS Options for Indian Students
+            </h2>
+            <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                      Country
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                      Average Tuition Fees (INR)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-100">
+                  {mbbsOptions.map((option, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-blue-50/50 transition-colors duration-150"
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <a
+                          href={option.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-700 hover:text-blue-900 hover:underline transition-colors"
+                        >
+                          Study MBBS in {option.country}
+                        </a>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                        {option.fees}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-6 text-sm text-gray-500 text-center md:text-left">
+              * Fees are approximate and may vary depending on university,
+              hostel, and other charges. Always verify latest information from
+              official sources.
+            </p>
+          </div>
+        </section>
+
+        {/* SEO CONTENT SECTION */}
+        <section className="py-16 md:py-20 px-5 sm:px-8 lg:px-12 bg-[#f8fafc]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 md:mb-12">
+              <p className="text-[#d4a853] uppercase tracking-widest text-xs md:text-sm font-medium mb-4">
+                MBBS Abroad Guidance
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0a2342] mb-4">
+                Study MBBS Abroad with Expert Guidance
+              </h2>
+              <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                Edu-Hawk Worldwide helps Indian students plan their MBBS journey
+                with transparent counselling, trusted university advice, and
+                affordable study options in lakhs for medical education abroad.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "MBBS Admission Abroad",
+                  desc: "Get support for MBBS admission abroad with eligibility guidance, university shortlisting, and application assistance.",
+                },
+                {
+                  title: "Medical Education Overseas",
+                  desc: "Explore medical education opportunities in foreign medical universities with recognized programs and strong academic support.",
+                },
+                {
+                  title: "Overseas Education for Indian Students",
+                  desc: "We simplify overseas education for Indian students with guidance on country selection, fees, and admission processes.",
+                },
+                {
+                  title: "Affordable Study in Lakhs",
+                  desc: "Compare cost-effective MBBS options in lakhs and choose the right path for your budget and career goals.",
+                },
+              ].map((card, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-200 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-[#d4a853]/50"
+                >
+                  <div className="mb-4 h-11 w-11 rounded-xl bg-gradient-to-br from-[#d4a853]/20 to-[#f0c070]/20 flex items-center justify-center text-xl shadow-inner">
+                    {index + 1}
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#0a2342] mb-3">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        
+        {/* STUDENT TESTIMONIALS SECTION (Dynamic - auto-hides if empty in CMS) */}
+        {TESTIMONIALS && TESTIMONIALS.length > 0 && (
+        <section className="py-20 md:py-24 px-5 sm:px-8 lg:px-12 bg-gradient-to-br from-[#071d38] via-[#0a2a4e] to-[#0d3460] text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-400/30">
+                <Star size={14} className="fill-amber-400 text-amber-400" />
+                Verified Student Reviews
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                Stories of Success From Our Medical Students
+              </h2>
+              <p className="text-slate-300 text-base sm:text-lg">
+                Hear directly from students and parents who placed their trust in Edu-Hawk Worldwide for their overseas medical journey.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {TESTIMONIALS.map((review, i) => (
+                <div
+                  key={i}
+                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 p-7 flex flex-col justify-between hover:bg-white/15 hover:border-amber-400/50 transition-all duration-300 hover:-translate-y-1.5 shadow-xl"
+                >
+                  <div>
+                    <div className="flex items-center gap-1 text-amber-400 mb-4">
+                      {Array.from({ length: review.stars || 5 }).map((_, sIdx) => (
+                        <Star key={sIdx} size={18} className="fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-6 italic">
+                      "{review.text}"
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-white/15 flex items-center justify-between">
+                    <div>
+                      <h4 className="font-bold text-white text-base">{review.name}</h4>
+                      <p className="text-xs text-amber-300 font-medium">{review.loc}</p>
+                      {review.university && (
+                        <p className="text-xs text-slate-300 mt-0.5">{review.university}</p>
+                      )}
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-300 bg-emerald-500/20 px-2.5 py-1 rounded-full border border-emerald-400/30">
+                      <CheckCircle2 size={12} />
+                      Verified
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        )}
+
+        <section className="py-16 md:py-20 px-5 sm:px-8 lg:px-12 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-8 text-center">
+              <p className="text-[#d4a853] uppercase tracking-widest text-xs md:text-sm font-medium mb-3">
+                FAQs
+              </p>
+              <h3 className="text-3xl sm:text-4xl font-bold text-[#0a2342]">
+                FAQs About MBBS Abroad and Study Guidance
+              </h3>
+            </div>
+
+            <div className="space-y-4">
+              {FAQ_ITEMS.map((item, index) => {
+                const isOpen = openFaq === index;
+
+                return (
+                  <div
+                    key={index}
+                    className="border border-gray-200 rounded-2xl overflow-hidden bg-[#f8fafc] shadow-sm transition-all duration-300 hover:shadow-md"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? -1 : index)}
+                      aria-expanded={isOpen}
+                      className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-all duration-300 hover:bg-white"
+                    >
+                      <h4 className="font-semibold text-[#0a2342] text-base md:text-lg pr-4">
+                        {item.question}
+                      </h4>
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0a2342] shadow-sm border border-gray-200 transition-all duration-300">
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform duration-300 ${
+                            isOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      </span>
+                    </button>
+
+                    <div
+                      className={`grid transition-all duration-300 ease-in-out ${
+                        isOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT SECTION */}
+        <section className="py-20 md:py-24 px-5 sm:px-8 lg:px-12 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="w-16 h-1 bg-gradient-to-r from-[#d4a853] to-[#f0c070] mx-auto mb-5" />
+              <p className="text-[#d4a853] uppercase tracking-widest text-xs md:text-sm font-medium mb-4">
+                Get In Touch
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0a2342] mb-6">
+                Talk to Our Team
+              </h2>
+              <p className="text-gray-600 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+                Have questions about building your MBBS career abroad? Our
+                counselling team is ready to help you plan the perfect path.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+              <form onSubmit={handleContactSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="contact-name" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                      Full Name
+                    </label>
+                    <input
+                      id="contact-name" className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition"
+                      placeholder="John Doe"
+                      value={contactForm.name}
+                      onChange={(e) =>
+                        updateContactField("name", e.target.value)
+                      }
+                    />
+                    {contactErrors.name && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {contactErrors.name}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="contact-email" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="contact-email" className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition"
+                      placeholder="you@email.com"
+                      value={contactForm.email}
+                      onChange={(e) =>
+                        updateContactField("email", e.target.value)
+                      }
+                    />
+                    {contactErrors.email && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {contactErrors.email}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="contact-phone" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                      Phone Number
+                    </label>
+                    <input
+                      id="contact-phone" className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition"
+                      placeholder="+91 00000 00000"
+                      value={contactForm.phone}
+                      onChange={(e) =>
+                        updateContactField("phone", e.target.value)
+                      }
+                    />
+                    {contactErrors.phone && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {contactErrors.phone}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Preferred Country */}
+                  <div>
+                    <label htmlFor="contact-country" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                      Preferred Country
+                    </label>
+                    <select
+                      id="contact-country" className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition"
+                      value={contactForm.country}
+                      onChange={(e) =>
+                        updateContactField("country", e.target.value)
+                      }
+                    >
+                      <option value="">Select country</option>
+                      {COUNTRIES.map((c) => (
+                        <option key={c.name} value={c.name}>
+                          {c.flag} {c.name}
+                        </option>
+                      ))}
+                    </select>
+                    {contactErrors.country && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {contactErrors.country}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* New City Dropdown */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="contact-city" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                      Preferred City
+                    </label>
+                    <select
+                      id="contact-city" className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition"
+                      value={contactForm.city || ""}
+                      onChange={(e) =>
+                        updateContactField("city", e.target.value)
+                      }
+                    >
+                      <option value="">Select city</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Mumbai">Mumbai</option>
+                      <option value="Bangalore">Bangalore</option>
+                      <option value="Hyderabad">Hyderabad</option>
+                      <option value="Chennai">Chennai</option>
+                      <option value="Kolkata">Kolkata</option>
+                      <option value="Pune">Pune</option>
+                      <option value="Ahmedabad">Ahmedabad</option>
+                      <option value="Jaipur">Jaipur</option>
+                      <option value="Lucknow">Lucknow</option>
+                      <option value="Indore">Indore</option>
+                      <option value="Bhopal">Bhopal</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    {contactErrors.city && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {contactErrors.city}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="contact-neet" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                      NEET Status
+                    </label>
+                    <select
+                      id="contact-neet" className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition"
+                      value={contactForm.neetStatus}
+                      onChange={(e) =>
+                        updateContactField("neetStatus", e.target.value)
+                      }
+                    >
+                      <option value="">Select NEET status</option>
+                      <option value="Qualified">Qualified</option>
+                      <option value="Not Qualified">Not Qualified</option>
+                    </select>
+                    {contactErrors.neetStatus && (
+                      <p className="mt-1 text-sm text-red-500">
+                        {contactErrors.neetStatus}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="contact-message" className="block text-gray-700 font-semibold mb-2 text-sm uppercase tracking-wide">
+                    Message
+                  </label>
+                  <textarea
+                    id="contact-message" rows={5}
+                    minLength={10}
+                    className="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#d4a853] focus:ring-2 focus:ring-[#d4a853]/30 bg-gray-50 transition resize-y"
+                    placeholder="Tell us about your academic profile, budget, and any queries..."
+                    value={contactForm.message}
+                    onChange={(e) =>
+                      updateContactField("message", e.target.value)
+                    }
+                  />
+                  <p className="mt-1 text-sm text-gray-500">
+                    Minimum 10 characters ({contactForm.message.length}/10)
+                  </p>
+                  {contactErrors.message && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {contactErrors.message}
+                    </p>
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isContactSubmitting}
+                  className={`bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-10 py-4 rounded-lg shadow-lg transition-all duration-300 ${
+                    isContactSubmitting
+                      ? "opacity-70 cursor-not-allowed"
+                      : "hover:shadow-2xl hover:-translate-y-1"
+                  }`}
+                >
+                  {isContactSubmitting ? "Sending..." : "Send Message →"}
+                </button>
+              </form>
+
+              {/* Right Side Contact Info (same as before) */}
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: "📞",
+                    title: "Phone",
+                    detail: "+91 9630736070",
+                    sub: "Mon–Sat, 9 AM – 7 PM",
+                  },
+                  {
+                    icon: "📧",
+                    title: "Email",
+                    detail: "admin@eduhawk.in",
+                    sub: "We reply within 24 hours",
+                  },
+                  {
+                    icon: "📍",
+                    title: "Office",
+                    detail: "Bajrang House, N-5, next to Aakash Institute, South Extension I, Block N, New Delhi, Delhi 110003",
+                    sub: "India, 110001",
+                  },
+                  {
+                    icon: "🕒",
+                    title: "Office Hours",
+                    detail: "Mon–Fri: 10 AM – 6 PM",
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex gap-6 items-start p-6 bg-[#faf8f4] rounded-xl border border-[#e8d5b0]/70"
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#d4a853] to-[#f0c070] rounded-full flex items-center justify-center text-2xl shrink-0 text-[#0a2342]">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <div className="text-[#d4a853] text-xs uppercase tracking-widest font-bold mb-1">
+                        {item.title}
+                      </div>
+                      <div className="font-semibold text-[#0a2342] text-lg">
+                        {item.detail}
+                      </div>
+                      <div className="text-gray-600 text-sm mt-1">
+                        {item.sub}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* MOBILE STICKY ACTION BAR */}
+        <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 shadow-2xl flex items-center gap-2">
+          <a
+            href="tel:+919630736070"
+            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-100 text-slate-800 font-semibold text-xs border border-slate-300"
+          >
+            <Phone size={15} className="text-[#0a2342]" />
+            <span>Call Now</span>
+          </a>
+          <a
+            href="https://wa.me/919630736070?text=Hi%20EduHawk,%20I%20am%20interested%20in%20MBBS%20Abroad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-emerald-600 text-white font-semibold text-xs shadow-md"
+          >
+            <MessageCircle size={15} />
+            <span>WhatsApp</span>
+          </a>
+          <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#d4a853] to-[#e0b76b] text-[#0a2342] font-bold text-xs shadow-md cursor-pointer"
+          >
+            <Sparkles size={14} />
+            <span>Apply Free</span>
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
