@@ -1,622 +1,8 @@
 import cmsData from "../../data/medical_colleges/uzbekistan.json";
-// import React, { useState } from "react";
-// import RussiaFlag from "../../Images/Russia/russia header threejpg.webp";
-// import kernal from "../../Images/Russia/about-russia.webp";
-// import Russianflag2 from "../../Images/country flag png/Russia.svg";
-// import MARISTATEUNIVERSITY from "../../Images/Russia/MARI STATE UNIVERSITY.webp";
-// import ORELSTATEUNIVERSITY from "../../Images/Russia/OREL STATE UNIVERSITY.webp";
-// import ORENBURGSTATEUNIVERSITY from "../../Images/Russia/ORENBURG STATE UNIVERSITY.webp";
-// import TVERSTATEMEDICALUNIVERSITY from "../../Images/Russia/TVER STATE MEDICAL UNIVERSITY.jpeg";
-// import AltaiStateMedicalUniversity from "../../Images/Russia/Altai State Medical University.jpg";
-// const Uzbekistan = () => {
-//   const [showMoreAbout, setShowMoreAbout] = useState(false);
-//   const [showMoreClimate, setShowMoreClimate] = useState(false);
-
-//   return (
-//     <div className="min-h-screen bg-gray-50 font-sans">
-//       {/* ==================== HEADER CAROUSEL ==================== */}
-//       <div className="relative h-screen overflow-hidden">
-//         <div className="absolute inset-0">
-//           <img
-//             src={RussiaFlag}
-//             alt="Kremlin Bridge City"
-//             className="w-full h-full object-cover brightness-75"
-//           />
-//           <div className="absolute inset-0 flex items-center justify-center">
-//             <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
-//               STUDY MBBS IN UZBEKISTAN
-//             </h1>
-//           </div>
-//         </div>
-
-//         {/* You can duplicate more slides like this or use carousel library */}
-//       </div>
-
-//       {/* ==================== MAIN CONTENT ==================== */}
-//       <div className="container mx-auto px-4 py-12 max-w-7xl">
-//         {/* Intro Section */}
-//         <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
-//           <div>
-//             <img
-//               src={Russianflag2}
-//               alt="Russia flag"
-//               className="w-32 md:w-40 border-4 border-gray-800 rounded shadow-lg"
-//             />
-//           </div>
-//           <div>
-//             <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
-//               Explore MBBS Opportunities in UZBEKISTAN 2026–2027
-//             </h2>
-//           </div>
-//         </div>
-
-//         {/* About Russia + Image */}
-//         <div className="grid md:grid-cols-2 gap-12 mb-20">
-//           <div>
-//             <h2 className="text-3xl font-bold text-center md:text-left text-blue-900 mb-6">
-//               About UZBEKISTAN
-//             </h2>
-//             <p className="text-lg leading-relaxed text-gray-700">
-//               Russia has become popular among medical students, who are looking
-//               for a safe option internationally, as it has a strong academic
-//               environment for MBBS abroad. With a duration of approximately{" "}
-//               <strong>6 years</strong>, Russia has a well-balanced combination
-//               of quality education and practical clinical exposure.
-//             </p>
-
-//             <p className="mt-4 text-lg leading-relaxed text-gray-700">
-//               One of the biggest reasons to choose Russia is affordability.
-//               Compared to other countries.<strong> Russian universities</strong>{" "}
-//               provide high-quality education at cost-effective prices. Russian
-//               universities are recognised globally and ranked among the top
-//               institutions internationally. Well known for a strong academic
-//               background, experienced faculty, and modern infrastructure. In
-//               russia students receive theoretical and hands on clincal training,
-//               helping them develop the skills needed to become medical experts.
-//               The learning environment, combined with diverse cultural
-//               experiences, also helps students grow personally and
-//               professionally.
-//             </p>
-
-//             {showMoreAbout ? (
-//               <p className="mt-4 text-lg leading-relaxed text-gray-700">
-//                 While Russia remains a popular destination, other countries like
-//                 China, Nepal, Germany, Philippines, Ukraine, Bangladesh, and
-//                 Kyrgyzstan also offer affordable medical education.
-//                 International students are often exempted from the one-year
-//                 preparatory course.
-//               </p>
-//             ) : null}
-
-//             <button
-//               onClick={() => setShowMoreAbout(!showMoreAbout)}
-//               className="mt-6 px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition"
-//             >
-//               {showMoreAbout ? "Show Less" : "Read More"}
-//             </button>
-//           </div>
-
-//           <div>
-//             <img
-//               src={kernal}
-//               alt="Kremlin"
-//               className="rounded-xl shadow-2xl w-full h-auto object-cover"
-//             />
-//           </div>
-//         </div>
-
-//         {/* Quick Information + About MBBS */}
-//         <div className="grid md:grid-cols-2 gap-12 mb-20">
-//           {/* Left – Quick Info Table */}
-//           <div>
-//             <h3 className="text-2xl font-bold text-center text-blue-900 mb-6">
-//               Quick Information – Study MBBS in UZBEKISTAN
-//             </h3>
-
-//             <div className="overflow-x-auto">
-//               <table className="min-w-full border border-gray-300 text-left">
-//                 <tbody>
-//                   <tr className="bg-gray-100">
-//                     <td className="p-4 font-semibold">Recognition</td>
-//                     <td className="p-4">NMC & WHO approved</td>
-//                   </tr>
-//                   <tr>
-//                     <td className="p-4 font-semibold">Eligibility</td>
-//                     <td className="p-4">50% in PCB aggregate</td>
-//                   </tr>
-//                   <tr className="bg-gray-100">
-//                     <td className="p-4 font-semibold">Course Duration</td>
-//                     <td className="p-4">6 Years</td>
-//                   </tr>
-//                   <tr>
-//                     <td className="p-4 font-semibold">NEET</td>
-//                     <td className="p-4">Compulsory</td>
-//                   </tr>
-//                   <tr className="bg-gray-100">
-//                     <td className="p-4 font-semibold">IELTS/TOEFL</td>
-//                     <td className="p-4">Not Required</td>
-//                   </tr>
-//                   <tr>
-//                     <td className="p-4 font-semibold">Medium of Teaching</td>
-//                     <td className="p-4">English</td>
-//                   </tr>
-//                 </tbody>
-//               </table>
-//             </div>
-//           </div>
-
-//           {/* Right – About MBBS */}
-//           <div>
-//             <h3 className="text-3xl font-bold text-blue-900 mb-6 text-center md:text-left">
-//               About MBBS in UZBEKISTAN
-//             </h3>
-//             <p className="text-lg leading-relaxed text-gray-700">
-//               Studying MBBS in UZBEKISTAN is notably straightforward 
-//             </p>
-
-//             {showMoreClimate ? (
-//               <p className="mt-4 text-lg leading-relaxed text-gray-700">
-//                 — no entrance
-//               exam (apart from NEET for Indian students). The Russian government
-//               subsidizes education, keeping fees relatively low...
-//               </p>
-//             ) : null}
-
-//             <button
-//               onClick={() => setShowMoreClimate(!showMoreClimate)}
-//               className="mt-6 px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition"
-//             >
-//               {showMoreClimate ? "Show Less" : "Read More"}
-//             </button>
-//           </div>
-//         </div>
-
-//         {/* ==================== UNIVERSITIES GRID ==================== */}
-//         <div className="mb-20">
-//           <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
-//             Top Medical Universities in UZBEKISTAN
-//           </h2>
-
-//           <div className="grid md:grid-cols-3 gap-8">
-//             {[
-//               {
-//                 name: "Mari State University",
-//                 img: MARISTATEUNIVERSITY,
-//               },
-//               {
-//                 name: "Orel State University",
-//                 img: ORELSTATEUNIVERSITY,
-//               },
-//               {
-//                 name: "Orenburg State University",
-//                 img: ORENBURGSTATEUNIVERSITY,
-//               },
-//               {
-//                 name: "Perm State University",
-//                 img: "https://upload.wikimedia.org/wikipedia/commons/b/b4/%D0%9F%D0%B3%D0%BD%D0%B8%D1%83._%D0%9A%D0%BE%D1%80%D0%BF%D1%83%D1%81_%E2%84%965.jpg",
-//               },
-//               {
-//                 name: "Tver State Medical University",
-//                 img: TVERSTATEMEDICALUNIVERSITY,
-//               },
-//               {
-//                 name: "Altai State Medical University",
-//                 img: AltaiStateMedicalUniversity,
-//               },
-//             ].map((uni, i) => (
-//               <div
-//                 key={i}
-//                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
-//               >
-//                 <img
-//                   src={uni.img}
-//                   alt={uni.name}
-//                   className="w-full h-64 object-cover"
-//                 />
-//                 <div className="p-6 text-center">
-//                   <h4 className="text-xl font-bold text-blue-900">
-//                     {uni.name}
-//                   </h4>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* ==================== ADVANTAGES + COST ==================== */}
-//         <div className="grid md:grid-cols-2 gap-12 mb-20">
-//           <div>
-//             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center md:text-left">
-//               Advantages of Studying MBBS in UZBEKISTAN 2026–2027
-//             </h2>
-
-//             <div className="space-y-6">
-//               <div>
-//                 <h5 className="text-xl font-semibold">
-//                   1. High-Quality Education
-//                 </h5>
-//                 <p className="text-gray-700">
-//                   Globally recognized universities with strong academic
-//                   standards.
-//                 </p>
-//               </div>
-//               <div>
-//                 <h5 className="text-xl font-semibold">
-//                   2. Affordable Tuition Fees
-//                 </h5>
-//                 <p className="text-gray-700">
-//                   Significantly lower than many Western countries.
-//                 </p>
-//               </div>
-//               <div>
-//                 <h5 className="text-xl font-semibold">
-//                   3. No Additional Entrance Exams
-//                 </h5>
-//                 <p className="text-gray-700">
-//                   (NEET required for Indian students only)
-//                 </p>
-//               </div>
-//               <div>
-//                 <h5 className="text-xl font-semibold">
-//                   4. English-Medium Programs
-//                 </h5>
-//                 <p className="text-gray-700">
-//                   No language barrier for most international students.
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-
-//           <div>
-//             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
-//               Cost of Study MBBS in Russia
-//             </h2>
-//             <p className="text-lg text-gray-700 leading-relaxed">
-//               The cost of the <strong> MBBS course in Russia</strong> is very
-//               low for Indian students who want to pursue their{" "}
-//               <strong>MBBS</strong> course in Russia. Russia is a very demanding
-//               country for Indian students who want to pursue their MBBS course.
-//               The government of Russia has funded the fee structure for the MBBS
-//               course. Studying MBBS in Russia is an easy task for Indian
-//               students compared to other countries. Studying MBBS in Russia is
-//               very cheap. The universities in Russia provide a smooth platform
-//               for <strong>international students</strong> so that they don't
-//               need to pay the high tuition fees. Apart from this, there is no
-//               need to pay any donations.
-//             </p>
-//           </div>
-//         </div>
-
-//         {/* You can continue adding more sections like Food & Accommodation, Admission Process, Documents, Eligibility, Comparison table, etc. in similar fashion */}
-//       </div>
-
-//       {/* Floating Enroll Button */}
-//       <button
-//         className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-5 rounded-full shadow-2xl hover:scale-105 transition transform animate-pulse"
-//         onClick={() => alert("Open Admission Modal / Redirect to form")}
-//       >
-//         <span className="font-bold text-lg">ENROLL NOW!</span>
-//       </button>
-
-//       {/* ==================== FOOD & ACCOMMODATION SECTION ==================== */}
-//       <div className="bg-gradient-to-b from-gray-50 to-white py-16">
-//         <div className="container mx-auto px-4 max-w-6xl">
-//           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
-//             Food and Accommodation Cost – MBBS in Russia
-//           </h2>
-
-//           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-//             <p>
-//               Most Russian medical universities provide comfortable hostel
-//               accommodation specially designed for international students. Rooms
-//               are usually shared (2–3 students per room) and come fully
-//               furnished with:
-//             </p>
-//             <ul className="list-disc pl-6 mt-4 space-y-2">
-//               <li>Beds, mattresses, bedsheets, blankets, pillows</li>
-//               <li>Study tables, chairs, wardrobes/cupboards</li>
-//               <li>Central heating (very important in Russian winters)</li>
-//             </ul>
-
-//             <p className="mt-6">Hostels typically include:</p>
-//             <ul className="list-disc pl-6 mt-4 space-y-2">
-//               <li>
-//                 Common kitchen where students can cook their own food (very
-//                 popular among Indian students to prepare Indian meals)
-//               </li>
-//               <li>Common washing machines / laundry rooms</li>
-//               <li>
-//                 Indian mess / canteen facilities in many universities (or
-//                 nearby)
-//               </li>
-//               <li>
-//                 Indian restaurants and grocery stores often within walking
-//                 distance
-//               </li>
-//             </ul>
-
-//             <p className="mt-6">
-//               <strong>Approximate monthly living expenses (2026–2027):</strong>
-//             </p>
-//             <ul className="list-disc pl-6 mt-4 space-y-2">
-//               <li>Hostel / Accommodation: ₹8,000 – ₹18,000</li>
-//               <li>Food (self-cooking + mess): ₹8,000 – ₹15,000</li>
-//               <li>Transport + Miscellaneous: ₹3,000 – ₹7,000</li>
-//               <li>
-//                 <strong>Total monthly:</strong> ≈ ₹20,000 – ₹40,000
-//               </li>
-//             </ul>
-
-//             <p className="mt-6 italic text-gray-600">
-//               Many universities also offer Indian food in their mess/canteen,
-//               helping students maintain a familiar diet without much extra cost.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* ==================== ADMISSION PROCESS ==================== */}
-//       <div className="py-16 bg-white">
-//         <div className="container mx-auto px-4 max-w-6xl">
-//           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
-//             Admission Process for MBBS in Russia 2026–2027
-//           </h2>
-
-//           <div className="max-w-4xl mx-auto">
-//             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-//               The admission process for{" "}
-//               <strong> MBBS (Bachelor of Medicine, Bachelor of Surgery)</strong>{" "}
-//               courses in Russia varies slightly among different universities,
-//               but the general process is as follows:
-//             </p>
-
-//             <div className="space-y-10">
-//               <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-//                 <h4 className="text-xl font-bold text-blue-900 mb-4">
-//                   1. Research and Select a University:
-//                 </h4>
-//                 <p className="text-gray-700">
-//                   Research the <strong>Russian universities</strong> that offer
-//                   MBBS courses. Some of the best universities for MBBS courses
-//                   in Russia are
-//                   <strong>
-//                     {" "}
-//                     Moscow State Medical University, Saint Petersburg State
-//                     Medical University, Kazan Federal University, etc.
-//                   </strong>
-//                 </p>
-//                 <p className="mt-2 text-gray-600">
-//                   Check: NMC/WHO recognition, English medium availability,
-//                   tuition fees, hostel quality.
-//                 </p>
-//               </div>
-
-//               <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-//                 <h4 className="text-xl font-bold text-blue-900 mb-4">
-//                   2. Check Eligibility
-//                 </h4>
-//                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
-//                   <li>Completed 10+2 with Physics, Chemistry, Biology</li>
-//                   <li>
-//                     Minimum 50% aggregate in PCB (40% for reserved categories)
-//                   </li>
-//                   <li>NEET qualified (mandatory for Indian students)</li>
-//                   <li>Age: 17 years completed by 31st Dec of admission year</li>
-//                 </ul>
-//               </div>
-
-//               <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-//                 <h4 className="text-xl font-bold text-blue-900 mb-4">
-//                   3. Apply Online
-//                 </h4>
-//                 <p className="text-gray-700">
-//                   Fill university application form → Submit scanned documents →
-//                   Receive admission/invitation letter (usually within 2–4
-//                   weeks).
-//                 </p>
-//               </div>
-
-//               <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-//                 <h4 className="text-xl font-bold text-blue-900 mb-4">
-//                   4. Visa & Travel
-//                 </h4>
-//                 <p className="text-gray-700">
-//                   Use invitation letter to apply for student visa at Russian
-//                   Embassy/Consulate → Book tickets → Arrive in Russia → Complete
-//                   university registration & medical check-up.
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* ==================== DOCUMENTS + ELIGIBILITY + SCHOLARSHIPS ==================== */}
-//       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-//         <div className="container mx-auto px-4 max-w-7xl">
-//           <div className="grid md:grid-cols-2 gap-12">
-//             {/* Left - Required Documents */}
-//             <div>
-//               <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center md:text-left">
-//                 Required Documents for MBBS in Russia 2026–2027
-//               </h2>
-
-//               <div className="space-y-6">
-//                 <div className="bg-white p-6 rounded-xl shadow-sm border">
-//                   <h5 className="text-lg font-semibold text-blue-800">
-//                     Educational Documents
-//                   </h5>
-//                   <ul className="list-disc pl-5 mt-3 text-gray-700 space-y-1">
-//                     <li>10th & 12th marksheets + certificates</li>
-//                     <li>NEET scorecard & admit card</li>
-//                     <li>Passport (valid for minimum 18–24 months)</li>
-//                   </ul>
-//                 </div>
-
-//                 <div className="bg-white p-6 rounded-xl shadow-sm border">
-//                   <h5 className="text-lg font-semibold text-blue-800">
-//                     Other Important Documents
-//                   </h5>
-//                   <ul className="list-disc pl-5 mt-3 text-gray-700 space-y-1">
-//                     <li>Passport size photos (white background)</li>
-//                     <li>HIV & medical fitness certificate</li>
-//                     <li>
-//                       Invitation letter from university (issued after admission)
-//                     </li>
-//                     <li>Visa application form & fee receipt</li>
-//                   </ul>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Right - Eligibility + Scholarships */}
-//             <div>
-//               <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
-//                 Eligibility Criteria & Scholarships
-//               </h2>
-
-//               <div className="bg-white p-6 rounded-xl shadow-sm border mb-8">
-//                 <h4 className="text-xl font-semibold text-blue-900 mb-4">
-//                   Basic Eligibility
-//                 </h4>
-//                 <ul className="list-decimal pl-5 space-y-2 text-gray-700">
-//                   <li>Age 17+ by 31st Dec of admission year</li>
-//                   <li>50%+ in PCB in 12th (40% for SC/ST/OBC)</li>
-//                   <li>NEET qualified (mandatory for Indians)</li>
-//                 </ul>
-//               </div>
-
-//               <div className="bg-white p-6 rounded-xl shadow-sm border">
-//                 <h4 className="text-xl font-semibold text-blue-900 mb-4">
-//                   Popular Scholarships
-//                 </h4>
-//                 <ul className="space-y-4">
-//                   <li>
-//                     <strong>
-//                       Russian Government Scholarship (Open Doors / Quota)
-//                     </strong>
-//                     <br />
-//                     <span className="text-gray-600 text-sm">
-//                       Covers tuition + sometimes hostel. Very competitive —
-//                       apply via education-in-russia.com
-//                     </span>
-//                   </li>
-//                   <li>
-//                     <strong>University-specific Merit Scholarships</strong>
-//                     <br />
-//                     <span className="text-gray-600 text-sm">
-//                       Offered by many universities for good NEET/academic scores
-//                     </span>
-//                   </li>
-//                   <li>
-//                     <strong>Other options</strong>
-//                     <br />
-//                     <span className="text-gray-600 text-sm">
-//                       Education Future, Inlaks, etc. (limited for MBBS)
-//                     </span>
-//                   </li>
-//                 </ul>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* ==================== COMPARISON TABLE ==================== */}
-//       <div className="py-16 bg-white">
-//         <div className="container mx-auto px-4 max-w-5xl">
-//           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">
-//             MBBS in Russia vs MBBS in India – Quick Comparison (2026–2027)
-//           </h2>
-
-//           <div className="overflow-x-auto">
-//             <table className="min-w-full border-collapse border border-gray-300 text-left">
-//               <thead>
-//                 <tr className="bg-blue-900 text-white">
-//                   <th className="p-4 border border-gray-300 text-center font-semibold">
-//                     Criteria
-//                   </th>
-//                   <th className="p-4 border border-gray-300 text-center font-semibold">
-//                     MBBS in Russia
-//                   </th>
-//                   <th className="p-4 border border-gray-300 text-center font-semibold">
-//                     MBBS in India
-//                   </th>
-//                 </tr>
-//               </thead>
-//               <tbody className="text-gray-700">
-//                 <tr className="bg-gray-50">
-//                   <td className="p-4 border font-medium">
-//                     Tuition Fees (per year)
-//                   </td>
-//                   <td className="p-4 border">₹2 – 5 Lakhs</td>
-//                   <td className="p-4 border">
-//                     Govt: ₹40k – ₹2 Lakhs
-//                     <br />
-//                     Private: ₹10 – 25+ Lakhs
-//                   </td>
-//                 </tr>
-//                 <tr>
-//                   <td className="p-4 border font-medium">
-//                     Donation / Capitation
-//                   </td>
-//                   <td className="p-4 border text-green-700">No Donation</td>
-//                   <td className="p-4 border text-red-700">
-//                     Often ₹30–80 Lakhs in private colleges
-//                   </td>
-//                 </tr>
-//                 <tr className="bg-gray-50">
-//                   <td className="p-4 border font-medium">Course Duration</td>
-//                   <td className="p-4 border">6 years (including internship)</td>
-//                   <td className="p-4 border">5.5 years + 1 year internship</td>
-//                 </tr>
-//                 <tr>
-//                   <td className="p-4 border font-medium">Class Strength</td>
-//                   <td className="p-4 border">20–40 students</td>
-//                   <td className="p-4 border">
-//                     100–150+ students (especially private)
-//                   </td>
-//                 </tr>
-//                 <tr className="bg-gray-50">
-//                   <td className="p-4 border font-medium">Global Recognition</td>
-//                   <td className="p-4 border">
-//                     NMC, WHO, WFME approved universities
-//                   </td>
-//                   <td className="p-4 border">
-//                     NMC approved, but private colleges vary
-//                   </td>
-//                 </tr>
-//                 <tr>
-//                   <td className="p-4 border font-medium">
-//                     Medium of Instruction
-//                   </td>
-//                   <td className="p-4 border">English</td>
-//                   <td className="p-4 border">English</td>
-//                 </tr>
-//               </tbody>
-//             </table>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Uzbekistan;
-
-
-
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import SeoHead from "../../component/SeoHead.jsx";
-import RussiaFlag from "../../Images/Russia/russia header threejpg.webp";
-import kernal from "../../Images/Russia/about-russia.webp";
-import Russianflag2 from "../../Images/country flag png/uzebkistan.webp";
-import MARISTATEUNIVERSITY from "../../Images/Russia/MARI STATE UNIVERSITY.webp";
-import ORELSTATEUNIVERSITY from "../../Images/Russia/OREL STATE UNIVERSITY.webp";
-import ORENBURGSTATEUNIVERSITY from "../../Images/Russia/ORENBURG STATE UNIVERSITY.webp";
-import TVERSTATEMEDICALUNIVERSITY from "../../Images/Russia/TVER STATE MEDICAL UNIVERSITY.jpeg";
-import AltaiStateMedicalUniversity from "../../Images/Russia/Altai State Medical University.jpg";
-import { useNavigate } from "react-router-dom";
+import UzbekistanFlag from "../../Images/country flag png/uzebkistan.webp";
 
 const Uzbekistan = () => {
   const [showMoreAbout, setShowMoreAbout] = useState(false);
@@ -640,11 +26,13 @@ const Uzbekistan = () => {
             src={cmsData?.hero?.image || "https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_vYiO8Uzxk.webp?tr=w-3840"}
             alt="Uzbekistan Landscape"
             className="w-full h-full object-cover brightness-75"
-                  srcSet="https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_vYiO8Uzxk.webp?tr=w-3840 1x, https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_vYiO8Uzxk.webp?tr=w-3840 2x"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+            srcSet="https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_vYiO8Uzxk.webp?tr=w-3840 1x, https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_vYiO8Uzxk.webp?tr=w-3840 2x"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
               {cmsData?.hero?.title || "STUDY MBBS IN UZBEKISTAN"}
             </h1>
           </div>
@@ -657,15 +45,15 @@ const Uzbekistan = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div>
             <img
-              src={Russianflag2}
+              src={UzbekistanFlag}
               loading="lazy"
               width={250}
               height={250}
               alt="Uzbekistan flag"
-              className="w-32 md:w-40"
-                  srcSet={`${Russianflag2} 1x, ${Russianflag2} 2x`}
-                  sizes="(max-width: 768px) 120px, 160px"
-                />
+              className="w-32 md:w-40 border-2 border-slate-200 rounded-lg shadow-sm"
+              srcSet={`${UzbekistanFlag} 1x, ${UzbekistanFlag} 2x`}
+              sizes="(max-width: 768px) 120px, 160px"
+            />
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
@@ -819,48 +207,80 @@ const Uzbekistan = () => {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Tashkent Medical Academy",
-                img: "https://tashkentmedicalacademy.in/wp-content/uploads/2025/03/Second-Tashkent-State-Medical-Institute.webp", // placeholder - replace path if needed
-              },
-              {
-                name: "Samarkand State Medical Institute",
-                img: "https://www.moksh16.com/uploads/images/samarkand1.webp", // placeholder - replace path if needed
-              },
-              {
-                name: "Bukhara State Medical Institute",
-                img: "https://mbbsadmissionindia.com/upload/media/bukhara-state-medical-institute-uzbekistan.jpeg",
-              },
-              {
-                name: "Andijan State Medical Institute",
-                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxwr0cTA6P-tyHV6l3NQ3FJ9A3ynhR-hIxvA&s",
-              },
-              {
-                name: "Tashkent Pediatric Medical Institute",
-                img: "https://mbbs-in-uzbekistan.in/assets/images/college/Tashkent%20Pediatric%20Medical%20Institute.jpg",
-              },
-              {
-                name: "Urgench Branch of Tashkent Medical Academy",
-                img: "https://mbbs-in-uzbekistan.in/assets/images/college/Urgench%20Branch%20of%20Tashkent%20Medical%20Academy.jpg", // placeholder
-              },
-            ].map((uni, i) => (
+            {(cmsData?.universities && cmsData.universities.length > 0
+              ? cmsData.universities
+              : [
+                  {
+                    name: "Tashkent Medical Academy",
+                    image: "https://tashkentmedicalacademy.in/wp-content/uploads/2025/03/Second-Tashkent-State-Medical-Institute.webp",
+                    location: "Tashkent, Uzbekistan",
+                    fee: "₹3.2 Lakhs / Year",
+                  },
+                  {
+                    name: "Samarkand State Medical Institute",
+                    image: "https://www.moksh16.com/uploads/images/samarkand1.webp",
+                    location: "Samarkand, Uzbekistan",
+                    fee: "₹3.0 Lakhs / Year",
+                  },
+                  {
+                    name: "Bukhara State Medical Institute",
+                    image: "https://mbbsadmissionindia.com/upload/media/bukhara-state-medical-institute-uzbekistan.jpeg",
+                    location: "Bukhara, Uzbekistan",
+                    fee: "₹2.9 Lakhs / Year",
+                  },
+                  {
+                    name: "Andijan State Medical Institute",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxwr0cTA6P-tyHV6l3NQ3FJ9A3ynhR-hIxvA&s",
+                    location: "Andijan, Uzbekistan",
+                    fee: "₹2.8 Lakhs / Year",
+                  },
+                  {
+                    name: "Tashkent Pediatric Medical Institute",
+                    image: "https://mbbs-in-uzbekistan.in/assets/images/college/Tashkent%20Pediatric%20Medical%20Institute.jpg",
+                    location: "Tashkent, Uzbekistan",
+                    fee: "₹3.1 Lakhs / Year",
+                  },
+                  {
+                    name: "Urgench Branch of Tashkent Medical Academy",
+                    image: "https://mbbs-in-uzbekistan.in/assets/images/college/Urgench%20Branch%20of%20Tashkent%20Medical%20Academy.jpg",
+                    location: "Urgench, Uzbekistan",
+                    fee: "₹2.7 Lakhs / Year",
+                  },
+                ]
+            ).map((uni, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col justify-between"
               >
-                <img
-                  src={uni.img}
-                  loading="lazy"
-                  alt={uni.name}
-                  className="w-full h-64 object-cover"
-                  srcSet={`${uni.img} 1x, ${uni.img} 2x`}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <div className="p-6 text-center">
-                  <h4 className="text-xl font-bold text-blue-900">
-                    {uni.name}
-                  </h4>
+                <div>
+                  <img
+                    src={uni.image || uni.img}
+                    loading="lazy"
+                    alt={uni.name}
+                    className="w-full h-64 object-cover"
+                    srcSet={`${uni.image || uni.img} 1x, ${uni.image || uni.img} 2x`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-blue-900 mb-2">
+                      {uni.name}
+                    </h4>
+                    {uni.location && (
+                      <p className="text-xs font-semibold text-slate-500 mb-2">
+                        📍 {uni.location}
+                      </p>
+                    )}
+                    {uni.fee && (
+                      <div className="inline-block px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 text-xs font-bold mb-3 border border-emerald-200">
+                        {uni.fee}
+                      </div>
+                    )}
+                    {uni.desc && (
+                      <p className="text-sm text-gray-600 line-clamp-3">
+                        {uni.desc}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -955,8 +375,137 @@ const Uzbekistan = () => {
           </div>
         </div>
 
-        {/* Admission Process, Documents, etc. - kept structure, updated country names where needed */}
-        {/* ... You can paste the remaining sections from your original code here, replacing Russia → Uzbekistan and adjusting minor text as above ... */}
+        {/* ==================== ADMISSION PROCESS ==================== */}
+        <div className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
+              Admission Process for MBBS in Uzbekistan 2026–2027
+            </h2>
+
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed text-center">
+                The admission process for MD Physician (MBBS equivalent) programs in recognized Uzbek medical academies is streamlined for Indian applicants:
+              </p>
+
+              <div className="space-y-6">
+                <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-blue-900 mb-2">
+                      Check Eligibility & Select University
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Verify 50% marks in 10+2 with Physics, Chemistry, and Biology (40% for reserved category) and valid NEET-UG scorecard. Choose your preferred government medical academy (e.g., Tashkent Medical Academy, Samarkand, or Bukhara).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-blue-900 mb-2">
+                      Submit Online Application & Documents
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Submit scanned copies of 10th & 12th certificates, NEET scorecard, and passport copy. EduHawk assists in direct registration with the university admissions board.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-blue-900 mb-2">
+                      Receive Official Admission & Ministry Invitation Letter
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Upon document verification, the university issues a provisional admission letter followed by the official student invitation letter authorized by the Ministry of Foreign Affairs of Uzbekistan.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                    4
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-blue-900 mb-2">
+                      Visa Stamping, Travel & Campus Reporting
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Submit visa application at the Uzbekistan Embassy in New Delhi. Direct flights from Delhi to Tashkent take approximately 3 hours. EduHawk provides complete airport reception, hostel allocation, and on-ground registration support.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ==================== REQUIRED DOCUMENTS ==================== */}
+        <div className="py-16 bg-slate-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
+              Required Documents for MBBS in Uzbekistan 2026–2027
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h4 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                  <span>📄</span> Academic Documentation
+                </h4>
+                <ul className="space-y-2.5 text-sm text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>Class 10th Marks Sheet & Passing Certificate</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>Class 12th Marks Sheet (Minimum 50% in PCB)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>NEET-UG Scorecard with qualifying percentile</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>School Leaving / Transfer Certificate</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h4 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                  <span>🛂</span> Identity & Travel Documents
+                </h4>
+                <ul className="space-y-2.5 text-sm text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>Original Passport valid for minimum 18–24 months</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>10–12 Passport-sized photographs (matte finish, white background)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>Medical Fitness Certificate & HIV Negative Report</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-500 font-bold">✓</span>
+                    <span>Official University Invitation Letter & Student Visa Form</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* ==================== COMPARISON TABLE ==================== */}
         <div className="py-16 bg-white">
@@ -1132,8 +681,34 @@ const Uzbekistan = () => {
           </div>
         </div>
 
-        {/* Floating Enroll Button */}
-       
+        {/* Bottom Consultation CTA */}
+        <div className="mt-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 rounded-2xl p-8 sm:p-12 text-white shadow-xl text-center relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 border border-white/15">
+              Official University Admission Partner
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+              Begin Your Medical Studies in Uzbekistan
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+              Benefit from affordable tuition fees, direct 3-hour flights from Delhi, English medium MBBS courses, and NMC-compliant degrees. Book a free counselling session with EduHawk today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition-all text-center"
+              >
+                Book Free Counselling
+              </Link>
+              <a
+                href="tel:+918076594248"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all text-center"
+              >
+                Call: +91 8076594248
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
