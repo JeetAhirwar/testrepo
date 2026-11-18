@@ -6017,15 +6017,50 @@ const AllIndia = () => {
       });
     }
 
-    // Filter by search
+    // Filter by search with common medical acronym expansion
     if (searchTerm.trim()) {
-      const q = searchTerm.toLowerCase().trim();
-      data = data.filter(
-        (row) =>
-          row.college.toLowerCase().includes(q) ||
-          row.state.toLowerCase().includes(q) ||
-          (row.management && row.management.toLowerCase().includes(q))
-      );
+      const rawQ = searchTerm.toLowerCase().trim();
+      const searchTerms = [rawQ];
+      if (rawQ === "aiims" || rawQ.includes("aiims")) {
+        searchTerms.push("all india institute of medical sciences");
+      }
+      if (rawQ === "gmc" || rawQ.includes("gmc")) {
+        searchTerms.push("government medical college");
+        searchTerms.push("govt medical college");
+      }
+      if (rawQ === "rims" || rawQ.includes("rims")) {
+        searchTerms.push("regional institute of medical sciences");
+      }
+      if (rawQ === "kgmu" || rawQ.includes("kgmu")) {
+        searchTerms.push("king george");
+      }
+      if (rawQ === "vmmc" || rawQ.includes("vmmc")) {
+        searchTerms.push("vardhman mahavir");
+      }
+      if (rawQ === "afmc" || rawQ.includes("afmc")) {
+        searchTerms.push("armed forces medical");
+      }
+      if (rawQ === "jipmer" || rawQ.includes("jipmer")) {
+        searchTerms.push("jawaharlal institute of postgraduate");
+      }
+      if (rawQ === "bhu" || rawQ.includes("bhu")) {
+        searchTerms.push("banaras hindu university");
+        searchTerms.push("institute of medical sciences, bhu");
+      }
+      if (rawQ === "amu" || rawQ.includes("amu")) {
+        searchTerms.push("aligarh muslim university");
+        searchTerms.push("jawaharlal nehru medical college, aligarh");
+      }
+
+      data = data.filter((row) => {
+        const collegeName = row.college.toLowerCase();
+        const stateName = row.state.toLowerCase();
+        const mgmt = (row.management || "").toLowerCase();
+
+        return searchTerms.some(
+          (t) => collegeName.includes(t) || stateName.includes(t) || mgmt.includes(t)
+        );
+      });
     }
 
     return data;
