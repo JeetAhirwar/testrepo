@@ -37,17 +37,17 @@ const Russia = () => {
             height={1900}
             alt="Kremlin Bridge City"
             className="w-full h-full object-cover brightness-75"
-                  srcSet={`${RussiaFlag} 1x, ${RussiaFlag} 2x`}
-                  sizes="100vw"
-                />
+            srcSet={`${RussiaFlag} 1x, ${RussiaFlag} 2x`}
+            sizes="100vw"
+          />
+          {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
               {cmsData?.hero?.title || "STUDY MBBS IN RUSSIA"}
             </h1>
           </div>
         </div>
-
-        {/* You can duplicate more slides like this or use carousel library */}
       </div>
 
       {/* ==================== MAIN CONTENT ==================== */}
@@ -94,7 +94,7 @@ const Russia = () => {
               universities. With a course duration of around 6 years,{" "}<strong>MBBS in Russia</strong>{" "}
               offers the perfect combination of theoretical learning and practical
               clinical exposure. Students receive hands-on medical training in
-               modern hospitals and laboratories, helping them develop strongS
+              modern hospitals and laboratories, helping them develop strong
               medical skills and professional confidence.
             </p>
 
@@ -121,7 +121,7 @@ const Russia = () => {
                 Apart from Russia, other popular {" "}<strong>foreign countries for MBBS abroad</strong>{" "}  include
                 Bangladesh, Nepal, Kazakhstan, and Kyrgyzstan. However, due to its
                 quality education and affordability, Russia remains a top choice 
-                and is home to some of the{" "}<strong>best medical colleges in abroad for 
+                and is home to some of the{" "}<strong>best medical colleges abroad for 
                 Indian students</strong>{" "} who wish to {" "}<strong>study medical in Russia</strong>.
               </p>
             ) : null}
@@ -194,14 +194,12 @@ const Russia = () => {
               About MBBS in Russia
             </h3>
             <p className="text-lg leading-relaxed text-gray-700">
-              Studying MBBS in Russia is notably straightforward
+              Studying MBBS in Russia is notably straightforward for Indian aspirants. Admission is merit-based requiring no independent university entrance exams beyond qualifying the NEET-UG examination. State universities in Russia are heavily subsidized by the federal government, keeping tuition fees highly economical.
             </p>
 
             {showMoreClimate ? (
               <p className="mt-4 text-lg leading-relaxed text-gray-700">
-                — no entrance exam (apart from NEET for Indian students). The
-                Russian government subsidizes education, keeping fees relatively
-                low...
+                International students benefit from 100% English medium coursework, fully equipped modern laboratories, and centrally heated student hostels. Clinical rotations are conducted in affiliated multi-speciality government hospitals, ensuring comprehensive hands-on exposure across diverse medical disciplines.
               </p>
             ) : null}
 
@@ -596,6 +594,39 @@ const Russia = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Consultation CTA */}
+      <div className="py-12 bg-slate-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 rounded-2xl p-8 sm:p-12 text-white shadow-xl text-center relative overflow-hidden">
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 border border-white/15">
+                Official University Admission Partner
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+                Plan Your MBBS Journey to Russia Today
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+                Get step-by-step assistance with university selection, direct admission letters, Russian student visa stamping, travel arrangements, and hostel allocation with EduHawk.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition-all text-center cursor-pointer"
+                >
+                  Book Free Counselling
+                </button>
+                <a
+                  href="tel:+918076594248"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all text-center"
+                >
+                  Call: +91 8076594248
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
