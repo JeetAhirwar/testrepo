@@ -21,10 +21,8 @@ import UniversityRome from "../../../src/Images/Italy/UniversityRome.webp";
 
 const Italy = () => {
   const [showMoreAbout, setShowMoreAbout] = useState(false);
-  const [showMoreFeatures, setShowMoreFeatures] = useState(false);
   const [showMoreEligibility, setShowMoreEligibility] = useState(false);
   const [showMoreRecognition, setShowMoreRecognition] = useState(false);
-  const [showMoreNMC, setShowMoreNMC] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
@@ -44,12 +42,14 @@ const Italy = () => {
             height={830}
             alt="Italy Landscape"
             className="w-full h-full object-cover brightness-75"
-                  srcSet={`${UniversityPadua} 1x, ${UniversityPadua} 2x`}
-                  sizes="100vw"
-                  fetchPriority="high"
-                />
+            srcSet={`${UniversityPadua} 1x, ${UniversityPadua} 2x`}
+            sizes="100vw"
+            fetchPriority="high"
+          />
+          {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl text-center px-4">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
               {cmsData?.hero?.title || "STUDY MBBS IN ITALY"}
             </h1>
           </div>
@@ -1424,6 +1424,35 @@ const Italy = () => {
     </div>
   </div>
 </div>
+
+        {/* Bottom Consultation CTA */}
+        <div className="mt-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 rounded-2xl p-8 sm:p-12 text-white shadow-xl text-center relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 border border-white/15">
+              Expert European Medical Admissions
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+              Ready to Begin Your Medical Career in Italy?
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+              Connect with our experienced European medical education counsellors for comprehensive guidance on IMAT exam preparation, Universitaly pre-enrolment, DSU/ER.GO scholarships, and visa processing.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition-all text-center"
+              >
+                Book Free Counselling
+              </Link>
+              <a
+                href="tel:+918076594248"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all text-center"
+              >
+                Call: +91 8076594248
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
