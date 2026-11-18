@@ -13,32 +13,32 @@
       "name": "University of Oxford",
       "location": "Oxford, England, UK",
       "fee": "£28,000 – £44,000 / Year",
-      "img": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image1.png",
-      "image": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image1.png",
+      "img": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png",
       "desc": "The University of Oxford is one of the world's most prestigious collegiate research universities, offering cutting-edge laboratories, world-leading faculty, and unparalleled academic heritage."
     },
     {
       "name": "University of Cambridge",
       "location": "Cambridge, England, UK",
       "fee": "£26,000 – £42,000 / Year",
-      "img": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image2.png",
-      "image": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image2.png",
+      "img": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png",
       "desc": "The University of Cambridge provides world-renowned rigorous academic training, innovative research opportunities, and comprehensive global career placement."
     },
     {
       "name": "Imperial College London",
       "location": "London, England, UK",
       "fee": "£30,000 – £46,000 / Year",
-      "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image3.png",
-      "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image3.png",
+      "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png",
       "desc": "Imperial College London is a world-class science, engineering, business, and medicine institution celebrated for industrial innovation and impactful research."
     },
     {
       "name": "University College London (UCL)",
       "location": "London, England, UK",
       "fee": "£24,000 – £38,000 / Year",
-      "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College__UCL_-image4.png",
-      "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College__UCL_-image4.png",
+      "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College-image3.png",
       "desc": "UCL is London's leading multidisciplinary university, renowned for disruptive research, diverse international communities, and strong clinical and corporate partnerships."
     }
   ],
@@ -347,32 +347,32 @@
           "name": "University of Oxford",
           "location": "Oxford, England, UK",
           "fee": "£28,000 – £44,000 / Year",
-          "img": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image1.png",
-          "image": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image1.png",
+          "img": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png",
+          "image": "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png",
           "desc": "The University of Oxford is one of the world's most prestigious collegiate research universities, offering cutting-edge laboratories, world-leading faculty, and unparalleled academic heritage."
         },
         {
           "name": "University of Cambridge",
           "location": "Cambridge, England, UK",
           "fee": "£26,000 – £42,000 / Year",
-          "img": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image2.png",
-          "image": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image2.png",
+          "img": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png",
+          "image": "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png",
           "desc": "The University of Cambridge provides world-renowned rigorous academic training, innovative research opportunities, and comprehensive global career placement."
         },
         {
           "name": "Imperial College London",
           "location": "London, England, UK",
           "fee": "£30,000 – £46,000 / Year",
-          "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image3.png",
-          "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image3.png",
+          "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png",
+          "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png",
           "desc": "Imperial College London is a world-class science, engineering, business, and medicine institution celebrated for industrial innovation and impactful research."
         },
         {
           "name": "University College London (UCL)",
           "location": "London, England, UK",
           "fee": "£24,000 – £38,000 / Year",
-          "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College__UCL_-image4.png",
-          "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College__UCL_-image4.png",
+          "img": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College-image3.png",
+          "image": "/uploads/study_abroad/uk/uk_computer_science_London_s_University_College-image3.png",
           "desc": "UCL is London's leading multidisciplinary university, renowned for disruptive research, diverse international communities, and strong clinical and corporate partnerships."
         }
       ],

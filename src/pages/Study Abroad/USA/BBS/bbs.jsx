@@ -384,11 +384,8 @@ const BbsAbroad = () => {
     <AbroadCoursePage
       page={dynamicPage}
       heroImg={heroImg}
-      heroBgImg={typeof heroBgImg !== 'undefined' ? heroBgImg : undefined}
-      sideImg={sideImg}
-      ctaBgImg={typeof ctaBgImg !== 'undefined' ? ctaBgImg : undefined}
-      imgDims={typeof imgDims !== 'undefined' ? imgDims : undefined}
-      seoPath="/study-abroad/usa/bbs"
+            sideImg={sideImg}
+                  seoPath="/study-abroad/usa/bbs"
     />
   );
 };

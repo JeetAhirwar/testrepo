@@ -649,9 +649,9 @@ export const stripHeadingNumbering = (text) => {
   if (!text || typeof text !== "string") return text;
   let s = decodeHtmlEntities(text.trim());
   s = s.replace(/^[#\s*]+/, "").replace(/[*#\s]+$/, "");
-  s = s.replace(/\\([.!()#*_\-])/g, "$1");
+  s = s.replace(/\\([.!()#*_-])/g, "$1");
   s = s.replace(/^(?:Step\s*\d+\s*[:.\-–]?\s*)+/i, "");
-  s = s.replace(/^(?:\d+(?:\.\d+)*[\.\)\:\-–]\s*)+/, "");
+  s = s.replace(/^(?:\d+(?:\.\d+)*[.):–-]\s*)+/, "");
   s = s.replace(/^(?:Step\s*\d+\s*[:.\-–]?\s*)+/i, "");
   s = s.replace(/^[*•\-–\s]+/, "").replace(/[*•\-–\s]+$/, "");
   return s.trim();
@@ -685,7 +685,7 @@ export const formatRichText = (content) => {
 
   const cleanPartText = (txt) => {
     if (!txt || typeof txt !== "string") return txt;
-    return decodeHtmlEntities(txt.replace(/\\([.!()#*_\-])/g, "$1").replace(/\*{1,3}/g, ""));
+    return decodeHtmlEntities(txt.replace(/\\([.!()#*_-])/g, "$1").replace(/\*{1,3}/g, ""));
   };
 
   if (parts.length === 1) return cleanPartText(content);

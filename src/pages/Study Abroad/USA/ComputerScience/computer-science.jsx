@@ -563,8 +563,8 @@ const ComputerScienceUSA = () => {
       }
       return sec;
     }),
-    faqs: ((csData?.faq || csData?.faqs) && (csData?.faq || csData?.faqs).length > 0)
-      ? (csData.faq || csData.faqs).map(f => ({ q: f.question || f.q, a: f.answer || f.a }))
+    faqs: (csData?.faq || csData?.faqs || []).length > 0
+      ? (csData?.faq || csData?.faqs || []).map(f => ({ q: f.question || f.q, a: f.answer || f.a }))
       : page.faqs,
   };
 
