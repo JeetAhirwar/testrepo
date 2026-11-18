@@ -116,11 +116,6 @@ export default function Services() {
       </SeoHead>
 
       <div className="min-h-screen bg-white font-sans text-slate-800">
-        {/* Page heading visually hidden for SEO architecture */}
-        <h1 className="sr-only">
-          Edu-Hawk Worldwide - MBBS Abroad Admission, Counselling and Visa Services
-        </h1>
-
         {/* ─── HERO CAROUSEL ──────────────────────────────────────────────── */}
         <section className="relative w-full h-[78vh] min-h-[620px] sm:min-h-[680px] lg:h-[84vh] overflow-hidden">
           {heroSlides.map((slide, idx) => (
@@ -157,9 +152,9 @@ export default function Services() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
                     {slide.title}
-                  </h2>
+                  </h1>
 
                   <p className="text-sm sm:text-base md:text-xl text-white/95 font-medium mb-7 md:mb-9 max-w-3xl mx-auto drop-shadow-lg leading-relaxed">
                     {slide.subtitle}
@@ -168,7 +163,7 @@ export default function Services() {
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5">
                     <button
                       type="button"
-                      onClick={() => navigate("/landingpage")}
+                      onClick={() => navigate("/contact")}
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-7 sm:px-9 py-3.5 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm cursor-pointer"
                     >
                       <span>
@@ -296,7 +291,7 @@ export default function Services() {
                     <div className="relative z-10 pt-4 border-t border-slate-100 flex items-center justify-between">
                       <button
                         type="button"
-                        onClick={() => navigate("/landingpage")}
+                        onClick={() => navigate("/contact")}
                         className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-amber-600 hover:text-amber-700 transition-colors cursor-pointer"
                       >
                         <span>Get Started with Step 0{idx + 1}</span>
@@ -473,7 +468,7 @@ export default function Services() {
 
               <button
                 type="button"
-                onClick={() => navigate("/landingpage")}
+                onClick={() => navigate("/contact")}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md px-8 py-4 text-sm sm:text-base font-bold text-white transition-all duration-300 shadow-lg cursor-pointer w-full sm:w-auto"
               >
                 <span>Book Free Counselling →</span>
@@ -506,7 +501,7 @@ export default function Services() {
           </button>
           <button
             type="button"
-            onClick={() => navigate("/landingpage")}
+            onClick={() => navigate("/contact")}
             className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-extrabold text-xs rounded-xl shadow-xs transition"
           >
             <span>Apply Free</span>
