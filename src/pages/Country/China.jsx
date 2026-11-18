@@ -1,17 +1,79 @@
 import cmsData from "../../data/medical_colleges/china.json";
 import React, { useState } from "react";
 import SeoHead from "../../component/SeoHead.jsx";
-import RussiaFlag from "../../Images/Russia/russia header threejpg.webp";
-import kernal from "../../Images/top medical collages list/Bangladesh Medical College.webp";
-import Russianflag2 from "../../Images/country flag png/China.svg";
-import MARISTATEUNIVERSITY from "../../Images/Russia/MARI STATE UNIVERSITY.webp";
-import ORELSTATEUNIVERSITY from "../../Images/Russia/OREL STATE UNIVERSITY.webp";
-import ORENBURGSTATEUNIVERSITY from "../../Images/Russia/ORENBURG STATE UNIVERSITY.webp";
-import TVERSTATEMEDICALUNIVERSITY from "../../Images/Russia/TVER STATE MEDICAL UNIVERSITY.jpeg";
-import AltaiStateMedicalUniversity from "../../Images/Russia/Altai State Medical University.jpg";
+import ChinaFlag from "../../Images/country flag png/China.svg";
+import { useNavigate, Link } from "react-router-dom";
+import { Plus as FiPlus, Minus as FiMinus } from "lucide-react";
+
+const faqData = [
+  {
+    question: "Is MBBS in China taught in English for Indian students?",
+    answer:
+      "Yes, MOE-listed (Ministry of Education, China) medical universities conduct the complete 6-year MBBS program entirely in English medium for international students. Clinical rounds also include English instruction alongside basic communicative Mandarin to interact effectively with patients."
+  },
+  {
+    question: "Is MBBS degree from China recognized by NMC and WHO?",
+    answer:
+      "Yes, MBBS degrees from MOE-approved Chinese medical universities are listed in WDOMS and recognized by the National Medical Commission (NMC) and WHO. Graduates are eligible to appear for the NExT/FMGE licensing exam in India as well as USMLE and PLAB."
+  },
+  {
+    question: "What is the duration of MBBS in China?",
+    answer:
+      "The MBBS program in China is 6 years in total — 5 years of rigorous academic medical coursework followed by 1 year of compulsory rotating clinical internship in university-affiliated tertiary hospitals."
+  },
+  {
+    question: "What is the total cost of studying MBBS in China?",
+    answer:
+      "Tuition fees in top government medical universities in China range between ₹3.5 Lakh to ₹5 Lakh per year, making the complete 6-year course package (tuition + accommodation) approximately ₹25 Lakh to ₹35 Lakh. No donation or capitation fees are charged."
+  },
+  {
+    question: "Is NEET mandatory for MBBS admission in China?",
+    answer:
+      "Yes, qualifying NEET-UG is strictly mandatory for all Indian students seeking MBBS admission abroad as mandated by the National Medical Commission (NMC)."
+  },
+  {
+    question: "Are Indian food and hostel facilities available in Chinese universities?",
+    answer:
+      "Yes, leading medical universities in China provide safe, air-conditioned campus dormitories with attached washrooms, high-speed Wi-Fi, and security. Most major universities with Indian student populations feature Indian mess facilities or communal kitchens for self-cooking."
+  }
+];
+
 const China = () => {
+  const navigate = useNavigate();
   const [showMoreAbout, setShowMoreAbout] = useState(false);
   const [showMoreClimate, setShowMoreClimate] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const defaultUniversities = [
+    {
+      name: "Nanjing Medical University",
+      img: "https://upload.wikimedia.org/wikipedia/commons/d/de/Dormitory_of_Bainiantang.jpg",
+    },
+    {
+      name: "Southern Medical University",
+      img: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Qilingang_campus.jpg",
+    },
+    {
+      name: "Tianjin Medical University",
+      img: "https://upload.wikimedia.org/wikipedia/commons/8/89/2014%E5%B9%B46%E6%9C88%E5%A4%A9%E6%B4%A5%E5%8C%BB%E7%A7%91%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD.jpg",
+    },
+    {
+      name: "China Medical University",
+      img: "https://upload.wikimedia.org/wikipedia/commons/0/00/CMU_20061030.jpg",
+    },
+    {
+      name: "Dalian Medical University",
+      img: "https://images.shiksha.com/mediadata/images/1597819161phpzHqyKj_g.png",
+    },
+    {
+      name: "Shandong University of Traditional Chinese Medicine",
+      img: "https://upload.wikimedia.org/wikipedia/commons/2/29/%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%EF%BC%88%E4%B8%AD%E5%BF%83%E6%A0%A1%E5%8C%BA%EF%BC%89%E5%8D%97%E9%97%A8%EF%BC%88%E6%AD%A3%E9%97%A8%EF%BC%89.jpg",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
@@ -22,24 +84,25 @@ const China = () => {
         path="/mbbs-abroad/china"
         ogType="website"
       />
+
       {/* ==================== HEADER CAROUSEL ==================== */}
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={cmsData?.hero?.image || "https://upload.wikimedia.org/wikipedia/commons/d/df/Pudong_Shanghai_November_2017_panorama.jpg"}
-            alt="Kremlin Bridge City"
+            alt="Pudong Shanghai Skyline, China"
             className="w-full h-full object-cover brightness-75"
-                  srcSet="https://upload.wikimedia.org/wikipedia/commons/d/df/Pudong_Shanghai_November_2017_panorama.jpg 1x, https://upload.wikimedia.org/wikipedia/commons/d/df/Pudong_Shanghai_November_2017_panorama.jpg 2x"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+            srcSet="https://upload.wikimedia.org/wikipedia/commons/d/df/Pudong_Shanghai_November_2017_panorama.jpg 1x, https://upload.wikimedia.org/wikipedia/commons/d/df/Pudong_Shanghai_November_2017_panorama.jpg 2x"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
               {cmsData?.hero?.title || "STUDY MBBS IN CHINA"}
             </h1>
           </div>
         </div>
-
-        {/* You can duplicate more slides like this or use carousel library */}
       </div>
 
       {/* ==================== MAIN CONTENT ==================== */}
@@ -48,15 +111,15 @@ const China = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div>
             <img
-              src={Russianflag2}
+              src={ChinaFlag}
               loading="lazy"
               width={900}
               height={600}
-              alt="Russia flag"
+              alt="China flag"
               className="w-32 md:w-40 border-4 border-gray-800 rounded shadow-lg"
-                  srcSet={`${Russianflag2} 1x, ${Russianflag2} 2x`}
-                  sizes="(max-width: 768px) 120px, 160px"
-                />
+              srcSet={`${ChinaFlag} 1x, ${ChinaFlag} 2x`}
+              sizes="(max-width: 768px) 120px, 160px"
+            />
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
@@ -65,43 +128,30 @@ const China = () => {
           </div>
         </div>
 
-        {/* About Russia + Image */}
+        {/* About China + Image */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <div>
             <h2 className="text-3xl font-bold text-center md:text-left text-blue-900 mb-6">
-              About Russia
+              About China
             </h2>
             <p className="text-lg leading-relaxed text-gray-700">
-              Russia has become popular among medical students, who are looking
-              for a safe option internationally, as it has a strong academic
-              environment for MBBS abroad. With a duration of approximately{" "}
-              <strong>6 years</strong>, Russia has a well-balanced combination
-              of quality education and practical clinical exposure.
+              China has emerged as one of the premier global destinations for international medical aspirants who wish to{" "}
+              <button
+                onClick={() => navigate("/")}
+                className="hover:text-[#426a91] text-blue-600 font-bold transition-colors duration-200 cursor-pointer"
+              >
+                study MBBS abroad.
+              </button>{" "}
+              With world-renowned university hospitals, state-of-the-art simulation labs, and an ultra-modern healthcare ecosystem, China offers Indian students rigorous 6-year clinical training with extensive patient bed exposure.
             </p>
 
             <p className="mt-4 text-lg leading-relaxed text-gray-700">
-              Bangladesh is a great choice for prospective medical students; it
-              offers a safe environment, quality of life, and a supportive
-              atmosphere for international students. With a course duration of
-              5.8 years, studying MBBS in Bangladeshis an excellent option for
-              students looking for top-quality education for international
-              students. Students from around the world choose Bangladesh for
-              their medical studies, and graduates from Bangladeshi universities
-              are highly respected in clinical settings around the globe.
-              Bangladesh offers a wide range of services and training that are
-              essential to the professional development of students, assuring a
-              successful and powerful professional journey. While Bangladesh
-              remains a popular destination, other countries, including China,
-              Nepal, and Kyrgyzstan, also provide affordable medical education.
+              Medical universities in China are recognized by the <strong>Ministry of Education (MOE) China</strong>, <strong>NMC (National Medical Commission)</strong>, and <strong>WHO</strong>. The curriculum is delivered in English, aligned with international medical standards, and prepares graduates thoroughly for NExT, USMLE, and PLAB licensing examinations.
             </p>
 
             {showMoreAbout ? (
               <p className="mt-4 text-lg leading-relaxed text-gray-700">
-                While Russia remains a popular destination, other countries like
-                China, Nepal, Germany, Philippines, Ukraine, Bangladesh, and
-                Kyrgyzstan also offer affordable medical education.
-                International students are often exempted from the one-year
-                preparatory course.
+                Beyond clinical excellence, China offers highly subsidized tuition packages, merit scholarships (such as the Chinese Government CSC Scholarship), safe on-campus housing, and bullet-train connectivity across all major university cities including Nanjing, Guangzhou, Tianjin, and Shenyang.
               </p>
             ) : null}
 
@@ -117,11 +167,11 @@ const China = () => {
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/6/64/CR400BF-Z-0312%40BJI_%2820231009152047%29.jpg"
               loading="lazy"
-              alt="Kremlin"
+              alt="High-Speed Rail in China"
               className="rounded-xl shadow-2xl w-full h-auto object-cover"
-                  srcSet="https://upload.wikimedia.org/wikipedia/commons/6/64/CR400BF-Z-0312%40BJI_%2820231009152047%29.jpg 1x, https://upload.wikimedia.org/wikipedia/commons/6/64/CR400BF-Z-0312%40BJI_%2820231009152047%29.jpg 2x"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              srcSet="https://upload.wikimedia.org/wikipedia/commons/6/64/CR400BF-Z-0312%40BJI_%2820231009152047%29.jpg 1x, https://upload.wikimedia.org/wikipedia/commons/6/64/CR400BF-Z-0312%40BJI_%2820231009152047%29.jpg 2x"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
 
@@ -130,7 +180,7 @@ const China = () => {
           {/* Left – Quick Info Table */}
           <div>
             <h3 className="text-2xl font-bold text-center text-blue-900 mb-6">
-              Quick Information – Study MBBS in Russia
+              Quick Information – Study MBBS in China
             </h3>
 
             <div className="overflow-x-auto">
@@ -138,19 +188,19 @@ const China = () => {
                 <tbody>
                   <tr className="bg-gray-100">
                     <td className="p-4 font-semibold">Recognition</td>
-                    <td className="p-4">NMC & WHO Recognized</td>
+                    <td className="p-4">NMC, WHO & MOE Recognized</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold">Eligibility</td>
-                    <td className="p-4">50% in PCB aggregate</td>
+                    <td className="p-4">50% in PCB aggregate in 10+2</td>
                   </tr>
                   <tr className="bg-gray-100">
                     <td className="p-4 font-semibold">Course Duration</td>
-                    <td className="p-4">6 Years</td>
+                    <td className="p-4">6 Years (5 Years Academic + 1 Year Internship)</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold">NEET</td>
-                    <td className="p-4">Compulsory</td>
+                    <td className="p-4">Compulsory for Indian Students</td>
                   </tr>
                   <tr className="bg-gray-100">
                     <td className="p-4 font-semibold">IELTS/TOEFL</td>
@@ -158,14 +208,11 @@ const China = () => {
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold">Medium of Teaching</td>
-                    <td className="p-4">English</td>
+                    <td className="p-4">English Medium (MOE Approved)</td>
                   </tr>
-
-                  <tr>
-                    <td className="p-4 font-semibold">
-                      Universities Recognition
-                    </td>
-                    <td className="p-4">NMC & WHO-Recognized</td>
+                  <tr className="bg-gray-100">
+                    <td className="p-4 font-semibold">Hospital Infrastructure</td>
+                    <td className="p-4">Grade 3A Super-Specialty Hospitals (2000+ Beds)</td>
                   </tr>
                 </tbody>
               </table>
@@ -175,17 +222,15 @@ const China = () => {
           {/* Right – About MBBS */}
           <div>
             <h3 className="text-3xl font-bold text-blue-900 mb-6 text-center md:text-left">
-              About MBBS in Kazakhstan
+              About MBBS in China
             </h3>
             <p className="text-lg leading-relaxed text-gray-700">
-              Studying MBBS in Kazakhstan is notably straightforward
+              China is known globally for medical education standards that rank alongside top European and American institutions. Chinese universities utilize English-medium curricula authored by international professors and conduct regular hands-on clinical rotations.
             </p>
 
             {showMoreClimate ? (
               <p className="mt-4 text-lg leading-relaxed text-gray-700">
-                — no entrance exam (apart from NEET for Indian students). The
-                Russian government subsidizes education, keeping fees relatively
-                low...
+                The Chinese government heavily subsidizes international medical tuition, allowing students from India to obtain a world-class degree at a fraction of the cost of Indian private medical colleges. Advanced 3D anatomy tables, robotic surgical suites, and dedicated international hostels make studying in China a truly transformative experience.
               </p>
             ) : null}
 
@@ -199,54 +244,35 @@ const China = () => {
         </div>
 
         {/* ==================== UNIVERSITIES GRID ==================== */}
-        <div className="mb-20">
+        <div id="universities" className="mb-20">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
-            {cmsData?.universitiesHeading || "Top Medical Universities in Russia"}
+            {cmsData?.universitiesHeading || "Top Medical Universities in China"}
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Nanjing Medical University",
-                img: "https://upload.wikimedia.org/wikipedia/commons/d/de/Dormitory_of_Bainiantang.jpg",
-              },
-              {
-                name: "Southern Medical University",
-                img: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Qilingang_campus.jpg",
-              },
-              {
-                name: "Tianjin Medical University",
-                img: "https://upload.wikimedia.org/wikipedia/commons/8/89/2014%E5%B9%B46%E6%9C%88%E5%A4%A9%E6%B4%A5%E5%8C%BB%E7%A7%91%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD.jpg",
-              },
-              {
-                name: "China Medical University",
-                img: "https://upload.wikimedia.org/wikipedia/commons/0/00/CMU_20061030.jpg",
-              },
-              {
-                name: "Dalian Medical University",
-                img: "https://images.shiksha.com/mediadata/images/1597819161phpzHqyKj_g.png",
-              },
-              {
-                name: "Shandong Uni. of Traditional Chinese Med.",
-                img: "https://upload.wikimedia.org/wikipedia/commons/2/29/%E5%B1%B1%E4%B8%9C%E5%A4%A7%E5%AD%A6%EF%BC%88%E4%B8%AD%E5%BF%83%E6%A0%A1%E5%8C%BA%EF%BC%89%E5%8D%97%E9%97%A8%EF%BC%88%E6%AD%A3%E9%97%A8%EF%BC%89.jpg",
-              },
-            ].map((uni, i) => (
+            {(cmsData?.universities && cmsData.universities.length > 0 ? cmsData.universities : defaultUniversities).map((uni, i) => (
               <div
                 key={i}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
               >
                 <img
-                  src={uni.img}
+                  src={uni.image || uni.img}
                   loading="lazy"
                   alt={uni.name}
                   className="w-full h-64 object-cover"
-                  srcSet={`${uni.img} 1x, ${uni.img} 2x`}
+                  srcSet={`${uni.image || uni.img} 1x, ${uni.image || uni.img} 2x`}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="p-6 text-center">
-                  <h4 className="text-xl font-bold text-blue-900">
+                  <h4 className="text-xl font-bold text-blue-900 mb-2">
                     {uni.name}
                   </h4>
+                  {uni.location && (
+                    <p className="text-sm text-gray-500 font-medium mb-1">{uni.location}</p>
+                  )}
+                  {uni.fee && (
+                    <p className="text-sm font-semibold text-blue-700">{uni.fee}</p>
+                  )}
                 </div>
               </div>
             ))}
@@ -257,41 +283,40 @@ const China = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <div>
             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center md:text-left">
-              Advantages of Studying MBBS in Russia 2026–2027
+              Advantages of Studying MBBS in China 2026–2027
             </h2>
 
             <div className="space-y-6">
               <div>
                 <h5 className="text-xl font-semibold">
-                  1. High-Quality Education
+                  1. World-Class Clinical Exposure
                 </h5>
                 <p className="text-gray-700">
-                  Globally recognized universities with strong academic
-                  standards.
+                  Affiliated Grade 3A teaching hospitals feature over 2,000 to 5,000 beds, giving Indian students unparalleled hands-on clinical exposure.
                 </p>
               </div>
               <div>
                 <h5 className="text-xl font-semibold">
-                  2. Affordable Tuition Fees
+                  2. English-Medium MOE Recognized Universities
                 </h5>
                 <p className="text-gray-700">
-                  Significantly lower than many Western countries.
+                  Official MOE-approved curricula conducted in 100% English medium with international medical faculty.
                 </p>
               </div>
               <div>
                 <h5 className="text-xl font-semibold">
-                  3. No Additional Entrance Exams
+                  3. Affordable Subsidized Tuition
                 </h5>
                 <p className="text-gray-700">
-                  (NEET required for Indian students only)
+                  Government-backed subsidies maintain tuition between ₹3.5L to ₹5L per year with zero capitation or donation fees.
                 </p>
               </div>
               <div>
                 <h5 className="text-xl font-semibold">
-                  4. English-Medium Programs
+                  4. High FMGE & Licensing Success
                 </h5>
                 <p className="text-gray-700">
-                  No language barrier for most international students.
+                  Rigorous medical curriculum aligned with NMC guidelines ensures strong performance in NExT, USMLE, and PLAB exams.
                 </p>
               </div>
             </div>
@@ -299,326 +324,355 @@ const China = () => {
 
           <div>
             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
-              Cost of Study MBBS in Russia
+              Cost of Study MBBS in China
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              The cost of the <strong> MBBS course in Russia</strong> is very
-              low for Indian students who want to pursue their{" "}
-              <strong>MBBS</strong> course in Russia. Russia is a very demanding
-              country for Indian students who want to pursue their MBBS course.
-              The government of Russia has funded the fee structure for the MBBS
-              course. Studying MBBS in Russia is an easy task for Indian
-              students compared to other countries. Studying MBBS in Russia is
-              very cheap. The universities in Russia provide a smooth platform
-              for <strong>international students</strong> so that they don't
-              need to pay the high tuition fees. Apart from this, there is no
-              need to pay any donations.
+              Studying MBBS in China is an economical and premium option for Indian medical aspirants. Compared to private Indian medical colleges where fees exceed ₹80 Lakh to ₹1.5 Crore, top Chinese state medical universities offer complete 6-year tuition and hostel packages between <strong>₹25 Lakh to ₹35 Lakh</strong>.
+            </p>
+            <p className="mt-4 text-lg text-gray-700 leading-relaxed">
+              Transparent university fee payment schedules, no capitation or donation charges, and affordable living costs make China one of the highest value-for-money MBBS destinations globally.
             </p>
           </div>
         </div>
 
-        {/* You can continue adding more sections like Food & Accommodation, Admission Process, Documents, Eligibility, Comparison table, etc. in similar fashion */}
-      </div>
+        {/* ==================== FOOD & ACCOMMODATION SECTION ==================== */}
+        <div className="bg-gradient-to-b from-gray-50 to-white py-16">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
+              Food and Accommodation Cost – MBBS in China
+            </h2>
 
-      {/* Floating Enroll Button */}
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <p>
+                Chinese medical universities offer modern, secure, and fully equipped on-campus international student apartments. Rooms are typically double or single occupancy with:
+              </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2">
+                <li>Beds, mattresses, study desks, chairs, and spacious wardrobes</li>
+                <li>Air conditioning and winter heating systems</li>
+                <li>Attached modern western-style bathrooms with 24/7 hot water</li>
+                <li>High-speed broadband internet and campus Wi-Fi</li>
+              </ul>
 
-      {/* ==================== FOOD & ACCOMMODATION SECTION ==================== */}
-      <div className="bg-gradient-to-b from-gray-50 to-white py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
-            Food and Accommodation Cost – MBBS in Russia
-          </h2>
+              <p className="mt-6">Hostels typically include:</p>
+              <ul className="list-disc pl-6 mt-4 space-y-2">
+                <li>Common kitchen facilities on each floor for self-cooking Indian meals</li>
+                <li>Automated card-operated laundry facilities on campus</li>
+                <li>Campus international dining halls with Indian vegetarian and non-veg options</li>
+                <li>Round-the-clock CCTV surveillance, biometric security, and dedicated wardens</li>
+              </ul>
 
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-            <p>
-              Most Russian medical universities provide comfortable hostel
-              accommodation specially designed for international students. Rooms
-              are usually shared (2–3 students per room) and come fully
-              furnished with:
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Beds, mattresses, bedsheets, blankets, pillows</li>
-              <li>Study tables, chairs, wardrobes/cupboards</li>
-              <li>Central heating (very important in Russian winters)</li>
-            </ul>
-
-            <p className="mt-6">Hostels typically include:</p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>
-                Common kitchen where students can cook their own food (very
-                popular among Indian students to prepare Indian meals)
-              </li>
-              <li>Common washing machines / laundry rooms</li>
-              <li>
-                Indian mess / canteen facilities in many universities (or
-                nearby)
-              </li>
-              <li>
-                Indian restaurants and grocery stores often within walking
-                distance
-              </li>
-            </ul>
-
-            <p className="mt-6">
-              <strong>Approximate monthly living expenses (2026–2027):</strong>
-            </p>
-            <ul className="list-disc pl-6 mt-4 space-y-2">
-              <li>Hostel / Accommodation: ₹8,000 – ₹18,000</li>
-              <li>Food (self-cooking + mess): ₹8,000 – ₹15,000</li>
-              <li>Transport + Miscellaneous: ₹3,000 – ₹7,000</li>
-              <li>
-                <strong>Total monthly:</strong> ≈ ₹20,000 – ₹40,000
-              </li>
-            </ul>
-
-            <p className="mt-6 italic text-gray-600">
-              Many universities also offer Indian food in their mess/canteen,
-              helping students maintain a familiar diet without much extra cost.
-            </p>
+              <p className="mt-6">
+                <strong>Approximate monthly living expenses (2026–2027):</strong>
+              </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2">
+                <li>Hostel / Accommodation: ₹8,000 – ₹16,000 / month</li>
+                <li>Food (self-cooking + Indian mess): ₹7,000 – ₹14,000 / month</li>
+                <li>Transport & Miscellaneous: ₹2,000 – ₹5,000 / month</li>
+                <li>
+                  <strong>Total monthly living cost:</strong> ≈ ₹17,000 – ₹35,000 / month
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ==================== ADMISSION PROCESS ==================== */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
-            Admission Process for MBBS in Russia 2026–2027
-          </h2>
+        {/* ==================== ADMISSION PROCESS ==================== */}
+        <div className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
+              Admission Process for MBBS in China 2026–2027
+            </h2>
 
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              The admission process for{" "}
-              <strong> MBBS (Bachelor of Medicine, Bachelor of Surgery)</strong>{" "}
-              courses in Russia varies slightly among different universities,
-              but the general process is as follows:
-            </p>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                The admission process for MOE-approved MBBS programs in China is systematic and transparent:
+              </p>
 
-            <div className="space-y-10">
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <h4 className="text-xl font-bold text-blue-900 mb-4">
-                  1. Research and Select a University:
-                </h4>
-                <p className="text-gray-700">
-                  Research the <strong>Russian universities</strong> that offer
-                  MBBS courses. Some of the best universities for MBBS courses
-                  in Russia are
-                  <strong>
-                    {" "}
-                    Moscow State Medical University, Saint Petersburg State
-                    Medical University, Kazan Federal University, etc.
-                  </strong>
-                </p>
-                <p className="mt-2 text-gray-600">
-                  Check: NMC/WHO recognition, English medium availability,
-                  tuition fees, hostel quality.
-                </p>
-              </div>
+              <div className="space-y-10">
+                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                  <h4 className="text-xl font-bold text-blue-900 mb-4">
+                    Stage 1: University Selection & Evaluation
+                  </h4>
+                  <p className="text-gray-700">
+                    Select an NMC-recognized, MOE-listed Chinese medical university such as Nanjing Medical University, Southern Medical University, or China Medical University based on location, fee budget, and hospital bed size.
+                  </p>
+                </div>
 
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <h4 className="text-xl font-bold text-blue-900 mb-4">
-                  2. Check Eligibility
-                </h4>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Completed 10+2 with Physics, Chemistry, Biology</li>
-                  <li>
-                    Minimum 50% aggregate in PCB (40% for reserved categories)
-                  </li>
-                  <li>NEET qualified (mandatory for Indian students)</li>
-                  <li>Age: 17 years completed by 31st Dec of admission year</li>
-                </ul>
-              </div>
+                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                  <h4 className="text-xl font-bold text-blue-900 mb-4">
+                    Stage 2: Eligibility & Document Submission
+                  </h4>
+                  <p className="text-gray-700">
+                    Submit scanned copies of 10th & 12th marksheets (min. 50% PCB), NEET-UG scorecard, valid passport copy, and physical examination record.
+                  </p>
+                </div>
 
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <h4 className="text-xl font-bold text-blue-900 mb-4">
-                  3. Apply Online
-                </h4>
-                <p className="text-gray-700">
-                  Fill university application form → Submit scanned documents →
-                  Receive admission/invitation letter (usually within 2–4
-                  weeks).
-                </p>
-              </div>
+                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                  <h4 className="text-xl font-bold text-blue-900 mb-4">
+                    Stage 3: Admission Notice & JW202 / JW201 Visa Form
+                  </h4>
+                  <p className="text-gray-700">
+                    The university issues an official Admission Notice, and the Ministry of Education in China processes the mandatory JW202/JW201 government visa authorization document.
+                  </p>
+                </div>
 
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <h4 className="text-xl font-bold text-blue-900 mb-4">
-                  4. Visa & Travel
-                </h4>
-                <p className="text-gray-700">
-                  Use invitation letter to apply for student visa at Russian
-                  Embassy/Consulate → Book tickets → Arrive in Russia → Complete
-                  university registration & medical check-up.
-                </p>
+                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                  <h4 className="text-xl font-bold text-blue-900 mb-4">
+                    Stage 4: Visa Application (X1 Visa) & Travel
+                  </h4>
+                  <p className="text-gray-700">
+                    Apply for a Chinese Student Visa (X1 Visa) at the Chinese Embassy/Consulate in India. Upon visa approval, EduHawk coordinates air ticketing, airport pickup in China, hostel allocation, and university registration.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ==================== DOCUMENTS + ELIGIBILITY + SCHOLARSHIPS ==================== */}
-      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Left - Required Documents */}
-            <div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center md:text-left">
-                Required Documents for MBBS in Russia 2026–2027
-              </h2>
+        {/* ==================== DOCUMENTS + ELIGIBILITY + SCHOLARSHIPS ==================== */}
+        <div className="py-16 bg-gradient-to-b from-white to-gray-50">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Left - Required Documents */}
+              <div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center md:text-left">
+                  Required Documents for MBBS in China 2026–2027
+                </h2>
 
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-xl shadow-sm border">
-                  <h5 className="text-lg font-semibold text-blue-800">
-                    Educational Documents
-                  </h5>
-                  <ul className="list-disc pl-5 mt-3 text-gray-700 space-y-1">
-                    <li>10th & 12th marksheets + certificates</li>
-                    <li>NEET scorecard & admit card</li>
-                    <li>Passport (valid for minimum 18–24 months)</li>
+                <div className="space-y-6">
+                  <div className="bg-white p-6 rounded-xl shadow-sm border">
+                    <h5 className="text-lg font-semibold text-blue-800">
+                      Educational Documents
+                    </h5>
+                    <ul className="list-disc pl-5 mt-3 text-gray-700 space-y-1">
+                      <li>10th and 12th Marksheets & Passing Certificates</li>
+                      <li>NEET-UG Scorecard (Qualified)</li>
+                      <li>Original Passport with minimum 18 months validity</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-xl shadow-sm border">
+                    <h5 className="text-lg font-semibold text-blue-800">
+                      Other Important Documents
+                    </h5>
+                    <ul className="list-disc pl-5 mt-3 text-gray-700 space-y-1">
+                      <li>Foreigner Physical Examination Form (Medical Fitness Report)</li>
+                      <li>Police Clearance Certificate (Non-Criminal Record)</li>
+                      <li>Passport-size photographs with white background</li>
+                      <li>Bank statement proving financial capability</li>
+                      <li>University Admission Letter & Official JW202 Form</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Eligibility + Scholarships */}
+              <div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
+                  Eligibility Criteria & Scholarships
+                </h2>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm border mb-8">
+                  <h4 className="text-xl font-semibold text-blue-900 mb-4">
+                    Basic Eligibility
+                  </h4>
+                  <ul className="list-decimal pl-5 space-y-2 text-gray-700">
+                    <li>Minimum 17 years completed by 31st December of the admission year</li>
+                    <li>Minimum 50% aggregate in Physics, Chemistry, Biology in 10+2 (40% for reserved)</li>
+                    <li>NEET-UG qualification mandatory for Indian citizens</li>
                   </ul>
                 </div>
 
                 <div className="bg-white p-6 rounded-xl shadow-sm border">
-                  <h5 className="text-lg font-semibold text-blue-800">
-                    Other Important Documents
-                  </h5>
-                  <ul className="list-disc pl-5 mt-3 text-gray-700 space-y-1">
-                    <li>Passport size photos (white background)</li>
-                    <li>HIV & medical fitness certificate</li>
+                  <h4 className="text-xl font-semibold text-blue-900 mb-4">
+                    Available Scholarships
+                  </h4>
+                  <ul className="space-y-4">
                     <li>
-                      Invitation letter from university (issued after admission)
+                      <strong>Chinese Government Scholarship (CSC)</strong>
+                      <br />
+                      <span className="text-gray-600 text-sm">
+                        Prestige scholarship offering full or partial tuition fee waiver for outstanding international applicants.
+                      </span>
                     </li>
-                    <li>Visa application form & fee receipt</li>
+                    <li>
+                      <strong>Provincial Government Scholarships</strong>
+                      <br />
+                      <span className="text-gray-600 text-sm">
+                        Scholarships offered by municipal provinces (e.g., Jiangsu, Guangdong) based on academic excellence.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>University Performance Awards</strong>
+                      <br />
+                      <span className="text-gray-600 text-sm">
+                        Annual academic merit rewards granted by universities for top-ranking students in semester exams.
+                      </span>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Right - Eligibility + Scholarships */}
-            <div>
-              <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
-                Eligibility Criteria & Scholarships
-              </h2>
+        {/* ==================== COMPARISON TABLE ==================== */}
+        <div className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">
+              MBBS in China vs MBBS in India – Quick Comparison (2026–2027)
+            </h2>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm border mb-8">
-                <h4 className="text-xl font-semibold text-blue-900 mb-4">
-                  Basic Eligibility
-                </h4>
-                <ul className="list-decimal pl-5 space-y-2 text-gray-700">
-                  <li>Age 17+ by 31st Dec of admission year</li>
-                  <li>50%+ in PCB in 12th (40% for SC/ST/OBC)</li>
-                  <li>NEET qualified (mandatory for Indians)</li>
-                </ul>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border">
-                <h4 className="text-xl font-semibold text-blue-900 mb-4">
-                  Popular Scholarships
-                </h4>
-                <ul className="space-y-4">
-                  <li>
-                    <strong>
-                      Russian Government Scholarship (Open Doors / Quota)
-                    </strong>
-                    <br />
-                    <span className="text-gray-600 text-sm">
-                      Covers tuition + sometimes hostel. Very competitive —
-                      apply via education-in-russia.com
-                    </span>
-                  </li>
-                  <li>
-                    <strong>University-specific Merit Scholarships</strong>
-                    <br />
-                    <span className="text-gray-600 text-sm">
-                      Offered by many universities for good NEET/academic scores
-                    </span>
-                  </li>
-                  <li>
-                    <strong>Other options</strong>
-                    <br />
-                    <span className="text-gray-600 text-sm">
-                      Education Future, Inlaks, etc. (limited for MBBS)
-                    </span>
-                  </li>
-                </ul>
-              </div>
+            <div className="overflow-x-auto shadow-md rounded-lg">
+              <table className="min-w-full border-collapse border border-gray-300 text-left">
+                <thead>
+                  <tr className="bg-blue-900 text-white">
+                    <th className="p-4 border border-gray-300 text-center font-semibold">
+                      Criteria
+                    </th>
+                    <th className="p-4 border border-gray-300 text-center font-semibold">
+                      MBBS in China
+                    </th>
+                    <th className="p-4 border border-gray-300 text-center font-semibold">
+                      MBBS in India
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-700">
+                  <tr className="bg-gray-50">
+                    <td className="p-4 border font-medium">
+                      Tuition Fees (Total Package)
+                    </td>
+                    <td className="p-4 border">₹25 – ₹35 Lakhs Total Package</td>
+                    <td className="p-4 border">
+                      Govt: ₹1 – ₹5 Lakhs
+                      <br />
+                      Private: ₹80 Lakhs – ₹1.5+ Crore
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 border font-medium">
+                      Donation / Capitation
+                    </td>
+                    <td className="p-4 border text-green-700 font-semibold">No Donation</td>
+                    <td className="p-4 border text-red-700">
+                      High capitation/donation in private colleges
+                    </td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="p-4 border font-medium">Course Duration</td>
+                    <td className="p-4 border">6 Years (5 Years Academic + 1 Year Internship)</td>
+                    <td className="p-4 border">5.5 Years (4.5 Years Academic + 1 Year Internship)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 border font-medium">Hospital Patient Volume</td>
+                    <td className="p-4 border">
+                      Massive tertiary hospitals (2,000–5,000+ beds) with robotic surgery
+                    </td>
+                    <td className="p-4 border">
+                      High in government colleges; varies in private colleges
+                    </td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="p-4 border font-medium">Global Recognition</td>
+                    <td className="p-4 border">
+                      NMC, WHO, WDOMS, MOE China recognized
+                    </td>
+                    <td className="p-4 border">
+                      NMC & WHO recognized
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 border font-medium">
+                      Medium of Instruction
+                    </td>
+                    <td className="p-4 border">100% English Medium</td>
+                    <td className="p-4 border">English</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ==================== COMPARISON TABLE ==================== */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">
-            MBBS in Russia vs MBBS in India – Quick Comparison (2026–2027)
+        {/* ==================== FAQs ==================== */}
+        <div className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">
+              Frequently Asked Questions – MBBS in China 2026-2027
+            </h2>
+
+            <div className="space-y-5">
+              {faqData.map((item, index) => (
+                <div
+                  key={index}
+                  className={`bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md ${
+                    openIndex === index ? "shadow-lg border-blue-300" : ""
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="text-2xl font-bold text-blue-700 min-w-[2.5rem]">
+                        {index + 1}.
+                      </span>
+                      <h4 className="text-xl md:text-2xl font-semibold text-blue-900 leading-tight">
+                        {item.question}
+                      </h4>
+                    </div>
+
+                    <span className="text-3xl text-blue-600 flex-shrink-0 transition-transform duration-300">
+                      {openIndex === index ? (
+                        <FiMinus className="transform rotate-0" />
+                      ) : (
+                        <FiPlus className="transform rotate-0" />
+                      )}
+                    </span>
+                  </button>
+
+                  <div
+                    className={`px-6 transition-all duration-500 ease-in-out ${
+                      openIndex === index
+                        ? "max-h-[600px] pb-8 pt-2 opacity-100"
+                        : "max-h-0 pb-0 opacity-0"
+                    }`}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ==================== CTA BANNER ==================== */}
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 text-white rounded-2xl p-8 md:p-12 text-center shadow-xl my-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            Plan Your Medical Journey in China with EduHawk
           </h2>
-
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse border border-gray-300 text-left">
-              <thead>
-                <tr className="bg-blue-900 text-white">
-                  <th className="p-4 border border-gray-300 text-center font-semibold">
-                    Criteria
-                  </th>
-                  <th className="p-4 border border-gray-300 text-center font-semibold">
-                    MBBS in Russia
-                  </th>
-                  <th className="p-4 border border-gray-300 text-center font-semibold">
-                    MBBS in India
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-gray-700">
-                <tr className="bg-gray-50">
-                  <td className="p-4 border font-medium">
-                    Tuition Fees (per year)
-                  </td>
-                  <td className="p-4 border">₹2 – 5 Lakhs</td>
-                  <td className="p-4 border">
-                    Govt: ₹40k – ₹2 Lakhs
-                    <br />
-                    Private: ₹10 – 25+ Lakhs
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-4 border font-medium">
-                    Donation / Capitation
-                  </td>
-                  <td className="p-4 border text-green-700">No Donation</td>
-                  <td className="p-4 border text-red-700">
-                    Often ₹30–80 Lakhs in private colleges
-                  </td>
-                </tr>
-                <tr className="bg-gray-50">
-                  <td className="p-4 border font-medium">Course Duration</td>
-                  <td className="p-4 border">6 years (including internship)</td>
-                  <td className="p-4 border">5.5 years + 1 year internship</td>
-                </tr>
-                <tr>
-                  <td className="p-4 border font-medium">Class Strength</td>
-                  <td className="p-4 border">20–40 students</td>
-                  <td className="p-4 border">
-                    100–150+ students (especially private)
-                  </td>
-                </tr>
-                <tr className="bg-gray-50">
-                  <td className="p-4 border font-medium">Global Recognition</td>
-                  <td className="p-4 border">
-                    NMC, WHO, WFME recognized universities
-                  </td>
-                  <td className="p-4 border">
-                    NMC recognized, but private colleges vary
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-4 border font-medium">
-                    Medium of Instruction
-                  </td>
-                  <td className="p-4 border">English</td>
-                  <td className="p-4 border">English</td>
-                </tr>
-              </tbody>
-            </table>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
+            Get 1-on-1 personalized counselling for top MOE-listed, NMC-recognized medical universities in China with transparent fee structures, JW202 visa processing, and complete on-ground support.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="px-8 py-3.5 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold rounded-xl transition duration-200 shadow-lg text-center"
+            >
+              Get Free Counselling
+            </Link>
+            <a
+              href="https://wa.me/919630736070?text=Hi%2C%20I%20want%20to%20know%20more%20about%20MBBS%20in%20China"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition duration-200 shadow-lg text-center flex items-center justify-center gap-2"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
