@@ -1,5 +1,6 @@
 import cmsData from "../../data/medical_colleges/egypt.json";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import EgyptFlag from "../../Images/country flag png/Egypt.svg"; // Correct path to Egypt flag
 import { Plus as FiPlus, Minus as FiMinus } from "lucide-react";
 import SeoHead from "../../component/SeoHead.jsx";
@@ -78,13 +79,15 @@ const Egypt = () => {
               src={cmsData?.hero?.image || "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Alexandria_University.JPG/1280px-Alexandria_University.JPG"}
               alt="Alexandria University"
               className="w-full h-full object-cover brightness-75"
-                  srcSet="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Alexandria_University.JPG/1280px-Alexandria_University.JPG 1x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Alexandria_University.JPG/1280px-Alexandria_University.JPG 2x"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              srcSet="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Alexandria_University.JPG/1280px-Alexandria_University.JPG 1x, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Alexandria_University.JPG/1280px-Alexandria_University.JPG 2x"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <h2 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
-                STUDY MBBS IN EGYPT
-              </h2>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
+                {cmsData?.hero?.title || "STUDY MBBS IN EGYPT"}
+              </h1>
             </div>
           </div>
         </div>
@@ -101,14 +104,14 @@ const Egypt = () => {
                 height={600}
                 alt="Egypt flag"
                 className="w-32 md:w-40 border-4 border-gray-800 rounded shadow-lg"
-                  srcSet={`${EgyptFlag} 1x, ${EgyptFlag} 2x`}
-                  sizes="(max-width: 768px) 120px, 160px"
-                />
+                srcSet={`${EgyptFlag} 1x, ${EgyptFlag} 2x`}
+                sizes="(max-width: 768px) 120px, 160px"
+              />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
-                Explore MBBS Opportunities in Egypt 2026–2027
-              </h1>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900">
+                {cmsData?.hero?.subtitle || "Explore MBBS Opportunities in Egypt 2026–2027"}
+              </h2>
             </div>
           </div>
 
@@ -240,7 +243,7 @@ const Egypt = () => {
               {[
                 {
                   name: "Cairo University",
-                  img: "https://upload.wikimedia.org/wikipedia/commons/5/57/CairoUniv.webp",
+                  img: "/uploads/colleges/cairo_university.jpg",
                 },
                 {
                   name: "Ain Shams University",
@@ -454,6 +457,135 @@ const Egypt = () => {
             </div>
           </div>
 
+          {/* ==================== ADMISSION PROCESS ==================== */}
+          <div className="py-16 bg-white mb-20">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
+                Admission Process For MBBS in Egypt 2026–27
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed text-center">
+                  The admission process for international medical students in Egypt is centralized through the official Egyptian Ministry of Higher Education portal (Wafeden):
+                </p>
+                <div className="space-y-6">
+                  <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                    <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                      1
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-blue-900 mb-2">
+                        Eligibility Check & University Selection
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Verify minimum 50% aggregate in 10+2 with Physics, Chemistry, and Biology and valid NEET qualification. Select from premier state faculties such as Cairo University, Ain Shams, or Alexandria University.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                    <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                      2
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-blue-900 mb-2">
+                        Online Ministry Registration (Wafeden Portal)
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Register on the Egyptian government's official international students portal with academic transcripts, NEET score, and passport copy. EduHawk handles end-to-end portal submission.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                    <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                      3
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-blue-900 mb-2">
+                        Provisional Approval & Ministry Invitation Letter
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Upon scrutiny by the Supreme Council of Universities in Cairo, an official seat allotment letter and visa sponsorship invitation are issued.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50/70 p-6 rounded-xl border border-blue-100 flex gap-4 items-start">
+                    <div className="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold flex-shrink-0">
+                      4
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-blue-900 mb-2">
+                        Visa Stamping, Flight & Campus Enrollment
+                      </h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        Obtain student visa from the Egyptian Embassy in New Delhi, fly to Cairo International Airport with EduHawk reception, complete physical document verification, hostel check-in, and commence classes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ==================== REQUIRED DOCUMENTS ==================== */}
+          <div className="py-16 bg-slate-50 mb-20">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-10">
+                Required Documents for MBBS in Egypt 2026–2027
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h4 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                    <span>📄</span> Academic Documentation
+                  </h4>
+                  <ul className="space-y-2.5 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>Class 10th Marks Sheet & Passing Certificate</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>Class 12th Marks Sheet (Minimum 50% in PCB)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>NEET-UG Scorecard with qualifying percentile</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>School Leaving / Transfer Certificate</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h4 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                    <span>🛂</span> Identity & Travel Documents
+                  </h4>
+                  <ul className="space-y-2.5 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>Original Passport valid for minimum 18–24 months</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>10–12 Passport-sized photographs (white background)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>Medical Fitness Certificate (HIV, Hepatitis testing)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold">✓</span>
+                      <span>Official Egyptian Ministry Seat Allocation Letter</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* ==================== COMPARISON TABLE ==================== */}
           <div className="py-16 bg-white">
             <div className="container mx-auto px-4 max-w-5xl">
@@ -599,6 +731,35 @@ const Egypt = () => {
                   Have more questions? Feel free to contact our experts for free
                   counseling!
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Consultation CTA */}
+          <div className="mt-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 rounded-2xl p-8 sm:p-12 text-white shadow-xl text-center relative overflow-hidden">
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-amber-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 border border-white/15">
+                Official University Admission Partner
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+                Plan Your MBBS Journey to Egypt
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+                Study medicine at prestigious, historic government academies such as Cairo University and Alexandria University with English-medium programs, clinical hospital internships, and affordable tuition. Book a free counselling session with EduHawk.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  to="/contact"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-extrabold text-sm shadow-lg shadow-amber-500/25 transition-all text-center"
+                >
+                  Book Free Counselling
+                </Link>
+                <a
+                  href="tel:+918076594248"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all text-center"
+                >
+                  Call: +91 8076594248
+                </a>
               </div>
             </div>
           </div>
