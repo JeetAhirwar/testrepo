@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../component/Navbar";
 import Footer from "../Footer";
 import RouteLoader from "../../component/RouteLoader";
-import { ChevronUp, GraduationCap, MapPin, PhoneCall } from "lucide-react";
+import { ChevronUp, GraduationCap, MapPin, PhoneCall, X } from "lucide-react";
 
 const universityDestinations = [
   {
@@ -120,11 +120,20 @@ const MainLayout = () => {
         <section
           aria-live="polite"
           aria-label="Study abroad university information"
-          className="fixed bottom-24 left-4 right-4 sm:right-auto sm:w-full z-40 max-w-sm rounded-2xl border border-blue-100 bg-white p-4 shadow-2xl sm:bottom-6 sm:left-6"
+          className="hidden sm:block fixed bottom-6 left-6 z-40 max-w-sm w-full rounded-2xl border border-blue-100 bg-white p-4 shadow-2xl transition-all duration-300"
         >
-          <div className="mb-3 flex items-center gap-2 text-blue-700">
-            <GraduationCap size={20} aria-hidden="true" />
-            <p className="text-sm font-bold">Study Abroad Spotlight</p>
+          <div className="mb-3 flex items-center justify-between text-blue-700">
+            <div className="flex items-center gap-2">
+              <GraduationCap size={20} aria-hidden="true" />
+              <p className="text-sm font-bold">Study Abroad Spotlight</p>
+            </div>
+            <button
+              onClick={() => setShowUniversityCard(false)}
+              className="text-gray-400 hover:text-gray-600 p-1 rounded-full hover:bg-gray-100 transition-colors"
+              aria-label="Close Spotlight"
+            >
+              <X size={16} />
+            </button>
           </div>
           <div className="space-y-2">
             <div className="flex items-start gap-2 text-sm text-gray-700">
@@ -170,7 +179,7 @@ const MainLayout = () => {
       )}
 
       {/* Floating Buttons */}
-      <div className="fixed bottom-6 right-6 flex gap-4 z-50">
+      <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 flex gap-3 sm:gap-4 z-50">
         
         {/* WhatsApp Button with Blinking Border */}
         <div className="relative">
