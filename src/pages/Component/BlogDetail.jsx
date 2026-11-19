@@ -1,7 +1,7 @@
 ﻿import { useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import DOMPurify from "dompurify";
-import { Share as ShareIcon } from "lucide-react";
+import { Share as ShareIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectCurrentProduct,
@@ -155,6 +155,17 @@ const BlogDetail = () => {
         ogImage={postOgImage}
       />
       <article className="min-h-screen bg-gray-50 pt-8 pb-20">
+        {/* Top-left Back to Articles Button */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-6">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-indigo-600 bg-white hover:bg-slate-50 border border-slate-200/90 shadow-xs px-3.5 py-1.5 rounded-lg transition-all duration-200 cursor-pointer"
+          >
+            <ArrowLeft size={15} />
+            <span>View all articles</span>
+          </Link>
+        </div>
+
         {/* Hero Image - full width (rendered only when the post has an image) */}
         {heroImage && (
           <div className="relative mx-auto mb-10 max-w-6xl overflow-hidden rounded-3xl px-4 shadow-2xl sm:px-6">
@@ -227,14 +238,26 @@ const BlogDetail = () => {
             </button>
           </div>
 
-          {/* Back Link */}
-          <div className="text-center mt-20">
-            <Link
-              to="/blog"
-              className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition-colors"
-            >
-              ← View all articles
-            </Link>
+          {/* Bottom Consultation CTA Banner */}
+          <div className="mt-16 pt-10 border-t border-slate-200">
+            <div className="rounded-3xl bg-gradient-to-br from-[#0a2342] via-[#0f3560] to-[#124074] p-8 sm:p-10 text-white text-center shadow-xl relative overflow-hidden">
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10 max-w-2xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 text-white">
+                  Planning to Study Abroad?
+                </h3>
+                <p className="text-slate-200 text-sm sm:text-base mb-6 leading-relaxed">
+                  Get personalized guidance from experienced education counsellors. Compare universities, check eligibility, and understand visa requirements with 100% transparency.
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-8 py-3.5 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all text-sm sm:text-base cursor-pointer"
+                >
+                  <span>Get Free Counselling</span>
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </article>
