@@ -691,66 +691,30 @@ const page = {
       ]
     }
   ],
-  "universities": [],
-  "table": {
-    "title": "Estimated Cost of Studying Language Courses in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
+  "universities": [
     {
-      "q": "Q1. Is taking language classes in the UK a best option?",
-      "a": "Yes . The UK provides a range of specialized courses, university-based programs, and language schools. Students can study foreign languages in a global setting, get ready for language tests, or enhance their English communication abilities."
+      "name": "University College London",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_language_courses_University_College_London-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_language_courses_University_College_London-image2.png",
+      "desc": "University College London is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q2. What is the duration of language lessons in the United Kingdom?",
-      "a": "Longer programs can run for several months, although shorter courses might just last a few weeks. The length is determined by the provider's course format, the student's language proficiency, and their learning objectives."
+      "name": "University of Cambridge",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_language_courses_University_of_Cambridge-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_language_courses_University_of_Cambridge-image3.png",
+      "desc": "The type of course, the school, the age of the student, and the goal of the study all affect eligibility. For Courses in General English Students with basic to advanced competency levels may be admitted. It's not always necessary to have a formal education. To ascertain the student's language proficiency, certain providers might administer a placement test."
     },
     {
-      "q": "Q3. What qualifications are needed to enrolll in language classes in the UK?",
-      "a": "Beginners may be accepted into general English courses, which may not require formal academic credentials. University-level programs, academic English, translation, and interpreting may call for prior training or a certain degree of language competency."
-    },
-    {
-      "q": "Q4. In the UK, how much do language classes cost?",
-      "a": "Many General English courses cost between £200 and £500 per week, many General English courses cost between £150 and £400 per week. Additional charges include living expenses, test fees, lodging, and other expenses."
-    },
-    {
-      "q": "Q5. After finishing a language course, can I get employment in the UK?",
-      "a": "Completing a language course does not automatically make one eligible for a post-study visa or authorization to work in the UK. The rules that apply to a person's course and circumstances, as well as their immigration status, determine their work rights."
-    },
-    {
-      "q": "How can I study abroad with the assistance of Edu Hawk Worldwide Consultancy?",
-      "a": "Students can use Edu Hawk Worldwide to plan their study-abroad journey, organize their application materials, research appropriate universities, and comprehend admission standards. Students should check with the appropriate official authorities on their academic, financial, immigration, and licensing needs."
+      "name": "University of Oxford",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_language_courses_University_of_Oxford-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_language_courses_University_of_Oxford-image1.png",
+      "desc": "For younger students, parental consent might be necessary. For Courses in Academic English It can be necessary for students to have a certain level of English proficiency."
     }
   ]
 };

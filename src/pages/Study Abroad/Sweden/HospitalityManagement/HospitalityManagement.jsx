@@ -160,39 +160,44 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Hospitality Management in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. Linnaeus University",
-          "location": "\\. Linnaeus University, Sweden",
+          "name": "Linnaeus University",
+          "location": "Linnaeus University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* Offers a bachelor's programme in International Tourism Management. * The programme focuses on strategic and sustainable tourism. * It is taught in English and may be relevant to students interested in tourism operations, destination management and hospitality-related careers.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "![][image1]",
-          "location": "![][image1], Sweden",
+          "name": "Uppsala University",
+          "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Mid Sweden University",
-          "location": "\\. Mid Sweden University",
+          "name": "Mid Sweden University",
+          "location": "Mid Sweden University",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* Offers one-year and two-year master's study options in Tourism, taught in English. * The curriculum covers areas such as tourism management, sustainability, research and destination development. * Graduates may explore opportunities in tourism organisations and destination planning.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "![][image2]",
-          "location": "![][image2], Sweden",
+          "name": "Uppsala University",
+          "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. University of Gothenburg",
-          "location": "\\. University of Gothenburg, Sweden",
+          "name": "University of Gothenburg",
+          "location": "University of Gothenburg, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* Students interested in the business side of hospitality can explore relevant programmes and courses in management, business and service-related subjects. * Applicants should check the current course catalogue rather than assume that a dedicated Hospitality Management degree is available. ![][image3] **Important:** Programme availability and titles can change. Always verify the current course structure, language of instruction and admission requirements on the official university website.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -512,39 +517,44 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. Linnaeus University",
-      "location": "\\. Linnaeus University, Sweden",
+      "name": "Linnaeus University",
+      "location": "Linnaeus University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* Offers a bachelor's programme in International Tourism Management. * The programme focuses on strategic and sustainable tourism. * It is taught in English and may be relevant to students interested in tourism operations, destination management and hospitality-related careers.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "![][image1]",
-      "location": "![][image1], Sweden",
+      "name": "Uppsala University",
+      "location": "Uppsala, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Mid Sweden University",
-      "location": "\\. Mid Sweden University",
+      "name": "Mid Sweden University",
+      "location": "Mid Sweden University",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* Offers one-year and two-year master's study options in Tourism, taught in English. * The curriculum covers areas such as tourism management, sustainability, research and destination development. * Graduates may explore opportunities in tourism organisations and destination planning.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "![][image2]",
-      "location": "![][image2], Sweden",
+      "name": "Uppsala University",
+      "location": "Uppsala, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. University of Gothenburg",
-      "location": "\\. University of Gothenburg, Sweden",
+      "name": "University of Gothenburg",
+      "location": "University of Gothenburg, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* Students interested in the business side of hospitality can explore relevant programmes and courses in management, business and service-related subjects. * Applicants should check the current course catalogue rather than assume that a dedicated Hospitality Management degree is available. ![][image3] **Important:** Programme availability and titles can change. Always verify the current course structure, language of instruction and admission requirements on the official university website.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -580,6 +590,18 @@ export default function HospitalityManagementSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

@@ -156,25 +156,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Summer Courses in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. University of J\u00f6nk\u00f6ping",
-          "location": "\\. University of J\u00f6nk\u00f6ping, Sweden",
+          "name": "University of J\u00f6nk\u00f6ping",
+          "location": "University of J\u00f6nk\u00f6ping, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The **Youth Summer School** is scheduled from **5 July to 30 July 2027** and introduces students aged 16\u201318 to sustainable development in Sweden while helping them develop their English-language skills. The programme includes cultural activities, study visits and field trips. ![][image1] Students should check the university's official summer school webpage for updated application details, programme fees and admission requirements.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Link\u00f6ping University",
-          "location": "\\. Link\u00f6ping University, Sweden",
+          "name": "Link\u00f6ping University",
+          "location": "Link\u00f6ping University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The **LiU Summer Academy** offers short summer courses, including *Sweden: Language, Culture and Society*. The summer programme takes place in July and is open only to students nominated by eligible partner universities who meet the academic requirements. ![][image2] Applicants should check the official Summer Academy webpage for current programme dates, eligibility conditions and application deadlines.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Malm\u00f6 University",
-          "location": "\\. Malm\u00f6 University, Sweden",
+          "name": "Malm\u00f6 University",
+          "location": "Malm\u00f6 University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Malm\u00f6 University offers courses in **Swedish Language, Culture and Society** for students interested in learning basic Swedish communication skills and understanding everyday life in Sweden. The introductory course has a summer study period scheduled from **28 June to 15 August 2027**. The published full tuition fee is **SEK 18,000 (approximately \u20b91.71 lakh)**. Students should verify the latest course availability, fee and application information on the university's official course webpage. ![][image3]",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -465,25 +468,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. University of J\u00f6nk\u00f6ping",
-      "location": "\\. University of J\u00f6nk\u00f6ping, Sweden",
+      "name": "University of J\u00f6nk\u00f6ping",
+      "location": "University of J\u00f6nk\u00f6ping, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The **Youth Summer School** is scheduled from **5 July to 30 July 2027** and introduces students aged 16\u201318 to sustainable development in Sweden while helping them develop their English-language skills. The programme includes cultural activities, study visits and field trips. ![][image1] Students should check the university's official summer school webpage for updated application details, programme fees and admission requirements.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Link\u00f6ping University",
-      "location": "\\. Link\u00f6ping University, Sweden",
+      "name": "Link\u00f6ping University",
+      "location": "Link\u00f6ping University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The **LiU Summer Academy** offers short summer courses, including *Sweden: Language, Culture and Society*. The summer programme takes place in July and is open only to students nominated by eligible partner universities who meet the academic requirements. ![][image2] Applicants should check the official Summer Academy webpage for current programme dates, eligibility conditions and application deadlines.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Malm\u00f6 University",
-      "location": "\\. Malm\u00f6 University, Sweden",
+      "name": "Malm\u00f6 University",
+      "location": "Malm\u00f6 University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Malm\u00f6 University offers courses in **Swedish Language, Culture and Society** for students interested in learning basic Swedish communication skills and understanding everyday life in Sweden. The introductory course has a summer study period scheduled from **28 June to 15 August 2027**. The published full tuition fee is **SEK 18,000 (approximately \u20b91.71 lakh)**. Students should verify the latest course availability, fee and application information on the university's official course webpage. ![][image3]",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -519,6 +525,18 @@ export default function SummerCoursesSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

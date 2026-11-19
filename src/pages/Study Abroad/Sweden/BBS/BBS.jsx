@@ -134,25 +134,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited BBS in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. University of Gothenburg (G\u00f6teborgs universitet)",
-          "location": "\\. University of Gothenburg (G\u00f6teborgs universitet), Sweden",
+          "name": "University of Gothenburg (G\u00f6teborgs universitet)",
+          "location": "University of Gothenburg (G\u00f6teborgs universitet), Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** Bachelor's Programme in Business and Economics * **Duration:** 3 years * **Language of Instruction:** English * **Total Tuition Fee:** SEK 291,000 * **Approximate Tuition Fee:** \u20b927.65 lakh ![][image1] The programme covers areas such as business, economics, commercial law, and sustainability.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Ume\u00e5 University",
-          "location": "\\. Ume\u00e5 University, Sweden",
+          "name": "Ume\u00e5 University",
+          "location": "Ume\u00e5 University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** International Business and Economics Programme * **Duration:** 3 years * **Language of Instruction:** English * **Total Tuition Fee:** SEK 289,800 * **Approximate Tuition Fee:** \u20b927.53 lakh ![][image2] Students explore international business, economics, market analysis, and data visualisation.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. J\u00f6nk\u00f6ping University",
-          "location": "\\. J\u00f6nk\u00f6ping University, Sweden",
+          "name": "J\u00f6nk\u00f6ping University",
+          "location": "J\u00f6nk\u00f6ping University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** Bachelor's Programme in International Management * **Duration:** 3 years * **Language of Instruction:** English * **Total Tuition Fee:** SEK 360,000 * **Approximate Tuition Fee:** \u20b934.20 lakh ![][image3] The programme focuses on areas such as business administration, management, leadership, and international business.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -455,25 +458,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. University of Gothenburg (G\u00f6teborgs universitet)",
-      "location": "\\. University of Gothenburg (G\u00f6teborgs universitet), Sweden",
+      "name": "University of Gothenburg (G\u00f6teborgs universitet)",
+      "location": "University of Gothenburg (G\u00f6teborgs universitet), Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** Bachelor's Programme in Business and Economics * **Duration:** 3 years * **Language of Instruction:** English * **Total Tuition Fee:** SEK 291,000 * **Approximate Tuition Fee:** \u20b927.65 lakh ![][image1] The programme covers areas such as business, economics, commercial law, and sustainability.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Ume\u00e5 University",
-      "location": "\\. Ume\u00e5 University, Sweden",
+      "name": "Ume\u00e5 University",
+      "location": "Ume\u00e5 University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** International Business and Economics Programme * **Duration:** 3 years * **Language of Instruction:** English * **Total Tuition Fee:** SEK 289,800 * **Approximate Tuition Fee:** \u20b927.53 lakh ![][image2] Students explore international business, economics, market analysis, and data visualisation.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. J\u00f6nk\u00f6ping University",
-      "location": "\\. J\u00f6nk\u00f6ping University, Sweden",
+      "name": "J\u00f6nk\u00f6ping University",
+      "location": "J\u00f6nk\u00f6ping University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** Bachelor's Programme in International Management * **Duration:** 3 years * **Language of Instruction:** English * **Total Tuition Fee:** SEK 360,000 * **Approximate Tuition Fee:** \u20b934.20 lakh ![][image3] The programme focuses on areas such as business administration, management, leadership, and international business.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -509,6 +515,18 @@ export default function BBSSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

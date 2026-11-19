@@ -617,66 +617,38 @@ const page = {
   ],
   "universities": [
     {
-      "name": "Manchester University - Manufacturing, materials, and mechanical engineering.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "London's Imperial College",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mech_engg_pg_London_s_Imperial_College-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_mech_engg_pg_London_s_Imperial_College-image3.png",
+      "desc": "London's Imperial College is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Sheffield University - Robotics, modern manufacturing, and mechanical engineering",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Manchester University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mech_engg_pg_Manchester_University-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_mech_engg_pg_Manchester_University-image4.png",
+      "desc": "Manchester University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Nottingham University - Sustainable energy, manufacturing, and mechanical engineering",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Nottingham University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mech_engg_pg_Nottingham_University-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_mech_engg_pg_Nottingham_University-image2.png",
+      "desc": "Nottingham University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
+    },
+    {
+      "name": "Sheffield University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mech_engg_pg_Sheffield_University-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_mech_engg_pg_Sheffield_University-image1.png",
+      "desc": "Sheffield University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying MSc Mechanical Engineering in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": []
+  ]
 };
 
 export default function MechanicalEngineeringUK() {

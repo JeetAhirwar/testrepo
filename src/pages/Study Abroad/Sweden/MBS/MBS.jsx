@@ -153,32 +153,36 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited MBS in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. University of Gothenburg",
-          "location": "\\. University of Gothenburg, Sweden",
+          "name": "University of Gothenburg",
+          "location": "University of Gothenburg, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The University of Gothenburg offers a three-year **Bachelor's Programme in Business and Economics**, taught in English. * **Duration:** 3 years * **Total tuition fee:** SEK 291,000 * **Approximate INR:** \u20b927.65 lakh * **Official programme page:** University of Gothenburg \u2013 Business and Economics. ![][image1]",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/university_of_gothenburg.webp",
+          "img": "/uploads/study_abroad/sweden/university_of_gothenburg.webp"
         },
         {
-          "name": "\\. Uppsala University",
-          "location": "\\. Uppsala University, Sweden",
+          "name": "Uppsala University",
+          "location": "Uppsala University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Uppsala University offers a two-year **Master's Programme in Business and Management**, with specialisations in International Business, Organisation, Marketing and Entrepreneurship. * **Duration:** 2 years * **Total tuition fee:** SEK 228,000 * **Approximate INR:** \u20b921.66 lakh * **Official programme page:** Uppsala University \u2013 Business and Management.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
         },
         {
-          "name": "![][image2]",
-          "location": "![][image2], Sweden",
+          "name": "Uppsala University",
+          "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
         },
         {
-          "name": "\\. Stockholm School of Economics",
-          "location": "\\. Stockholm School of Economics, Sweden",
+          "name": "Stockholm School of Economics",
+          "location": "Stockholm School of Economics, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The Stockholm School of Economics offers a three-year **Bachelor's Programme in Business and Economics**, taught entirely in English. * **Duration:** 3 years * **Annual tuition fee:** SEK 120,000 * **Total tuition fee:** SEK 360,000 * **Approximate INR:** \u20b934.20 lakh * **Official programme page:** Stockholm School of Economics \u2013 Business and Economics. ![][image3] Students comparing the **Best Universities for Business Studies in Sweden** should check the exact programme title, specialisations, teaching language, tuition fees and admission requirements on the official university websites.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
         }
       ],
       "note": [
@@ -585,32 +589,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. University of Gothenburg",
-      "location": "\\. University of Gothenburg, Sweden",
+      "name": "University of Gothenburg",
+      "location": "University of Gothenburg, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The University of Gothenburg offers a three-year **Bachelor's Programme in Business and Economics**, taught in English. * **Duration:** 3 years * **Total tuition fee:** SEK 291,000 * **Approximate INR:** \u20b927.65 lakh * **Official programme page:** University of Gothenburg \u2013 Business and Economics. ![][image1]",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/university_of_gothenburg.webp",
+          "img": "/uploads/study_abroad/sweden/university_of_gothenburg.webp"
     },
     {
-      "name": "\\. Uppsala University",
-      "location": "\\. Uppsala University, Sweden",
+      "name": "Uppsala University",
+      "location": "Uppsala University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Uppsala University offers a two-year **Master's Programme in Business and Management**, with specialisations in International Business, Organisation, Marketing and Entrepreneurship. * **Duration:** 2 years * **Total tuition fee:** SEK 228,000 * **Approximate INR:** \u20b921.66 lakh * **Official programme page:** Uppsala University \u2013 Business and Management.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
     },
     {
-      "name": "![][image2]",
-      "location": "![][image2], Sweden",
+      "name": "Uppsala University",
+      "location": "Uppsala, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
     },
     {
-      "name": "\\. Stockholm School of Economics",
-      "location": "\\. Stockholm School of Economics, Sweden",
+      "name": "Stockholm School of Economics",
+      "location": "Stockholm School of Economics, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The Stockholm School of Economics offers a three-year **Bachelor's Programme in Business and Economics**, taught entirely in English. * **Duration:** 3 years * **Annual tuition fee:** SEK 120,000 * **Total tuition fee:** SEK 360,000 * **Approximate INR:** \u20b934.20 lakh * **Official programme page:** Stockholm School of Economics \u2013 Business and Economics. ![][image3] Students comparing the **Best Universities for Business Studies in Sweden** should check the exact programme title, specialisations, teaching language, tuition fees and admission requirements on the official university websites.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
     }
   ],
   "faqs": [
@@ -646,6 +654,18 @@ export default function MBSSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

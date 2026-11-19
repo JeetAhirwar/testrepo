@@ -136,25 +136,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Chemical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. KTH Royal Institute of Technology",
-          "location": "\\. KTH Royal Institute of Technology, Sweden",
+          "name": "KTH Royal Institute of Technology",
+          "location": "KTH Royal Institute of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "KTH offers an **MSc in Chemical Engineering for Energy and Environment**, taught in English. The programme focuses on industrial process design, sustainable energy, emissions reduction and circular resource flows. It is a two-year programme leading to a Master of Science degree. **![][image1]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Chalmers University of Technology",
-          "location": "\\. Chalmers University of Technology, Sweden",
+          "name": "Chalmers University of Technology",
+          "location": "Chalmers University of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Chalmers offers **Innovative and Sustainable Chemical Engineering**, a two-year master's programme taught in English. The programme explores efficient chemical processes, sustainable production, recycling, renewable fuels and industrial resource management. **Location:** Gothenburg, Sweden **![][image2]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
         },
         {
-          "name": "\\. Lund University",
-          "location": "\\. Lund University, Sweden",
+          "name": "Lund University",
+          "location": "Lund University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Students can explore related postgraduate opportunities in chemical sciences, process-related research, materials and sustainability. Applicants should consult the current programme catalogue to confirm the exact degree title, course structure and entry requirements for their intended intake. **![][image3]** **Important Note:** Among the universities listed above, KTH and Chalmers are the most directly relevant options for chemical engineering. Lund University and Link\u00f6ping University are alternatives for related specializations and should not automatically be considered providers of a degree specifically titled Chemical Engineering. These institutions are worth exploring when comparing the **Best Universities for Chemical Engineering in Sweden**. Always verify programme availability and degree titles through official university websites.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -425,25 +428,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. KTH Royal Institute of Technology",
-      "location": "\\. KTH Royal Institute of Technology, Sweden",
+      "name": "KTH Royal Institute of Technology",
+      "location": "KTH Royal Institute of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "KTH offers an **MSc in Chemical Engineering for Energy and Environment**, taught in English. The programme focuses on industrial process design, sustainable energy, emissions reduction and circular resource flows. It is a two-year programme leading to a Master of Science degree. **![][image1]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Chalmers University of Technology",
-      "location": "\\. Chalmers University of Technology, Sweden",
+      "name": "Chalmers University of Technology",
+      "location": "Chalmers University of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Chalmers offers **Innovative and Sustainable Chemical Engineering**, a two-year master's programme taught in English. The programme explores efficient chemical processes, sustainable production, recycling, renewable fuels and industrial resource management. **Location:** Gothenburg, Sweden **![][image2]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
     },
     {
-      "name": "\\. Lund University",
-      "location": "\\. Lund University, Sweden",
+      "name": "Lund University",
+      "location": "Lund University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Students can explore related postgraduate opportunities in chemical sciences, process-related research, materials and sustainability. Applicants should consult the current programme catalogue to confirm the exact degree title, course structure and entry requirements for their intended intake. **![][image3]** **Important Note:** Among the universities listed above, KTH and Chalmers are the most directly relevant options for chemical engineering. Lund University and Link\u00f6ping University are alternatives for related specializations and should not automatically be considered providers of a degree specifically titled Chemical Engineering. These institutions are worth exploring when comparing the **Best Universities for Chemical Engineering in Sweden**. Always verify programme availability and degree titles through official university websites.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -479,6 +485,18 @@ export default function ChemicalEngineeringPGSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

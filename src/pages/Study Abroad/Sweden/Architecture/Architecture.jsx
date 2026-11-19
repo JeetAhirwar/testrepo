@@ -152,32 +152,36 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Architecture in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. Ume\u00e5 University",
-          "location": "\\. Ume\u00e5 University, Sweden",
+          "name": "Ume\u00e5 University",
+          "location": "Ume\u00e5 University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* Offers a five-year Architecture Programme worth 300 credits. * The programme is taught in English. * It combines architectural design, history, technology, sustainability and urban planning. * It leads to a professional degree in architecture according to the programme information. ![][image1] This option may suit students looking for a longer undergraduate-level architecture pathway.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. KTH Royal Institute of Technology",
-          "location": "\\. KTH Royal Institute of Technology, Sweden",
+          "name": "KTH Royal Institute of Technology",
+          "location": "KTH Royal Institute of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* Offers a two-year MSc in Architecture taught in English. * The programme explores architecture through design, technology, aesthetics, social conditions and sustainability. * Applicants generally need a relevant undergraduate degree in architecture. * An architectural portfolio is an important part of the application.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "![][image2]",
-          "location": "![][image2], Sweden",
+          "name": "Uppsala University",
+          "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Chalmers University of Technology",
-          "location": "\\. Chalmers University of Technology, Sweden",
+          "name": "Chalmers University of Technology",
+          "location": "Chalmers University of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* Offers an MSc in Architectural Design for students who want to develop advanced architectural design skills. * Applicants must meet the academic prerequisites. * A portfolio demonstrating architectural design ability is required as part of the admission process. ![][image3] **Choosing the Right University:** Ume\u00e5 University is worth exploring for its five-year architecture pathway taught in English. Students who already hold a relevant undergraduate architecture qualification can consider KTH and Chalmers for postgraduate specialisation. These institutions offer different qualification pathways. Students should verify programme availability, degree titles, language requirements and professional recognition on the official university websites.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -527,32 +531,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. Ume\u00e5 University",
-      "location": "\\. Ume\u00e5 University, Sweden",
+      "name": "Ume\u00e5 University",
+      "location": "Ume\u00e5 University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* Offers a five-year Architecture Programme worth 300 credits. * The programme is taught in English. * It combines architectural design, history, technology, sustainability and urban planning. * It leads to a professional degree in architecture according to the programme information. ![][image1] This option may suit students looking for a longer undergraduate-level architecture pathway.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. KTH Royal Institute of Technology",
-      "location": "\\. KTH Royal Institute of Technology, Sweden",
+      "name": "KTH Royal Institute of Technology",
+      "location": "KTH Royal Institute of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* Offers a two-year MSc in Architecture taught in English. * The programme explores architecture through design, technology, aesthetics, social conditions and sustainability. * Applicants generally need a relevant undergraduate degree in architecture. * An architectural portfolio is an important part of the application.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "![][image2]",
-      "location": "![][image2], Sweden",
+      "name": "Uppsala University",
+      "location": "Uppsala, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Recognized institution in Sweden providing accredited degree programs and research facilities for international students.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Chalmers University of Technology",
-      "location": "\\. Chalmers University of Technology, Sweden",
+      "name": "Chalmers University of Technology",
+      "location": "Chalmers University of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* Offers an MSc in Architectural Design for students who want to develop advanced architectural design skills. * Applicants must meet the academic prerequisites. * A portfolio demonstrating architectural design ability is required as part of the admission process. ![][image3] **Choosing the Right University:** Ume\u00e5 University is worth exploring for its five-year architecture pathway taught in English. Students who already hold a relevant undergraduate architecture qualification can consider KTH and Chalmers for postgraduate specialisation. These institutions offer different qualification pathways. Students should verify programme availability, degree titles, language requirements and professional recognition on the official university websites.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -588,6 +596,18 @@ export default function ArchitectureSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

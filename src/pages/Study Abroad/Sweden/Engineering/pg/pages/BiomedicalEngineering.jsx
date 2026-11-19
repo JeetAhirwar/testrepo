@@ -138,18 +138,20 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Biomedical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. Chalmers University of Technology",
-          "location": "\\. Chalmers University of Technology, Sweden",
+          "name": "Chalmers University of Technology",
+          "location": "Chalmers University of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Chalmers offers a two-year MSc programme in Biomedical Engineering, taught in English. The programme includes specialisation opportunities in areas such as Neuroengineering and Sensor Technology, AI in Healthcare, and Clinical Innovation and Implementation. Students can study medical devices, biomedical signals, imaging, artificial intelligence and digital healthcare technologies. **Location:** Gothenburg **![][image1]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/university_of_gothenburg.webp",
+          "img": "/uploads/study_abroad/sweden/university_of_gothenburg.webp"
         },
         {
-          "name": "\\. KTH Royal Institute of Technology",
-          "location": "\\. KTH Royal Institute of Technology, Sweden",
+          "name": "KTH Royal Institute of Technology",
+          "location": "KTH Royal Institute of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "KTH offers a related MSc programme in Medical Engineering, which connects engineering methods with medical and healthcare applications. It may be suitable for students interested in medical technology, healthcare systems, instrumentation and engineering solutions to clinical challenges. **Location:** Stockholm **![][image2]** **Understanding the programme differences:** Chalmers offers a direct Biomedical Engineering programme, while KTH's Medical Engineering programme is a closely related alternative. Students should review the curriculum, specialisations and eligibility criteria before applying.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -491,18 +493,20 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. Chalmers University of Technology",
-      "location": "\\. Chalmers University of Technology, Sweden",
+      "name": "Chalmers University of Technology",
+      "location": "Chalmers University of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Chalmers offers a two-year MSc programme in Biomedical Engineering, taught in English. The programme includes specialisation opportunities in areas such as Neuroengineering and Sensor Technology, AI in Healthcare, and Clinical Innovation and Implementation. Students can study medical devices, biomedical signals, imaging, artificial intelligence and digital healthcare technologies. **Location:** Gothenburg **![][image1]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/university_of_gothenburg.webp",
+          "img": "/uploads/study_abroad/sweden/university_of_gothenburg.webp"
     },
     {
-      "name": "\\. KTH Royal Institute of Technology",
-      "location": "\\. KTH Royal Institute of Technology, Sweden",
+      "name": "KTH Royal Institute of Technology",
+      "location": "KTH Royal Institute of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "KTH offers a related MSc programme in Medical Engineering, which connects engineering methods with medical and healthcare applications. It may be suitable for students interested in medical technology, healthcare systems, instrumentation and engineering solutions to clinical challenges. **Location:** Stockholm **![][image2]** **Understanding the programme differences:** Chalmers offers a direct Biomedical Engineering programme, while KTH's Medical Engineering programme is a closely related alternative. Students should review the curriculum, specialisations and eligibility criteria before applying.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -538,6 +542,18 @@ export default function BiomedicalEngineeringPGSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

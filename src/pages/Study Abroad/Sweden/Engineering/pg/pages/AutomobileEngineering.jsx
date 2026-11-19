@@ -140,18 +140,20 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Automobile Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. KTH Royal Institute of Technology",
-          "location": "\\. KTH Royal Institute of Technology, Sweden",
+          "name": "KTH Royal Institute of Technology",
+          "location": "KTH Royal Institute of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "KTH offers a two-year MSc in Vehicle Engineering, taught in English. Students can specialise in road or rail vehicles. The road-vehicle pathway is particularly relevant to students interested in cars, trucks, buses, vehicle dynamics, design, electrification and safety systems. **Location:** Stockholm, Sweden **![][image1]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Chalmers University of Technology",
-          "location": "\\. Chalmers University of Technology, Sweden",
+          "name": "Chalmers University of Technology",
+          "location": "Chalmers University of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Chalmers offers an MSc in Mobility Engineering with a specialisation in Automotive Engineering. Students can explore vehicle dynamics and control, powertrains, traffic safety, aerodynamics, electric and hybrid vehicles, and propulsion technologies. The optional Formula Student project can provide practical experience in vehicle development and engineering. **Location:** Gothenburg, Sweden **![][image2]** **Which university should you choose?** KTH offers a broader vehicle engineering education, with opportunities to focus on road or rail vehicles. Chalmers is a relevant choice for students who want to specialise in automotive engineering through its Mobility Engineering programme. Compare the curriculum, eligibility criteria and project options before making a decision.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -477,18 +479,20 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. KTH Royal Institute of Technology",
-      "location": "\\. KTH Royal Institute of Technology, Sweden",
+      "name": "KTH Royal Institute of Technology",
+      "location": "KTH Royal Institute of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "KTH offers a two-year MSc in Vehicle Engineering, taught in English. Students can specialise in road or rail vehicles. The road-vehicle pathway is particularly relevant to students interested in cars, trucks, buses, vehicle dynamics, design, electrification and safety systems. **Location:** Stockholm, Sweden **![][image1]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Chalmers University of Technology",
-      "location": "\\. Chalmers University of Technology, Sweden",
+      "name": "Chalmers University of Technology",
+      "location": "Chalmers University of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Chalmers offers an MSc in Mobility Engineering with a specialisation in Automotive Engineering. Students can explore vehicle dynamics and control, powertrains, traffic safety, aerodynamics, electric and hybrid vehicles, and propulsion technologies. The optional Formula Student project can provide practical experience in vehicle development and engineering. **Location:** Gothenburg, Sweden **![][image2]** **Which university should you choose?** KTH offers a broader vehicle engineering education, with opportunities to focus on road or rail vehicles. Chalmers is a relevant choice for students who want to specialise in automotive engineering through its Mobility Engineering programme. Compare the curriculum, eligibility criteria and project options before making a decision.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -524,6 +528,18 @@ export default function AutomobileEngineeringPGSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

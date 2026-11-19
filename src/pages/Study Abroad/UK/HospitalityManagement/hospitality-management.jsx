@@ -667,73 +667,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "Popular Universities to explore",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "Oxford Brookes University - Programs in hospitality, tourism, and allied management are available. University of Birmingham Students interested in the broader hospitality industry may find the business and tourism-related course choices appealing. University of Strathclyde - well-known for its business and management programs, which include pertinent alternatives for jobs in the hotel industry. University of Derby - offers courses in tourism, events, hospitality and associated fields.",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying Hospitality Management in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "Q1. Is it a good idea to study hospitality management in the UK?",
-      "a": "Yes. The UK has a wide range of hospitality businesses, globally recognized certifications and initiatives which may include real world projects or industry internships. Students are urged to compare individual courses to find the ones that best align with their career aspirations."
+      "name": "Oxford Brookes University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_hospitality_management_Oxford_Brookes_University-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_hospitality_management_Oxford_Brookes_University-image2.png",
+      "desc": "University of Birmingham Students interested in the broader hospitality industry may find the business and tourism-related course choices appealing. University of Strathclyde - well-known for its business and management programs, which include pertinent alternatives for jobs in the hotel industry. University of Derby - offers courses in tourism, events, hospitality and associated fields."
     },
     {
-      "q": "Q2. How long does it take to complete a hospitality management course in the UK?",
-      "a": "An undergraduate degree usually takes three years in England, Wales and Northern Ireland, although some courses are longer or include a year in industry. In Scotland many undergraduate honors degrees are of four years duration. Most full-time taught master's programs are one year long."
+      "name": "University of Birmingham",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Birmingham-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Birmingham-image1.png",
+      "desc": "Eligibility depends on the level of the course, the university and the candidate's previous education. For Undergraduate Studies Class 12 or its recognized equivalent."
     },
     {
-      "q": "Q3. What qualifications do I require to be a hospitality manager in the UK?",
-      "a": "Undergraduate candidates are often required to have a recognized secondary-school qualification. Postgraduate candidates are typically required to have a recognized bachelor's degree. The university and the course will determine the English-language proficiency and other pre-requisites."
+      "name": "University of Derby",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Derby-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Derby-image4.png",
+      "desc": "Must be able to speak English. Relevant courses or a foundation study if specified by the program. Some universities may consider a variety of academic backgrounds. For Graduate Studies Recognized Bachelor's degree in business, management, hospitality, tourism or related profession. The relevant bachelor's degrees or equivalent."
     },
     {
-      "q": "Q4. How much does it cost to study hospitality management in the UK?",
-      "a": "International tuition fees for many undergraduate courses will be in the region of £13,000 to £25,000 per year and for many taught master's courses, £15,000 to £30,000 per year. Living expenses are additional and vary by city and lifestyle."
-    },
-    {
-      "q": "Q5. What kind of jobs can I do in the UK after studying hospitality management?",
-      "a": "Graduates work in hotel operations, restaurant management, guest relations, events, food and beverage management, tourism, and revenue management. Career advancement and pay depend on experience, skills, employer and function."
-    },
-    {
-      "q": "Edu Hawk World Wide Consultancy – How to Study Abroad?",
-      "a": "Edu Hawk Worldwide helps students in planning their study-abroad journey, preparing application documents, understanding admission requirements and exploring appropriate universities. Students should check the appropriate official sources for advice on their academic, financial, immigration and licensing requirements."
+      "name": "University of Strathclyde",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Strathclyde-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Strathclyde-image3.png",
+      "desc": "Some programs will accept graduates of other disciplines. Some specialized courses may require or prefer relevant work experience. For MBA or Executive Programs A recognized bachelor degree. Where applicable, have relevant professional experience There is some evidence of managerial or leadership responsibility for some programs. English Proficiency CV, interview, personal statement or references as appropriate."
     }
   ]
 };

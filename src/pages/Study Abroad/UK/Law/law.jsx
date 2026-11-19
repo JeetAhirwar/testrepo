@@ -752,66 +752,38 @@ const page = {
       ]
     }
   ],
-  "universities": [],
-  "table": {
-    "title": "Estimated Cost of Studying Law in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
+  "universities": [
     {
-      "q": "Q1. Is studying law in the UK the best choice ?",
-      "a": "Yes. The UK offers opportunities to study legal principles, case law and international legal issues, with universities recognized around the world and a wide choice of legal specializations. Students should select a course that is appropriate to their chosen career path and academic interests."
+      "name": "King's College London",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_law_King_s_College_London-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_law_King_s_College_London-image3.png",
+      "desc": "King's College London is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q2. How long does it take to do a law degree in the UK?",
-      "a": "In England, Wales and Northern Ireland a LLB is normally a three year full time course. LLM programs take a full year for many. Becoming an attorney or barrister depends on the professional path, necessary training, tests and real-world experience."
+      "name": "The London School of Economics and Political Science",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_law_The_London_School_of_Economics_and_Political_Science-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_law_The_London_School_of_Economics_and_Political_Science-image4.png",
+      "desc": "Commercial law, international law, and legal research are just a few of the legal programs offered by King's College London."
     },
     {
-      "q": "Q3. What are the qualifications to study law in the UK?",
-      "a": "Usually, to apply as an undergraduate, you must have a recognized high school diploma with the necessary marks. Postgraduate applications usually require a recognized bachelor's degree, and an LLM may require a law background. You may also need to submit some extra application documents and have a good command of English."
+      "name": "The University of Cambridge",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_law_The_University_of_Cambridge-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_law_The_University_of_Cambridge-image1.png",
+      "desc": "Commercial law, international law, and legal research are just a few of the legal programs offered by King's College London."
     },
     {
-      "q": "Q4. How much does it cost to study law in the UK?",
-      "a": "International undergraduate law tuition can be around £15,000 to £30,000 per year, whilst LLM programs range from £16,000 to £35,000. There are other costs like the cost of living, immigration fees and any professional training or assessment fees."
-    },
-    {
-      "q": "Q5. Can foreign students practice law in the UK after graduation?",
-      "a": "International students can follow a law career if they meet the required immigration and professional requirements. The process is different for the legal professions in Scotland and Northern Ireland and for solicitors and barristers in England and Wales. Merely having a law degree does not make a graduate eligible to practice."
-    },
-    {
-      "q": "**How can I study abroad with the assistance of Edu Hawk Worldwide Consultancy?**",
-      "a": "Students can use Edu Hawk Worldwide to plan their study-abroad journey, organize their application materials, research appropriate universities, and comprehend admission standards. Students should check with the appropriate official authorities on their academic, financial, immigration, and licensing needs."
+      "name": "The University of Oxford",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_law_The_University_of_Oxford-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_law_The_University_of_Oxford-image2.png",
+      "desc": "Common career paths Once the necessary qualifications have been met a lawyer. Barrister, subject to meeting the appropriate authorization and training criteria. A paralegal. Legal researcher. Compliance officer. A contract analyst. Corporate legal counsel, depending on the requirements of the position. Policy advisor. Scholar of Human Rights. A legal consultant. Academic researcher / lecturer UK Pay Ranges (estimated) Salary depends on location, employer, experience, specialization and professional certification. Salaries for entry-level paralegals or legal assistants range from £22,000 to £32,000 per year. Salaries for trainee solicitors can vary widely depending on the region and the employer, but they can range between £28,000 and £45,000 per year. Jobs for newly qualified solicitors can pay anything from £35,000 to £60,000+ per year depending on the firm and area of expertise. Jobs for solicitors with experience pay between £50,000 and £90,000 a year. Earnings for barristers are heavily dependent on practice area, chambers, experience and caseload."
     }
   ]
 };

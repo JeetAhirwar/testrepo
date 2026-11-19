@@ -899,74 +899,38 @@ const page = {
   ],
   "universities": [
     {
-      "name": "Liverpool University - Postgraduate studies in business management and related fields",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Exeter University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mbs_Exeter_University-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_mbs_Exeter_University-image3.png",
+      "desc": "Exeter University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Exeter University - Programs in business and management.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Liverpool University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mbs_Liverpool_University-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_mbs_Liverpool_University-image4.png",
+      "desc": "Liverpool University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Sussex University - International business and management.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Strathclyde University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mbs_Strathclyde_University-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_mbs_Strathclyde_University-image2.png",
+      "desc": "Strathclyde University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Strathclyde University - Programs in business and management.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Sussex University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_mbs_Sussex_University-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_mbs_Sussex_University-image1.png",
+      "desc": "Sussex University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying MBS in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": []
+  ]
 };
 
 export default function mbsUK() {

@@ -589,77 +589,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "University of Birmingham: Pharmacy and pharmaceutical sciences opportunities.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Newcastle University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_pharmacy_Newcastle_University-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_pharmacy_Newcastle_University-image3.png",
+      "desc": "University of Strathclyde: Provides the opportunity to study pharmacy and engage in pharmaceutical research."
     },
     {
-      "name": "Newcastle University: Offers an MPharm program with professional and clinical learning.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "University of Strathclyde: Provides the opportunity to study pharmacy and engage in pharmaceutical research. Robert Gordon University: For those wishing to enter professional pharmacy practice, there is an MPharm program.",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying Pharmacy in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "**Q1. Can I study Pharmacy in the UK from India?**",
-      "a": "Yeah. Indian students can apply to study undergraduate MPharm courses and postgraduate courses in pharmacy or pharmaceutical sciences, provided you meet the university's academic and English language requirements. Q2. How long does Pharmacy take in the UK The normal MPharm course in Great Britain is a four year course. Some universities offer a foundation year route which is longer."
+      "name": "Robert Gordon University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_pharmacy_Robert_Gordon_University-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_pharmacy_Robert_Gordon_University-image1.png",
+      "desc": "Robert Gordon University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "**Q3. ( What is the primary pharmacy degree in the UK?**",
-      "a": "For those students who follow the UK university path to becoming a pharmacist, the Master of Pharmacy (MPharm) degree is the main professional degree."
+      "name": "University of Birmingham",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_pharmacy_University_of_Birmingham-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_pharmacy_University_of_Birmingham-image4.png",
+      "desc": "University of Birmingham is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q4. Do I need to take the NEET for Pharmacy in the UK?**",
-      "a": "NEET is not normally a standard entry requirement for UK pharmacy programs. However, students must meet the individual university's subject and academic requirements."
-    },
-    {
-      "q": "Q5. After completing an MPharm in the UK, can I become a registered pharmacist?**",
-      "a": "Completing an accredited MPharm is a major step but does not in itself provide enough. Students also need to complete the required foundation training, pass the registration assessment and meet the requirements of the regulator for registration."
-    },
-    {
-      "q": "How can Edu Hawk Worldwide Consultancy help me to study abroad?",
-      "a": "Choosing to study pharmacy in the UK calls for careful consideration of university choice, course accreditation, academic qualification, tuition fees, and visa requirements. Edu Hawk Worldwide Consultancy can assist students in planning their study abroad journey. Our team can help students find suitable universities, learn about admission requirements, prepare application documents and plan their next steps. With the right guidance and preparation Indian students can make well-informed decisions about studying pharmacy and pharmaceutical science in the UK."
+      "name": "University of Strathclyde",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_pharmacy_University_of_Strathclyde-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_pharmacy_University_of_Strathclyde-image2.png",
+      "desc": "Eligibility for Undergraduates - 12 Class or equivalent qualification from a recognized board . - Good academic performance in the relevant science subjects. - Chemistry is usually a required subject for MPharm entry. - Biology, Mathematics or Physics may also be required depending on the university - English language proficiency test, if needed. - Fulfilling the health, fitness to practise and age requirements of the university. Indian applicants should verify that their Class 12 qualification meets the direct-entry requirements of their chosen university. Eligibility for Postgraduate Admission - A recognized bachelor's degree in pharmacy, pharmaceutical sciences, chemistry, biology or another relevant subject, depending on the program. - Academic qualifications or equivalents required. - Academic or professional experience (if mentioned). - Proficiency in the English language. - Further documents or research proposals for selected programs."
     }
   ]
 };

@@ -126,25 +126,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Computer Engineering (UG) in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. KTH Royal Institute of Technology",
-          "location": "\\. KTH Royal Institute of Technology, Sweden",
+          "name": "KTH Royal Institute of Technology",
+          "location": "KTH Royal Institute of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The KTH Information and Communication Technology (ICT) program is a three-year bachelor\u2019s program, taught in English, and worth 180 ECTS credits. Subjects include programming, electronics, computer science, mathematics, digital systems and communication technology. ![][image1]",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Chalmers University of Technology",
-          "location": "\\. Chalmers University of Technology, Sweden",
+          "name": "Chalmers University of Technology",
+          "location": "Chalmers University of Technology, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Chalmers is a well established technical university with education in electrical engineering, computer science and related areas. Most bachelor\u2019s programs are taught in Swedish so international students should read the language requirements carefully. ![][image2]",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
         },
         {
-          "name": "\\. Lule\u00e5 Tekniska Universitet",
-          "location": "\\. Lule\u00e5 Tekniska Universitet, Sweden",
+          "name": "Lule\u00e5 Tekniska Universitet",
+          "location": "Lule\u00e5 Tekniska Universitet, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Students can see what it has to offer in terms of engineering and computing.\u201d Find bachelor programs that match with computer engineering interests in the current course catalog and verify whether the program is taught in English or Swedish. ![][image3] Important: The KTH's English-taught ICT bachelor's program is a particularly interesting option for international students. The other universities listed are worth looking at for related studies, but you need to check their current program catalogs before assuming they offer an English-taught bachelor\u2019s in computer engineering. Find available programs through University Admissions in Sweden.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -405,25 +408,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. KTH Royal Institute of Technology",
-      "location": "\\. KTH Royal Institute of Technology, Sweden",
+      "name": "KTH Royal Institute of Technology",
+      "location": "KTH Royal Institute of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The KTH Information and Communication Technology (ICT) program is a three-year bachelor\u2019s program, taught in English, and worth 180 ECTS credits. Subjects include programming, electronics, computer science, mathematics, digital systems and communication technology. ![][image1]",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Chalmers University of Technology",
-      "location": "\\. Chalmers University of Technology, Sweden",
+      "name": "Chalmers University of Technology",
+      "location": "Chalmers University of Technology, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Chalmers is a well established technical university with education in electrical engineering, computer science and related areas. Most bachelor\u2019s programs are taught in Swedish so international students should read the language requirements carefully. ![][image2]",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
     },
     {
-      "name": "\\. Lule\u00e5 Tekniska Universitet",
-      "location": "\\. Lule\u00e5 Tekniska Universitet, Sweden",
+      "name": "Lule\u00e5 Tekniska Universitet",
+      "location": "Lule\u00e5 Tekniska Universitet, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Students can see what it has to offer in terms of engineering and computing.\u201d Find bachelor programs that match with computer engineering interests in the current course catalog and verify whether the program is taught in English or Swedish. ![][image3] Important: The KTH's English-taught ICT bachelor's program is a particularly interesting option for international students. The other universities listed are worth looking at for related studies, but you need to check their current program catalogs before assuming they offer an English-taught bachelor\u2019s in computer engineering. Find available programs through University Admissions in Sweden.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -459,6 +465,18 @@ export default function ComputerEngineeringUGSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

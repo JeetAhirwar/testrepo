@@ -727,73 +727,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "University of Edinburgh -provides architecture education.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "Newcastle University -  offers programs in architecture and the built environment that include technical and design elements. Oxford Brookes University - provides professional development and design-focused programs in addition to architecture education.",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying Architecture in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "Q1. Is studying architecture in the UK a better idea?",
-      "a": "yes. Established architectural schools, a varied built environment, and programs that integrate design, technical expertise, and critical thinking are all available in the UK. Before applying, students should evaluate the facilities, professional recognition, and course material."
+      "name": "Newcastle University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_architecture_Newcastle_University-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_architecture_Newcastle_University-image4.png",
+      "desc": "University of Edinburgh -provides architecture education."
     },
     {
-      "q": "Q2. How long does it take to study architecture in the United Kingdom?",
-      "a": "Although some programs are lengthier, an undergraduate degree in architecture typically takes three years. It can take several more years to complete the full path to professional registration, which often entails extra coursework, real-world experience, and professional evaluation."
+      "name": "Oxford Brookes University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_architecture_Oxford_Brookes_University-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_architecture_Oxford_Brookes_University-image1.png",
+      "desc": "Oxford Brookes University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q3. What qualifications are needed to become an architect in the UK?",
-      "a": "A recognized secondary school degree and the necessary grades are typically prerequisites for undergraduate admissions. An appropriate bachelor's degree is typically required for postgraduate applicants. Evidence in English and a creative portfolio can also be necessary."
+      "name": "The University of Manchester",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_architecture_The_University_of_Manchester-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_architecture_The_University_of_Manchester-image3.png",
+      "desc": "University of Edinburgh -provides architecture education."
     },
     {
-      "q": "Q4. What is the price of studying architecture in the United Kingdom?",
-      "a": "While many postgraduate programs cost between £16,000 and £35,000 annually, international undergraduate tuition fees can range between £15,000 to £30,000. There are additional charges for living expenses, design supplies, and other things."
-    },
-    {
-      "q": "Q5. After graduation, are foreign students able to work as architects in the UK?",
-      "a": "If they  fulfill the necessary requirements for education, real-world experience, and assessment, international students can indeed pursue the UK architecture registration route. A person is not immediately eligible for registration just because they have completed an architecture course. The most recent requirements released by the Architects Registration Board (ARB) should be reviewed by students."
-    },
-    {
-      "q": "How can I study abroad with the assistance of Edu Hawk Worldwide Consultancy?",
-      "a": "Students can use Edu Hawk Worldwide to plan their study-abroad journey, organize their application materials, research appropriate universities, and comprehend admission standards. Students should check with the appropriate official authorities on their academic, financial, immigration, and licensing needs."
+      "name": "University of Edinburgh",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_architecture_University_of_Edinburgh-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_architecture_University_of_Edinburgh-image2.png",
+      "desc": "University of Edinburgh is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
   ]
 };

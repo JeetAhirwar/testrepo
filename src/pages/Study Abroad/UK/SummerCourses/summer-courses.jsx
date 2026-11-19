@@ -727,73 +727,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "The University of Oxford provides a variety of summer learning options.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "King's College London - may provide summer courses in a few professional and academic fields. The availability of academic and language-related study possibilities at the University of Edinburgh varies from year to year.",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying Summer Courses in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "Q1. What are summer courses in the UK?",
-      "a": "Summer courses are short-term educational programs offered by colleges, universities, language schools, and specialized providers during the summer months. They cover English, business, law, technology, science, arts and professional development."
+      "name": "King’s College London",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_summer_courses_King_s_College_London-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_summer_courses_King_s_College_London-image2.png",
+      "desc": "King’s College London is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q2. How long are summer courses in the UK?",
-      "a": "Most summer courses are one to four weeks long, but some programs run six to eight weeks or longer. How long it takes depends on the course structure, subject and supplier."
+      "name": "The University of Oxford",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_summer_courses_The_University_of_Oxford-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_summer_courses_The_University_of_Oxford-image1.png",
+      "desc": "The University of Oxford is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q3. How much do summer courses in the United Kingdom cost?",
-      "a": "Some university summer schools cost between £1,000 and £5,000 for two to four weeks, and short academic programs cost between £500 and £2,500 for one to two weeks. There may be extra fees for lodging, meals, travel and visas."
-    },
-    {
-      "q": "Q4. Do you accept international students for summer courses in the UK?",
-      "a": "Yes. Depending on their qualifying requirements and available spaces, some providers accept  international applicants. Students should check dates, costs, paperwork and any visa requirements before applying."
-    },
-    {
-      "q": "Q5. Can I get a job in the UK after completing a summer course?",
-      "a": "Taking a  summer course  does not mean that you are eligible for a  post-study visa  or permission to work in the UK. Your rights at work will depend on the rules that apply to your course and circumstances and your immigration status."
-    },
-    {
-      "q": "How can I study abroad with the assistance of Edu Hawk Worldwide Consultancy?",
-      "a": "Students may find appropriate universities, comprehend admission requirements, arrange application materials, and organize their study-abroad journey with the assistance of Edu Hawk Worldwide. Students should check with the appropriate official authorities on their academic, financial, immigration, and licensing needs."
+      "name": "University of Edinburgh",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_summer_courses_University_of_Edinburgh-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_summer_courses_University_of_Edinburgh-image3.png",
+      "desc": "University of Edinburgh is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
   ]
 };

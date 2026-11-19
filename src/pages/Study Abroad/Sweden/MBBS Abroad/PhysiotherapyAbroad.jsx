@@ -165,35 +165,40 @@ const page = {
           "location": "University College Copenhagen (KP), Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "University College Copenhagen provides professional healthcare education, including physiotherapy. Its programs integrate academic education with practical training and clinical experience.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "VIA University College",
           "location": "VIA University College, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "VIA University College is a professional higher education institution that offers courses in healthcare and other fields. Future students should consult its current physiotherapy program details, language of instruction and admission criteria.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "University College Lillebaelt (UCL)",
           "location": "University College Lillebaelt (UCL), Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "University College Lillebaelt provides professional education within several areas of healthcare. Students wishing to study physiotherapy should check the current availability of programs and the requirements for international applicants.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "University of Southern Sweden (SDU)",
           "location": "University of Southern Sweden (SDU)",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The University of Southern Sweden offers health-related education and research. Students interested in pursuing rehabilitation research, sports science or related postgraduate study should check the requirements of individual programs rather than assuming that a professional physiotherapy degree is available in English.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "How to Choose the Right Institution",
           "location": "How to Choose the Right Institution, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Compare the curriculum, language requirements, clinical placement arrangements, tuition fees, location and whether the qualification meets the requirements for professional practice. When reviewing **Physiotherapy universities in Sweden**, applicants should also confirm the latest course availability and international admission conditions directly with the institutions.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -456,35 +461,40 @@ const page = {
       "location": "University College Copenhagen (KP), Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "University College Copenhagen provides professional healthcare education, including physiotherapy. Its programs integrate academic education with practical training and clinical experience.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
       "name": "VIA University College",
       "location": "VIA University College, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "VIA University College is a professional higher education institution that offers courses in healthcare and other fields. Future students should consult its current physiotherapy program details, language of instruction and admission criteria.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
       "name": "University College Lillebaelt (UCL)",
       "location": "University College Lillebaelt (UCL), Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "University College Lillebaelt provides professional education within several areas of healthcare. Students wishing to study physiotherapy should check the current availability of programs and the requirements for international applicants.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
       "name": "University of Southern Sweden (SDU)",
       "location": "University of Southern Sweden (SDU)",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The University of Southern Sweden offers health-related education and research. Students interested in pursuing rehabilitation research, sports science or related postgraduate study should check the requirements of individual programs rather than assuming that a professional physiotherapy degree is available in English.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
       "name": "How to Choose the Right Institution",
       "location": "How to Choose the Right Institution, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Compare the curriculum, language requirements, clinical placement arrangements, tuition fees, location and whether the qualification meets the requirements for professional practice. When reviewing **Physiotherapy universities in Sweden**, applicants should also confirm the latest course availability and international admission conditions directly with the institutions.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -524,6 +534,18 @@ export default function PhysiotherapySweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

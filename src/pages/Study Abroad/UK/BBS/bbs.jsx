@@ -812,85 +812,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "University of Liverpool - Business Management and associated courses.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Coventry University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bbs_Coventry_University-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_bbs_Coventry_University-image3.png",
+      "desc": "Coventry University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "University of Sussex - Programs in business and management.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "University of Liverpool=",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bbs_University_of_Liverpool_image1.png",
+      "image": "/uploads/study_abroad/uk/uk_bbs_University_of_Liverpool_image1.png",
+      "desc": "University of Liverpool= is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "University of Strathclyde -Courses in business and management.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "University of Strathclyde",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bbs_University_of_Strathclyde-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_bbs_University_of_Strathclyde-image2.png",
+      "desc": "University of Strathclyde is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Coventry University - Undergraduate degree in business management and related subjects.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying BBS in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "After Class 12, are Indian students able to pursue BBS studies in the UK?",
-      "a": "After Class 12, students who fulfill the academic and English-language requirements of the university are eligible to apply for undergraduate business programs. Students should look at similar business bachelor's degrees as BBS is not a typical degree title among UK universities."
-    },
-    {
-      "q": "Does every university in the UK offer a Bachelor of Business Studies?",
-      "a": "No. Business-related courses with titles like BA Business Management, BSc Business Management, or BA International Business are offered by numerous UK universities. Visit the official course page to verify the precise qualification granted."
-    },
-    {
-      "q": "In the UK, how long does it take to finish BBS?",
-      "a": "The length is determined by the specific program. In England, Wales, and Northern Ireland, many undergraduate business degrees need three years to complete. It may take longer to complete courses with foundation or placement years."
+      "name": "University of Sussex",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bbs_University_of_Sussex-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_bbs_University_of_Sussex-image4.png",
+      "desc": "University of Sussex is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
   ]
 };

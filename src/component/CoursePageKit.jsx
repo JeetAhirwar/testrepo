@@ -2291,6 +2291,72 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
   );
 };
 
+const CAMPUS_FALLBACK_IMAGES = [
+  "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+  "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
+  "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+  "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+  "/uploads/study_abroad/sweden/swe_BBA_image2.png",
+  "/uploads/study_abroad/sweden/swe_BBA_image3.png",
+  "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png",
+  "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png",
+  "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png",
+  "/uploads/study_abroad/uk/uk_architecture_University_of_Edinburgh-image2.png",
+  "/uploads/study_abroad/uk/uk_architecture_The_University_of_Manchester-image3.png",
+  "/uploads/study_abroad/uk/uk_architecture_Newcastle_University-image4.png",
+  "/uploads/study_abroad/uk/uk_bba_Coventry_University-image3.png",
+  "/uploads/study_abroad/uk/uk_chem_engg_pg_Birmingham_University-image1.png",
+];
+
+const resolveCampusFallback = (u, index = 0) => {
+  const name = String(u?.name || u?.title || "").toLowerCase();
+  if (name.includes("karolinska")) return "/uploads/study_abroad/sweden/karolinska_institutet.webp";
+  if (name.includes("kth")) return "/uploads/study_abroad/sweden/swe_Architecture_image1.png";
+  if (name.includes("lund")) return "/uploads/study_abroad/sweden/swe_Architecture_image2.png";
+  if (name.includes("chalmers")) return "/uploads/study_abroad/sweden/swe_Architecture_image3.png";
+  if (name.includes("uppsala")) return "/uploads/study_abroad/sweden/swe_BBA_image1.png";
+  if (name.includes("gothenburg")) return "/uploads/study_abroad/sweden/university_of_gothenburg.webp";
+  if (name.includes("malmo") || name.includes("malmö")) return "/uploads/study_abroad/sweden/malmo_university.webp";
+  if (name.includes("umeå") || name.includes("umea")) return "/uploads/study_abroad/sweden/swe_Architecture_image1.png";
+  if (name.includes("linköping") || name.includes("linkoping")) return "/uploads/study_abroad/sweden/swe_ComputerScience_image1.png";
+  if (name.includes("oxford brookes")) return "/uploads/study_abroad/uk/uk_architecture_Oxford_Brookes_University-image1.png";
+  if (name.includes("oxford")) return "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png";
+  if (name.includes("cambridge")) return "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png";
+  if (name.includes("imperial")) return "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png";
+  if (name.includes("edinburgh")) return "/uploads/study_abroad/uk/uk_architecture_University_of_Edinburgh-image2.png";
+  if (name.includes("manchester")) return "/uploads/study_abroad/uk/uk_architecture_The_University_of_Manchester-image3.png";
+  if (name.includes("newcastle")) return "/uploads/study_abroad/uk/uk_architecture_Newcastle_University-image4.png";
+  if (name.includes("birmingham")) return "/uploads/study_abroad/uk/uk_chem_engg_pg_Birmingham_University-image1.png";
+  if (name.includes("bristol")) return "/uploads/study_abroad/uk/uk_civil_engg_pg_Bristol_University-image3.png";
+  if (name.includes("glasgow")) return "/uploads/study_abroad/uk/uk_biomed_engg_pg_Glasgow_University-image1.png";
+  if (name.includes("leeds")) return "/uploads/study_abroad/uk/uk_chem_engg_pg_Leeds_University-image3.png";
+  if (name.includes("nottingham")) return "/uploads/study_abroad/uk/uk_chem_engg_pg_Nottingham_University-image2.png";
+  if (name.includes("sheffield")) return "/uploads/study_abroad/uk/uk_civil_engg_pg_Sheffield_University-image1.png";
+  if (name.includes("southampton")) return "/uploads/study_abroad/uk/uk_civil_engg_pg_Southampton_University-image4.png";
+  if (name.includes("warwick")) return "/uploads/study_abroad/uk/uk_auto_engg_pg_Warwick_University-image2.png";
+  if (name.includes("coventry")) return "/uploads/study_abroad/uk/uk_bba_Coventry_University-image3.png";
+  if (name.includes("liverpool")) return "/uploads/study_abroad/uk/uk_bba_University_of_Liverpool-image4.png";
+  if (name.includes("strathclyde")) return "/uploads/study_abroad/uk/uk_bba_University_of_Strathclyde-image2.png";
+  if (name.includes("sussex")) return "/uploads/study_abroad/uk/uk_bba_University_of_Sussex-image1.png";
+  if (name.includes("loughborough")) return "/uploads/study_abroad/uk/uk_auto_engg_pg_Loughborough_University-image3.png";
+  if (name.includes("cranfield")) return "/uploads/study_abroad/uk/uk_auto_engg_pg_Cranfield_University-image1.png";
+  if (name.includes("aston")) return "/uploads/study_abroad/uk/uk_aero_engg_ug_Aston_University-image3.png";
+  if (name.includes("swansea")) return "/uploads/study_abroad/uk/uk_aero_engg_ug_Swansea_University-image2.png";
+  if (name.includes("surrey")) return "/uploads/study_abroad/uk/uk_aero_engg_ug_The_University_of_Surrey-image1.png";
+  if (name.includes("derby")) return "/uploads/study_abroad/uk/uk_hospitality_management_University_of_Derby-image4.png";
+  if (name.includes("reading")) return "/uploads/study_abroad/uk/uk_executive_mba_University_of_Reading_Henley_Business_School-image2.png";
+  if (name.includes("york")) return "/uploads/study_abroad/uk/uk_comp_engg_ug_York_University-image3.png";
+  if (name.includes("brunel")) return "/uploads/study_abroad/uk/uk_comp_engg_ug_London_s_Brunel_University-image2.png";
+  if (name.includes("greenwich")) return "/uploads/study_abroad/uk/uk_comp_engg_ug_Greenwich_University-image4.png";
+  if (name.includes("middlesex")) return "/uploads/study_abroad/uk/uk_comp_engg_ug_University_of_Middlesex-image1.png";
+  if (name.includes("exeter")) return "/uploads/study_abroad/uk/uk_business_hub_Exeter_University-image1.png";
+  if (name.includes("queen mary")) return "/uploads/study_abroad/uk/uk_biomed_engg_ug_Queen_Mary_University_of_London-image3.png";
+  if (name.includes("bath")) return "/uploads/study_abroad/uk/uk_chem_engg_ug_Bath_University-image4.png";
+  if (name.includes("king's college") || name.includes("kings college")) return "/uploads/study_abroad/uk/uk_dentistry_London_s_King_s_College-image1.png";
+
+  return CAMPUS_FALLBACK_IMAGES[Math.abs(index) % CAMPUS_FALLBACK_IMAGES.length];
+};
+
 export const UniversityGrid = ({ unis, alt, className = "" }) => {
   const isFourItems = Array.isArray(unis) && unis.length === 4;
   const gridLayout = isFourItems
@@ -2301,7 +2367,10 @@ export const UniversityGrid = ({ unis, alt, className = "" }) => {
     <div className={gridLayout + className}>
       {Array.isArray(unis) &&
         unis.map((u, i) => {
-          const imgSrc = u.image || u.img || u.src;
+          let imgSrc = u.image || u.img || u.src;
+          if (!imgSrc || imgSrc === "null" || imgSrc === "undefined") {
+            imgSrc = resolveCampusFallback(u, i);
+          }
           if (imgSrc) {
             return (
               <div
@@ -5766,7 +5835,12 @@ export const AbroadCoursePage = ({
 
 
 
-        const hasExplicitUnis = Array.isArray(s.unis) && s.unis.length > 0;
+        const sectionRawUnis = (Array.isArray(s.unis) && s.unis.length > 0)
+          ? s.unis
+          : (Array.isArray(s.unis_data) && s.unis_data.length > 0)
+            ? s.unis_data
+            : null;
+        const hasExplicitUnis = Boolean(sectionRawUnis);
         const isUniSlot = s.slot === "universities";
         const canRenderUnis =
           !renderedUnis &&
@@ -5779,7 +5853,7 @@ export const AbroadCoursePage = ({
         if (canRenderUnis) {
           renderedUnis = true;
           const sectionUnis =
-            (hasExplicitUnis ? s.unis : null) ||
+            sectionRawUnis ||
             page.universities ||
             s.groups?.find((g) => g && (g.t === "cards" || (Array.isArray(g.items) && g.items.some((it) => it && (it.img || it.image || it.name)))))?.items;
 

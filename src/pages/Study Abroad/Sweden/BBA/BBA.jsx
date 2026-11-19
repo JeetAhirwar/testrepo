@@ -76,35 +76,40 @@ const page = {
           "location": "Stockholm, Sweden",
           "fee": "SEK 140,000 \u2013 200,000 / Year",
           "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
+          "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
         },
         {
           "name": "KTH Royal Institute of Technology",
           "location": "Stockholm, Sweden",
           "fee": "SEK 120,000 \u2013 160,000 / Year",
           "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "Lund University",
           "location": "Lund, Sweden",
           "fee": "SEK 90,000 \u2013 150,000 / Year",
           "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
         },
         {
           "name": "Uppsala University",
           "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 145,000 / Year",
           "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
         },
         {
           "name": "Chalmers University of Technology",
           "location": "Gothenburg, Sweden",
           "fee": "SEK 130,000 \u2013 170,000 / Year",
           "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
         }
       ],
       "note": [
@@ -122,35 +127,40 @@ const page = {
           "location": "Stockholm, Sweden",
           "fee": "SEK 140,000 \u2013 200,000 / Year",
           "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
+          "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
         },
         {
           "name": "KTH Royal Institute of Technology",
           "location": "Stockholm, Sweden",
           "fee": "SEK 120,000 \u2013 160,000 / Year",
           "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "Lund University",
           "location": "Lund, Sweden",
           "fee": "SEK 90,000 \u2013 150,000 / Year",
           "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
         },
         {
           "name": "Uppsala University",
           "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 145,000 / Year",
           "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
         },
         {
           "name": "Chalmers University of Technology",
           "location": "Gothenburg, Sweden",
           "fee": "SEK 130,000 \u2013 170,000 / Year",
           "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
         }
       ],
       "note": [
@@ -184,35 +194,40 @@ const page = {
           "location": "Stockholm, Sweden",
           "fee": "SEK 140,000 \u2013 200,000 / Year",
           "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
+          "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
         },
         {
           "name": "KTH Royal Institute of Technology",
           "location": "Stockholm, Sweden",
           "fee": "SEK 120,000 \u2013 160,000 / Year",
           "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
           "name": "Lund University",
           "location": "Lund, Sweden",
           "fee": "SEK 90,000 \u2013 150,000 / Year",
           "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
         },
         {
           "name": "Uppsala University",
           "location": "Uppsala, Sweden",
           "fee": "SEK 90,000 \u2013 145,000 / Year",
           "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
         },
         {
           "name": "Chalmers University of Technology",
           "location": "Gothenburg, Sweden",
           "fee": "SEK 130,000 \u2013 170,000 / Year",
           "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
         }
       ],
       "note": [
@@ -226,25 +241,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited BBA in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. University of Gothenburg",
-          "location": "\\. University of Gothenburg, Sweden",
+          "name": "University of Gothenburg",
+          "location": "University of Gothenburg, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** Bachelor's Programme in Business and Economics * **Duration:** 3 years * **Tuition Fee:** SEK 291,000 (approximately \u20b927.65 lakh) * **Application Period for Autumn 2027:** 16 October 2026 \u2013 15 January 2027 ![][image1] Students should check the official programme page for the language of instruction, eligibility requirements, and application details for their chosen intake.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. J\u00f6nk\u00f6ping University",
-          "location": "\\. J\u00f6nk\u00f6ping University, Sweden",
+          "name": "J\u00f6nk\u00f6ping University",
+          "location": "J\u00f6nk\u00f6ping University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** Bachelor's Programme in International Management * **Duration:** 3 years * **Language:** English * **Total Tuition Fee:** SEK 360,000 (approximately \u20b934.20 lakh) * **Entry Requirements:** Applicants must meet the academic requirements, including the specified English, mathematics, and social studies prerequisites or accepted equivalents. ![][image2] J\u00f6nk\u00f6ping University's programme offers an international business and management focus. Applicants should check the official programme page for the relevant application route and deadlines.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Ume\u00e5 University",
-          "location": "\\. Ume\u00e5 University, Sweden",
+          "name": "Ume\u00e5 University",
+          "location": "Ume\u00e5 University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** International Business and Economics Programme * **Duration:** 3 years * **Total Tuition Fee:** SEK 289,800 (approximately \u20b927.53 lakh) The curriculum combines areas of business administration and economics. Students should confirm the language of instruction and admission requirements for the intended intake. **![][image3]** **Important:** Students must carefully check the language of instruction. The programme listing may be in Swedish, so applicants seeking an English-taught degree should confirm this directly with the university. *Currency conversion is for illustration only, using SEK 1 \u2248 \u20b99.50. Programme availability, tuition fees, language of instruction, and admission requirements may change by intake. Always refer to the official university website for updated information.*",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -554,25 +572,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. University of Gothenburg",
-      "location": "\\. University of Gothenburg, Sweden",
+      "name": "University of Gothenburg",
+      "location": "University of Gothenburg, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** Bachelor's Programme in Business and Economics * **Duration:** 3 years * **Tuition Fee:** SEK 291,000 (approximately \u20b927.65 lakh) * **Application Period for Autumn 2027:** 16 October 2026 \u2013 15 January 2027 ![][image1] Students should check the official programme page for the language of instruction, eligibility requirements, and application details for their chosen intake.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. J\u00f6nk\u00f6ping University",
-      "location": "\\. J\u00f6nk\u00f6ping University, Sweden",
+      "name": "J\u00f6nk\u00f6ping University",
+      "location": "J\u00f6nk\u00f6ping University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** Bachelor's Programme in International Management * **Duration:** 3 years * **Language:** English * **Total Tuition Fee:** SEK 360,000 (approximately \u20b934.20 lakh) * **Entry Requirements:** Applicants must meet the academic requirements, including the specified English, mathematics, and social studies prerequisites or accepted equivalents. ![][image2] J\u00f6nk\u00f6ping University's programme offers an international business and management focus. Applicants should check the official programme page for the relevant application route and deadlines.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Ume\u00e5 University",
-      "location": "\\. Ume\u00e5 University, Sweden",
+      "name": "Ume\u00e5 University",
+      "location": "Ume\u00e5 University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** International Business and Economics Programme * **Duration:** 3 years * **Total Tuition Fee:** SEK 289,800 (approximately \u20b927.53 lakh) The curriculum combines areas of business administration and economics. Students should confirm the language of instruction and admission requirements for the intended intake. **![][image3]** **Important:** Students must carefully check the language of instruction. The programme listing may be in Swedish, so applicants seeking an English-taught degree should confirm this directly with the university. *Currency conversion is for illustration only, using SEK 1 \u2248 \u20b99.50. Programme availability, tuition fees, language of instruction, and admission requirements may change by intake. Always refer to the official university website for updated information.*",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -608,6 +629,18 @@ export default function BBASweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

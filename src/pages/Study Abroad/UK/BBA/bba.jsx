@@ -778,97 +778,36 @@ const page = {
   ],
   "universities": [
     {
-      "name": "University of Liverpool - Management and associated courses..",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "Coventry University",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bba_Coventry_University-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_bba_Coventry_University-image3.png",
+      "desc": "Coventry University is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "University of Sussex - Business & Management Courses",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "University of Liverpool",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bba_University_of_Liverpool-image4.png",
+      "image": "/uploads/study_abroad/uk/uk_bba_University_of_Liverpool-image4.png",
+      "desc": "University of Liverpool is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "University of Strathclyde - Business and management courses.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
+      "name": "University of Strathclyde",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bba_University_of_Strathclyde-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_bba_University_of_Strathclyde-image2.png",
+      "desc": "University of Strathclyde is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "Coventry University - Undergraduate degrees in business management and associated fields.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying BBA in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "After Class 12, are Indian kids able to pursue a BBA in the UK?",
-      "a": "After Class 12, students who fulfill the academic and English language requirements of the university are eligible to apply to undergraduate business programs. Students should find out if the university of their choice offers a BBA or a similar bachelor's degree in business."
-    },
-    {
-      "q": "Does every university in the UK offer a Bachelor of Business Administration?",
-      "a": "No. Business-related courses, such as BA Business Management, BSc Business Management, or BA International Business, are offered by numerous UK universities. Visit the official course page to verify the precise qualification granted."
-    },
-    {
-      "q": "In the UK, how long does it take to finish a BBA?",
-      "a": "The length is determined by the specific program. In England, Wales, and Northern Ireland, many undergraduate business degrees need three years to complete. It may take longer to complete courses with foundation or placement years."
-    },
-    {
-      "q": "How much does a BBA program cost in the UK?",
-      "a": "International tuition costs for relevant undergraduate business courses can range from £13,000 to £25,000 annually, with certain colleges charging more, according to a general planning estimate. Additional costs include living expenses, travel, and visa-related fees. Always ask the university to confirm the precise cost."
-    },
-    {
-      "q": "After earning a BBA in the UK, what can I do?",
-      "a": "Entry-level positions in marketing, sales, business development, operations, human resources, administration, and allied sectors are available to graduates. If they fulfilll the prerequisites, they can also apply to postgraduate business programs. Current immigration regulations and individual circumstances determine employment and post-study opportunities."
-    },
-    {
-      "q": "How can I study abroad with the assistance of Edu Hawk Worldwide Consultancy?",
-      "a": "Students may plan their study abroad experience, organize their application materials, research appropriate universities, and comprehend admission requirements with the assistance of Edu Hawk Worldwide. Students should check with the appropriate official authorities on their academic, financial, immigration, and licensing needs."
+      "name": "University of Sussex",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_bba_University_of_Sussex-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_bba_University_of_Sussex-image1.png",
+      "desc": "University of Sussex is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
   ]
 };

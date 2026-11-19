@@ -678,81 +678,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "Universities to consider include:",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "University of Manchester - Provides business and marketing courses where you can learn about marketing strategy, consumer behavior and international business.",
-      "imgFile": null
+      "name": "University of Birmingham",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_marketing_management_University_of_Birmingham-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_marketing_management_University_of_Birmingham-image2.png",
+      "desc": "University of Birmingham is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "name": "University of Birmingham: Postgraduate courses in marketing and business education.",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "University of Leeds - Marketing and business degrees with emphasis on marketing strategy, research and consumer markets.",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying Marketing Management in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "Q1. Can Indian students take marketing management in the UK?**",
-      "a": "\"Yes. If you are an Indian student and you meet the academic and English language requirements of your chosen universities, then you can apply for undergraduate and postgraduate marketing management courses in the UK."
+      "name": "University of Leeds",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_marketing_management_University_of_Leeds-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_marketing_management_University_of_Leeds-image1.png",
+      "desc": "Undergraduate Eligibility Indian Students Generally are required to meet the following Must have completed class 12 from any recognized education board."
     },
     {
-      "q": "Q2. What is the duration of a Marketing Management course in the UK?**",
-      "a": "Most undergraduate marketing degrees are 3 years long. A postgraduate master's is typically one year full-time study."
-    },
-    {
-      "q": "**Q3. What are the best courses on Marketing Management in the UK?",
-      "a": "Popular options include MSc Marketing Management, MSc Digital Marketing, MSc International Marketing, MSc Strategic Marketing, MSc Brand Management, BA/BSc Marketing programs."
-    },
-    {
-      "q": "**Q4. Do I need IELTS for Marketing Management in the UK?**",
-      "a": "At many universities you will often be required to have a certain level of proficiency in the English language. IELTS is an accepted alternative. \" Depending on the university's policy, it may accept other tests or alternative evidence."
-    },
-    {
-      "q": "Q5. Marketing Management in the UK after BCom or BBA?**",
-      "a": "Yeah. Students with a BCom, BBA or other related bachelor's degree may apply for suitable postgraduate marketing programs provided they meet university admission criteria."
-    },
-    {
-      "q": "How does Edu Hawk Worldwide Consultancy help me to study abroad?",
-      "a": "Choosing the right university and marketing management program in the UK is a detailed process. Students need to compare the courses offered, understand the admission requirements, evaluate the tuition fees and prepare their applications. Edu Hawk Worldwide Consultancy can help students in planning for study abroad by helping them know the suitable universities, eligibility criteria, prepare the application documents and plan the next steps."
+      "name": "University of Manchester",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_marketing_management_University_of_Manchester-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_marketing_management_University_of_Manchester-image3.png",
+      "desc": "Proficiency in English language (IELTS, TOEFL or equivalent accepted qualification if necessary). Personal statement: Academic interests and reasons for selecting the course If there are any, the university sets additional admission requirements. If students do not have the grades for direct entry they may be able to study a foundation course instead. Postgraduate Entry Requirements Applicants for MSc in Marketing Management should normally have:"
     }
   ]
 };

@@ -155,25 +155,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Law in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. Uppsala University",
-          "location": "\\. Uppsala University, Sweden",
+          "name": "Uppsala University",
+          "location": "Uppsala University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Uppsala University offers a professional Law Programme worth 270 credits, normally completed over 4.5 years. The programme is taught in Swedish, so applicants must meet the required Swedish-language proficiency. ![][image1] The university also offers the **Master's Programme in Investment Treaty Arbitration**, an English-taught postgraduate programme for eligible law graduates. It focuses on international investment law and the resolution of investment disputes.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Stockholm University",
-          "location": "\\. Stockholm University, Sweden",
+          "name": "Stockholm University",
+          "location": "Stockholm University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Stockholm University offers specialised English-taught master's programmes, including: * LL.M. in International Commercial Arbitration Law * LL.M. in European Intellectual Property Law ![][image2] These programmes are designed for students with a qualifying legal education who want to develop specialist knowledge in international commercial disputes or intellectual property law.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
         },
         {
-          "name": "\\. Swedish Defence University",
-          "location": "\\. Swedish Defence University, Sweden",
+          "name": "Swedish Defence University",
+          "location": "Swedish Defence University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The Swedish Defence University offers a one-year **Master's Programme in International Operational Law**. It covers international law relating to armed conflict, military operations, human rights and peace operations. Applicants must hold a relevant legal qualification and satisfy the programme-specific academic and admission requirements. ![][image3] **Important:** Programme availability, admission criteria, teaching language and tuition fees can change. Always confirm the latest information through the official university programme pages.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -490,25 +493,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. Uppsala University",
-      "location": "\\. Uppsala University, Sweden",
+      "name": "Uppsala University",
+      "location": "Uppsala University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Uppsala University offers a professional Law Programme worth 270 credits, normally completed over 4.5 years. The programme is taught in Swedish, so applicants must meet the required Swedish-language proficiency. ![][image1] The university also offers the **Master's Programme in Investment Treaty Arbitration**, an English-taught postgraduate programme for eligible law graduates. It focuses on international investment law and the resolution of investment disputes.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Stockholm University",
-      "location": "\\. Stockholm University, Sweden",
+      "name": "Stockholm University",
+      "location": "Stockholm University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Stockholm University offers specialised English-taught master's programmes, including: * LL.M. in International Commercial Arbitration Law * LL.M. in European Intellectual Property Law ![][image2] These programmes are designed for students with a qualifying legal education who want to develop specialist knowledge in international commercial disputes or intellectual property law.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
     },
     {
-      "name": "\\. Swedish Defence University",
-      "location": "\\. Swedish Defence University, Sweden",
+      "name": "Swedish Defence University",
+      "location": "Swedish Defence University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The Swedish Defence University offers a one-year **Master's Programme in International Operational Law**. It covers international law relating to armed conflict, military operations, human rights and peace operations. Applicants must hold a relevant legal qualification and satisfy the programme-specific academic and admission requirements. ![][image3] **Important:** Programme availability, admission criteria, teaching language and tuition fees can change. Always confirm the latest information through the official university programme pages.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -544,6 +550,18 @@ export default function LawSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

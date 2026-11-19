@@ -136,25 +136,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Executive MBA in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. Stockholm School of Economics",
-          "location": "\\. Stockholm School of Economics, Sweden",
+          "name": "Stockholm School of Economics",
+          "location": "Stockholm School of Economics, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** SSE MBA Executive Format * **Duration:** 18 months * **Study Mode:** Part-time * **Language:** English * **Start Date Listed:** December 2026 * **Tuition Fee:** SEK 645,000 (before applicable VAT) * **Approximate Tuition Fee:** \u20b961.28 lakh (before VAT) ![][image1] The programme focuses on general management and leadership development for experienced professionals. It also includes additional certificate opportunities alongside the MBA degree. Applicants should review the official programme information for admission requirements, application dates, and applicable tax conditions.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. University of Gothenburg",
-          "location": "\\. University of Gothenburg, Sweden",
+          "name": "University of Gothenburg",
+          "location": "University of Gothenburg, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** Gothenburg Executive MBA * **Duration:** 21 months * **Study Mode:** Part-time * **Tuition Fee for the 2026\u20132028 Programme:** SEK 545,000 (excluding VAT) * **Approximate Tuition Fee:** \u20b951.78 lakh (before VAT) ![][image2] The programme is designed for managers working in private and public organisations. It incorporates practical learning and international study modules. Applicants should contact the provider to confirm the current intake, teaching language, schedule, and admission arrangements.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. Stockholm University",
-          "location": "\\. Stockholm University, Sweden",
+          "name": "Stockholm University",
+          "location": "Stockholm University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "* **Programme:** Executive MBA * **Duration:** 21 months * **Study Mode:** Part-time executive learning * **Programme Fee:** SEK 489,000 (excluding VAT) * **Approximate Tuition Fee:** \u20b946.46 lakh (before VAT) ![][image3] The programme leads to the award of a **Master of Science in Business Administration**. It is taught mainly in Swedish, with some English-language elements. According to the programme information provided, the fee is paid by the employer or organisation rather than the individual participant. Applicants should confirm the current sponsorship and payment conditions directly with the institution. **Important:** Executive MBA programmes are different from standard full-time MBA or MSc degrees. They are generally designed for professionals with substantial work experience and may have different admission criteria, teaching languages, fee-payment arrangements, and immigration considerations.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -448,25 +451,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. Stockholm School of Economics",
-      "location": "\\. Stockholm School of Economics, Sweden",
+      "name": "Stockholm School of Economics",
+      "location": "Stockholm School of Economics, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** SSE MBA Executive Format * **Duration:** 18 months * **Study Mode:** Part-time * **Language:** English * **Start Date Listed:** December 2026 * **Tuition Fee:** SEK 645,000 (before applicable VAT) * **Approximate Tuition Fee:** \u20b961.28 lakh (before VAT) ![][image1] The programme focuses on general management and leadership development for experienced professionals. It also includes additional certificate opportunities alongside the MBA degree. Applicants should review the official programme information for admission requirements, application dates, and applicable tax conditions.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. University of Gothenburg",
-      "location": "\\. University of Gothenburg, Sweden",
+      "name": "University of Gothenburg",
+      "location": "University of Gothenburg, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** Gothenburg Executive MBA * **Duration:** 21 months * **Study Mode:** Part-time * **Tuition Fee for the 2026\u20132028 Programme:** SEK 545,000 (excluding VAT) * **Approximate Tuition Fee:** \u20b951.78 lakh (before VAT) ![][image2] The programme is designed for managers working in private and public organisations. It incorporates practical learning and international study modules. Applicants should contact the provider to confirm the current intake, teaching language, schedule, and admission arrangements.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. Stockholm University",
-      "location": "\\. Stockholm University, Sweden",
+      "name": "Stockholm University",
+      "location": "Stockholm University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "* **Programme:** Executive MBA * **Duration:** 21 months * **Study Mode:** Part-time executive learning * **Programme Fee:** SEK 489,000 (excluding VAT) * **Approximate Tuition Fee:** \u20b946.46 lakh (before VAT) ![][image3] The programme leads to the award of a **Master of Science in Business Administration**. It is taught mainly in Swedish, with some English-language elements. According to the programme information provided, the fee is paid by the employer or organisation rather than the individual participant. Applicants should confirm the current sponsorship and payment conditions directly with the institution. **Important:** Executive MBA programmes are different from standard full-time MBA or MSc degrees. They are generally designed for professionals with substantial work experience and may have different admission criteria, teaching languages, fee-payment arrangements, and immigration considerations.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -502,6 +508,18 @@ export default function ExecutiveMBASweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

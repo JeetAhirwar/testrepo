@@ -153,25 +153,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited MBA in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. Stockholm School of Economics (SSE)",
-          "location": "\\. Stockholm School of Economics (SSE), Sweden",
+          "name": "Stockholm School of Economics (SSE)",
+          "location": "Stockholm School of Economics (SSE), Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "Stockholm School of Economics is known for its Executive MBA pathway for experienced professionals. The programme is part-time, taught in English and runs for 18 months. * **Programme:** Executive MBA * **Duration:** 18 months * **Tuition fee for December 2026 intake:** SEK 645,000 if paid in full before the programme starts. * **Installment payment option:** SEK 660,000. * **Official website:** Stockholm School of Economics \u2013 SSE MBA. ![][image1] The published fee is exclusive of VAT. Applicants should confirm the applicable VAT treatment and any additional programme expenses with the school.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
         },
         {
-          "name": "\\. J\u00f6nk\u00f6ping University",
-          "location": "\\. J\u00f6nk\u00f6ping University, Sweden",
+          "name": "J\u00f6nk\u00f6ping University",
+          "location": "J\u00f6nk\u00f6ping University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "J\u00f6nk\u00f6ping University offers a bachelor's programme in International Management and master's programmes in areas such as Entrepreneurship and Innovation, Strategic Marketing, and Leading Change, Organisations and People. Selected programme fees include: * **Bachelor's in International Management:** SEK 360,000 total tuition. * **Master's in Entrepreneurship and Innovation:** SEK 146,000 total tuition. * **Master's in Leading Change, Organisations and People:** SEK 288,000 total tuition. These programmes provide business and management education but should not be confused with an MBA. * **![][image2]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         },
         {
-          "name": "\\. University of Gothenburg",
-          "location": "\\. University of Gothenburg, Sweden",
+          "name": "University of Gothenburg",
+          "location": "University of Gothenburg, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The University of Gothenburg is an option for students considering undergraduate business and economics or postgraduate management studies. Its School of Business, Economics and Law offers a **Bachelor's Programme in Business and Economics** and an **Executive MBA** for professionals. **![][image3]** Students comparing the **Top Universities for MBA in Sweden** should check whether the programme is an MBA, Executive MBA or academic master's degree. They should also compare professional experience requirements, teaching format, tuition fees and programme structure.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -579,25 +582,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. Stockholm School of Economics (SSE)",
-      "location": "\\. Stockholm School of Economics (SSE), Sweden",
+      "name": "Stockholm School of Economics (SSE)",
+      "location": "Stockholm School of Economics (SSE), Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "Stockholm School of Economics is known for its Executive MBA pathway for experienced professionals. The programme is part-time, taught in English and runs for 18 months. * **Programme:** Executive MBA * **Duration:** 18 months * **Tuition fee for December 2026 intake:** SEK 645,000 if paid in full before the programme starts. * **Installment payment option:** SEK 660,000. * **Official website:** Stockholm School of Economics \u2013 SSE MBA. ![][image1] The published fee is exclusive of VAT. Applicants should confirm the applicable VAT treatment and any additional programme expenses with the school.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
     },
     {
-      "name": "\\. J\u00f6nk\u00f6ping University",
-      "location": "\\. J\u00f6nk\u00f6ping University, Sweden",
+      "name": "J\u00f6nk\u00f6ping University",
+      "location": "J\u00f6nk\u00f6ping University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "J\u00f6nk\u00f6ping University offers a bachelor's programme in International Management and master's programmes in areas such as Entrepreneurship and Innovation, Strategic Marketing, and Leading Change, Organisations and People. Selected programme fees include: * **Bachelor's in International Management:** SEK 360,000 total tuition. * **Master's in Entrepreneurship and Innovation:** SEK 146,000 total tuition. * **Master's in Leading Change, Organisations and People:** SEK 288,000 total tuition. These programmes provide business and management education but should not be confused with an MBA. * **![][image2]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     },
     {
-      "name": "\\. University of Gothenburg",
-      "location": "\\. University of Gothenburg, Sweden",
+      "name": "University of Gothenburg",
+      "location": "University of Gothenburg, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The University of Gothenburg is an option for students considering undergraduate business and economics or postgraduate management studies. Its School of Business, Economics and Law offers a **Bachelor's Programme in Business and Economics** and an **Executive MBA** for professionals. **![][image3]** Students comparing the **Top Universities for MBA in Sweden** should check whether the programme is an MBA, Executive MBA or academic master's degree. They should also compare professional experience requirements, teaching format, tuition fees and programme structure.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -633,6 +639,18 @@ export default function MBASweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,

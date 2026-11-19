@@ -519,73 +519,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "Here are some colleges and business schools you might want to check out:",
-      "city": "United Kingdom",
-      "rank": "Top Ranked UK University",
-      "fee": "£16,000 - £35,000 / yr",
-      "desc": "The Judge Business School at the University of Cambridge - provides an Executive MBA with an emphasis on global management, leadership, business strategy and innovation. The Alliance Manchester Business School offers an Executive MBA program, aimed at enhancing management proficiency and critical decision-making skills. University of Reading Henley Business School - Executive MBA courses focusing on professional development, management and leadership.",
-      "imgFile": null
-    }
-  ],
-  "table": {
-    "title": "Estimated Cost of Studying Executive MBA in the UK (Tuition & Living)",
-    "headers": [
-      "Category / Level",
-      "Estimated Cost (£ / GBP)",
-      "Details / Scope"
-    ],
-    "rows": [
-      [
-        "Undergraduate Degree (Annual)",
-        "£14,000 – £28,000 / year",
-        "Varies by university ranking, laboratory access, and course type"
-      ],
-      [
-        "Postgraduate Degree (Annual)",
-        "£16,000 – £35,000 / year",
-        "1-year intensive master's program or research dissertation"
-      ],
-      [
-        "Monthly Living Costs (Outside London)",
-        "£900 – £1,100 / month",
-        "Includes private/student accommodation, groceries, and utilities"
-      ],
-      [
-        "Monthly Living Costs (London)",
-        "£1,250 – £1,450 / month",
-        "Mandated UKVI maintenance requirement for London study"
-      ],
-      [
-        "Health Surcharge (IHS)",
-        "£776 / year",
-        "Access to UK National Health Service (NHS) for student visa holders"
-      ]
-    ]
-  },
-  "faqs": [
-    {
-      "q": "Q1. How long does an Executive MBA last in the UK?",
-      "a": "Most of Executive MBA programs are about 18 – 24 months long, depending on the school and the way you study, some may be done sooner or later."
+      "name": "The Alliance Manchester Business School",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_executive_mba_The_Alliance_Manchester_Business_School-image1.png",
+      "image": "/uploads/study_abroad/uk/uk_executive_mba_The_Alliance_Manchester_Business_School-image1.png",
+      "desc": "The Alliance Manchester Business School is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q2. How many years of work experience do you need for an Executive MBA in the UK?",
-      "a": "Most programs require 5-10 years of professional experience and often seek those with leadership or managerial experience. The business school specifies the exact prerequisite."
+      "name": "University of Cambridge",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_executive_mba_University_of_Cambridge-image3.png",
+      "image": "/uploads/study_abroad/uk/uk_executive_mba_University_of_Cambridge-image3.png",
+      "desc": "University of Cambridge is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     },
     {
-      "q": "Q3. **How much does an Executive MBA in the UK cost?",
-      "a": "Tuition fees generally range from £25,000 to £100,000 or more. Students should save money for travel, lodging and other expenses as the tuition might be higher at top business schools."
-    },
-    {
-      "q": "Q4. Can I study for an Executive MBA in the UK and work full time?",
-      "a": "Yes. Many Executive MBA programs are targeted at working professionals and offer part-time, weekend, modular or blended learning options. But students should check the workload and attendance requirements before enrolling."
-    },
-    {
-      "q": "Q5. Is it worth studying an executive MBA to advance your career?",
-      "a": "An Executive MBA can help professionals develop their leadership skills, expand their business knowledge, enhance their professional network and prepare for senior positions. The value of an Executive MBA depends on career goals, program quality, cost, prior experience and the professional use of the qualification."
-    },
-    {
-      "q": "How can I study abroad through Edu Hawk Worldwide Consultancy?",
-      "a": "Edu Hawk Worldwide assists students in planning their study abroad experience, organizing their application materials, researching suitable universities and understanding admission requirements. Students should check with the appropriate official authorities for their academic, financial, immigration and licensing needs."
+      "name": "University of Reading Henley Business School",
+      "location": "United Kingdom",
+      "fee": "£15,000 – £38,000 / Year",
+      "img": "/uploads/study_abroad/uk/uk_executive_mba_University_of_Reading_Henley_Business_School-image2.png",
+      "image": "/uploads/study_abroad/uk/uk_executive_mba_University_of_Reading_Henley_Business_School-image2.png",
+      "desc": "University of Reading Henley Business School is one of the United Kingdom's leading institutions offering globally recognized degrees and world-class academic excellence."
     }
   ]
 };

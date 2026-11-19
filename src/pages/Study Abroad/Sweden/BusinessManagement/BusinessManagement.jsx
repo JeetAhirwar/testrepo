@@ -148,25 +148,28 @@ const page = {
       "lead": "Explore leading universities and institutions in Sweden offering accredited Business Management in Sweden programmes, world-class research facilities, and international student support.",
       "unis_data": [
         {
-          "name": "\\. University of Gothenburg",
-          "location": "\\. University of Gothenburg, Sweden",
+          "name": "University of Gothenburg",
+          "location": "University of Gothenburg, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The University of Gothenburg offers a **Bachelor of Science in Business and Economics** and a **Master of Science in Management**. The master's programme is taught in English and is listed for Autumn 2027\\. **Master's tuition fee:** SEK 194,000 for the complete programme for fee-paying students. **![][image1]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/university_of_gothenburg.webp",
+          "img": "/uploads/study_abroad/sweden/university_of_gothenburg.webp"
         },
         {
-          "name": "\\. Stockholm School of Economics",
-          "location": "\\. Stockholm School of Economics, Sweden",
+          "name": "Stockholm School of Economics",
+          "location": "Stockholm School of Economics, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "The Stockholm School of Economics offers a three-year **Bachelor's Programme in Business and Economics**, taught entirely in English. It provides a foundation in business, economics, finance, innovation and entrepreneurship. * **![][image2]**",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
         },
         {
-          "name": "\\. M\u00e4lardalen University",
-          "location": "\\. M\u00e4lardalen University, Sweden",
+          "name": "M\u00e4lardalen University",
+          "location": "M\u00e4lardalen University, Sweden",
           "fee": "SEK 90,000 \u2013 160,000 / Year",
           "desc": "M\u00e4lardalen University offers an English-taught **Bachelor's Programme in International Business Management**, focusing on business administration in an international context. **![][image3]** Students comparing the **Best Universities for Business Management in Sweden** should check the exact degree title, programme language, specialisations, tuition fees and admission requirements for their intended intake.",
-          "img_var": "null"
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
         }
       ],
       "note": [
@@ -522,25 +525,28 @@ const page = {
   ],
   "universities": [
     {
-      "name": "\\. University of Gothenburg",
-      "location": "\\. University of Gothenburg, Sweden",
+      "name": "University of Gothenburg",
+      "location": "University of Gothenburg, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The University of Gothenburg offers a **Bachelor of Science in Business and Economics** and a **Master of Science in Management**. The master's programme is taught in English and is listed for Autumn 2027\\. **Master's tuition fee:** SEK 194,000 for the complete programme for fee-paying students. **![][image1]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/university_of_gothenburg.webp",
+          "img": "/uploads/study_abroad/sweden/university_of_gothenburg.webp"
     },
     {
-      "name": "\\. Stockholm School of Economics",
-      "location": "\\. Stockholm School of Economics, Sweden",
+      "name": "Stockholm School of Economics",
+      "location": "Stockholm School of Economics, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "The Stockholm School of Economics offers a three-year **Bachelor's Programme in Business and Economics**, taught entirely in English. It provides a foundation in business, economics, finance, innovation and entrepreneurship. * **![][image2]**",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png"
     },
     {
-      "name": "\\. M\u00e4lardalen University",
-      "location": "\\. M\u00e4lardalen University, Sweden",
+      "name": "M\u00e4lardalen University",
+      "location": "M\u00e4lardalen University, Sweden",
       "fee": "SEK 90,000 \u2013 160,000 / Year",
       "desc": "M\u00e4lardalen University offers an English-taught **Bachelor's Programme in International Business Management**, focusing on business administration in an international context. **![][image3]** Students comparing the **Best Universities for Business Management in Sweden** should check the exact degree title, programme language, specialisations, tuition fees and admission requirements for their intended intake.",
-      "img_var": "null"
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
     }
   ],
   "faqs": [
@@ -576,6 +582,18 @@ export default function BusinessManagementSweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,
