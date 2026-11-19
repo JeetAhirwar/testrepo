@@ -19,6 +19,7 @@
 | **NAV-001** | Country Hub Routes (`/study-abroad/:country`) | UI/UX / Routing | Medium | **Verified** | 14 country base routes added in `routes.jsx` |
 | **CONTENT-001**| MBBS in Armenia (`/mbbs-abroad/armenia`) | SEO / Technical | Low | **Verified** | Canonical normalized; 301 permanent redirect preserved |
 | **CODE-001** | USA Course Pages & `CoursePageKit.jsx` | Technical / QA | Medium | **Verified** | Undeclared props removed; 0 ESLint errors project-wide |
+| **IMG-002** | Sweden & UK Study Abroad Course Pages (53 pages) | Image / CMS | High | **Verified** | Campus images bound across 39 Sweden & 14 UK pages; global fallback safety net added |
 
 ---
 
@@ -124,3 +125,24 @@
 - **Root Cause:** Unused prop checks and unescaped character class hyphens.
 - **Recommended Fix:** Clean undeclared prop references, normalize regex patterns, and use safe array validation for FAQs.
 - **Status:** **Verified** (Verified with `npx eslint src/ --quiet`; exit code 0, 0 errors).
+
+---
+
+### Issue ID: IMG-002
+- **Page Name:** Sweden & UK Study Abroad Course Pages (53 pages, e.g., `/study-abroad/sweden/biotechnology`, `/study-abroad/sweden/architecture`, `/study-abroad/uk/architecture`)
+- **Live URL:** https://eduhawkwebsite.vercel.app/study-abroad/sweden/biotechnology
+- **Issue Category:** Image / CMS
+- **Severity:** High
+- **Problem Description:** On 39 Sweden pages and 14 UK pages, university cards in the "Top Universities" / "Best Universities" section were displaying without campus photography, either showing blank solid gradient fallback cards (`<SolidUniversityCard />`) or failing to resolve images.
+- **Expected Behavior:** Every university card in the university grid should feature an authentic, high-resolution campus photo (e.g. Karolinska Institutet, KTH, Lund, Chalmers, Uppsala, Oxford, Cambridge, Imperial College, etc.).
+- **Actual Behavior:** In Sweden pages, `"img_var": "null"` was scaffolded into local JSON and JSX data and CMS university bindings were omitted from `dynamicPage`. In UK pages, static definition blocks lacked explicit image attributes.
+- **Root Cause:** 
+  1. Scaffolding artifact where `"img_var": "null"` was output instead of photo references.
+  2. `AbroadCoursePage` checked only `s.unis` and did not recognize `s.unis_data`.
+  3. `UniversityGrid` rendered a solid card whenever `imgSrc` was missing or `"null"` without attempting keyword-based campus image resolution.
+- **Recommended Fix:** 
+  1. Add `resolveCampusFallback` inside `CoursePageKit.jsx` mapped to authentic campus photos.
+  2. Support both `s.unis` and `s.unis_data` in `AbroadCoursePage`.
+  3. Update all 39 Sweden pages to bind `cmsData.universities` and `cmsData.sections` with explicit image paths.
+  4. Update all 14 UK pages with explicit campus images.
+- **Status:** **Verified** (Audit across all Study Abroad pages confirmed 0 missing image issues; verified on local dev server and committed to `audit-remediation`).
