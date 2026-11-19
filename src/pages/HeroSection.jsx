@@ -836,7 +836,13 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-8">
-              <Link to="/landingpage" className="inline-block bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-10 py-4 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto cursor-pointer">Book Free Counselling →</Link>
+              <button
+                type="button"
+                onClick={() => setIsOpen(true)}
+                className="inline-block bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-10 py-4 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base w-full sm:w-auto cursor-pointer"
+              >
+                Book Free Counselling →
+              </button>
 
               <div
                 ref={exploreMenuRef}

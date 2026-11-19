@@ -496,7 +496,7 @@ export default function About() {
 
               <button
                 type="button"
-                onClick={() => navigate("/landingpage")}
+                onClick={() => navigate("/contact")}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md px-8 py-4 text-sm sm:text-base font-bold text-white transition-all duration-300 shadow-lg cursor-pointer w-full sm:w-auto"
               >
                 <span>Book Free Counselling →</span>

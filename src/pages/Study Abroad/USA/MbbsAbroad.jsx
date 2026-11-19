@@ -44,7 +44,7 @@ const HERO_SLIDES = [
     highlight: "Your Gateway to Premier Overseas Education",
     desc: "Compare accredited medical colleges in Russia, Georgia, Kazakhstan, and premier STEM & Business universities across the USA & Finland. 100% transparent fee structures & NMC compliance.",
     cta: "Book Free 1-on-1 Counselling",
-    ctaLink: "/landingpage",
+    ctaLink: "/contact",
   },
   {
     image: heroRussia,
@@ -378,7 +378,7 @@ const MbbsAbroad = () => {
                 {/* Hero Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5">
                   <Link
-                    to={slide.ctaLink || "/landingpage"}
+                    to={slide.ctaLink || "/contact"}
                     className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-8 py-3.5 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm w-full sm:w-auto cursor-pointer"
                   >
                     <span>{slide.cta}</span>
@@ -739,7 +739,7 @@ const MbbsAbroad = () => {
 
               <div className="space-y-3">
                 <Link
-                  to="/landingpage"
+                  to="/contact"
                   className="w-full py-3.5 px-5 rounded-xl font-bold text-sm text-center bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
                 >
                   <span>Book Free Eligibility Check</span>
@@ -892,7 +892,7 @@ const MbbsAbroad = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
                 <Link
-                  to="/landingpage"
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-8 py-3.5 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm w-full sm:w-auto cursor-pointer"
                 >
                   <span>Book Free Consultation</span>
