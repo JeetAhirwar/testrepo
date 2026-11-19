@@ -709,9 +709,6 @@ const Kyrgyzstan = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating Enroll Button */}
-      </div>
     </div>
     </>
   );
