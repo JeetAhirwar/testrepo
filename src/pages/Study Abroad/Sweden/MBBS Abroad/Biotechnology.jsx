@@ -130,41 +130,88 @@ const page = {
       "eyebrow": "Top Institutions",
       "title": "Best Universities for Biotechnology in Sweden",
       "lead": "Explore leading universities and institutions in Sweden offering accredited Biotechnology in Sweden programmes, world-class research facilities, and international student support.",
-      "unis_data": [
+      "unis": [
         {
           "name": "Karolinska Institutet",
           "location": "Stockholm, Sweden",
-          "fee": "SEK 140,000 \u2013 200,000 / Year",
+          "fee": "SEK 140,000 – 200,000 / Year",
           "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
-          "img_var": "null"
+          "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
+          "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
         },
         {
           "name": "KTH Royal Institute of Technology",
           "location": "Stockholm, Sweden",
-          "fee": "SEK 120,000 \u2013 160,000 / Year",
+          "fee": "SEK 120,000 – 160,000 / Year",
           "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
-          "img_var": "null"
+          "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image1.png",
+          "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image1.png"
         },
         {
           "name": "Lund University",
           "location": "Lund, Sweden",
-          "fee": "SEK 90,000 \u2013 150,000 / Year",
+          "fee": "SEK 90,000 – 150,000 / Year",
           "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
-          "img_var": "null"
+          "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png",
+          "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png"
         },
         {
           "name": "Uppsala University",
           "location": "Uppsala, Sweden",
-          "fee": "SEK 90,000 \u2013 145,000 / Year",
+          "fee": "SEK 90,000 – 145,000 / Year",
           "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
-          "img_var": "null"
+          "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png",
+          "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png"
         },
         {
           "name": "Chalmers University of Technology",
           "location": "Gothenburg, Sweden",
-          "fee": "SEK 130,000 \u2013 170,000 / Year",
+          "fee": "SEK 130,000 – 170,000 / Year",
           "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
-          "img_var": "null"
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
+        }
+      ],
+      "unis_data": [
+        {
+          "name": "Karolinska Institutet",
+          "location": "Stockholm, Sweden",
+          "fee": "SEK 140,000 – 200,000 / Year",
+          "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
+          "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
+          "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
+        },
+        {
+          "name": "KTH Royal Institute of Technology",
+          "location": "Stockholm, Sweden",
+          "fee": "SEK 120,000 – 160,000 / Year",
+          "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
+          "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image1.png",
+          "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image1.png"
+        },
+        {
+          "name": "Lund University",
+          "location": "Lund, Sweden",
+          "fee": "SEK 90,000 – 150,000 / Year",
+          "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
+          "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png",
+          "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png"
+        },
+        {
+          "name": "Uppsala University",
+          "location": "Uppsala, Sweden",
+          "fee": "SEK 90,000 – 145,000 / Year",
+          "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
+          "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png",
+          "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png"
+        },
+        {
+          "name": "Chalmers University of Technology",
+          "location": "Gothenburg, Sweden",
+          "fee": "SEK 130,000 – 170,000 / Year",
+          "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
+          "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+          "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
         }
       ],
       "note": [
@@ -434,37 +481,42 @@ const page = {
     {
       "name": "Karolinska Institutet",
       "location": "Stockholm, Sweden",
-      "fee": "SEK 140,000 \u2013 200,000 / Year",
+      "fee": "SEK 140,000 – 200,000 / Year",
       "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
-      "img_var": "null"
+      "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
+      "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
     },
     {
       "name": "KTH Royal Institute of Technology",
       "location": "Stockholm, Sweden",
-      "fee": "SEK 120,000 \u2013 160,000 / Year",
+      "fee": "SEK 120,000 – 160,000 / Year",
       "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
-      "img_var": "null"
+      "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image1.png",
+      "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image1.png"
     },
     {
       "name": "Lund University",
       "location": "Lund, Sweden",
-      "fee": "SEK 90,000 \u2013 150,000 / Year",
+      "fee": "SEK 90,000 – 150,000 / Year",
       "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
-      "img_var": "null"
+      "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png",
+      "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png"
     },
     {
       "name": "Uppsala University",
       "location": "Uppsala, Sweden",
-      "fee": "SEK 90,000 \u2013 145,000 / Year",
+      "fee": "SEK 90,000 – 145,000 / Year",
       "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
-      "img_var": "null"
+      "img": "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png",
+      "image": "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png"
     },
     {
       "name": "Chalmers University of Technology",
       "location": "Gothenburg, Sweden",
-      "fee": "SEK 130,000 \u2013 170,000 / Year",
+      "fee": "SEK 130,000 – 170,000 / Year",
       "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
-      "img_var": "null"
+      "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
+      "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
     }
   ],
   "faqs": [
@@ -500,6 +552,18 @@ export default function BiotechnologySweden() {
       .filter(s => s.label && s.value).length > 0
       ? (cmsData.stats || []).map(s => ({ label: s.l || s.label, value: s.n || s.value }))
       : page.stats,
+    universities: (cmsData.universities && cmsData.universities.length > 0)
+      ? cmsData.universities
+      : page.universities,
+    sections: (page.sections || []).map((sec) => {
+      if (sec.slot === "universities" && cmsData.universities && cmsData.universities.length > 0) {
+        return {
+          ...sec,
+          unis: cmsData.universities,
+        };
+      }
+      return sec;
+    }),
     seo: {
       title: cmsData.seo?.title || page.title,
       description: cmsData.seo?.description || page.description,
