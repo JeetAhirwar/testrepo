@@ -66,57 +66,6 @@ const page = {
  ],
  "sections": [
  {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Those with a master\u2019s degree can specialize in mechanical systems, automotive technology, industrial automation, energy systems, and advance...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Mechanical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
- {
  "slot": "eligibility",
  "eyebrow": "Eligibility Criteria",
  "title": "Main benefits include:",
@@ -124,64 +73,13 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Higher Technical Education: Study the latest engineering concepts and design techniques.",
- "## Research and Innovation: Research into simulation, robotics, manufacturing and sustainable engineering.",
- "## Industry Exposure: Gain skills relevant to automotive, aerospace, energy and manufacturing industries.",
- "## International Learning Environment: Learn alongside students from all over the world.",
- "## Career Development Prepare for specialist engineering, research and technical leadership roles."
+ "Higher Technical Education: Study the latest engineering concepts and design techniques.",
+ "Research and Innovation: Research into simulation, robotics, manufacturing and sustainable engineering.",
+ "Industry Exposure: Gain skills relevant to automotive, aerospace, energy and manufacturing industries.",
+ "International Learning Environment: Learn alongside students from all over the world.",
+ "Career Development Prepare for specialist engineering, research and technical leadership roles."
  ]
  }
- ]
- },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "For international applicants meeting the entry requirements, Sweden is a good option since many universities offer master\u2019s programs in engi...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Mechanical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
  ]
  },
  {
@@ -192,68 +90,17 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Machine Design: Product development, design optimization, mechanical components.",
- "## Automotive Engineering: Vehicle systems, vehicle dynamics and electric mobility.",
- "## Manufacturing Engineering: Production systems, industrial processes and quality control.",
- "## Thermal Engineering: Heat Transfer, Energy Conversion, Thermodynamics.",
- "## Fluid Mechanics: Flow of fluids, computational modeling and hydraulic systems.",
- "## Robotics & Automation Intelligent machines, control systems, industrial automation.",
- "## Materials Engineering: Material selection and properties & performance. Mechanical properties.",
- "## Sustainable Energy Engineering: Energy Efficiency, Renewable Technologies and Sustainable Systems.",
- "## Computational Mechanics: Numerical Modeling, Simulation and Engineering Analysis."
+ "Machine Design: Product development, design optimization, mechanical components.",
+ "Automotive Engineering: Vehicle systems, vehicle dynamics and electric mobility.",
+ "Manufacturing Engineering: Production systems, industrial processes and quality control.",
+ "Thermal Engineering: Heat Transfer, Energy Conversion, Thermodynamics.",
+ "Fluid Mechanics: Flow of fluids, computational modeling and hydraulic systems.",
+ "Robotics & Automation Intelligent machines, control systems, industrial automation.",
+ "Materials Engineering: Material selection and properties & performance. Mechanical properties.",
+ "Sustainable Energy Engineering: Energy Efficiency, Renewable Technologies and Sustainable Systems.",
+ "Computational Mechanics: Numerical Modeling, Simulation and Engineering Analysis."
  ]
  }
- ]
- },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Top Universities for Mechanical Engineering in Sweden",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Mechanical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
  ]
  },
  {
@@ -371,7 +218,7 @@ const page = {
  {
  "t": "p",
  "items": [
- "The main international application period for Autumn 2027 entry runs from 15 January 2027 to 16 October 2026 The deadline for supporting documents and the application fee is 1 February 2027 Admission results are scheduled for 1 April 2027\.",
+ "The main international application period for Autumn 2027 entry runs from 15 January 2027 to 16 October 2026 The deadline for supporting documents and the application fee is 1 February 2027 Admission results are scheduled for 1 April 2027.",
  "Official application portal: University Admissions Sweden",
  "Those who wish to apply for Mechanical Engineering in Sweden should carefully follow the official application instructions and deadlines to be considered for admission.",
  "**8 Additional Studies and Professional Development**",

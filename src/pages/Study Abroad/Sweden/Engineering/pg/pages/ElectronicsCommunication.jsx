@@ -66,57 +66,6 @@ const page = {
  ],
  "sections": [
  {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "A Masters in Electronics Engineering in Sweden will give students the know-how to work with integrated circuits, microelectronics, signal pr...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Electronics & Communication (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
- {
  "slot": "eligibility",
  "eyebrow": "Eligibility Criteria",
  "title": "Key Benefits of Pursuing Electronics Engineering in Sweden",
@@ -124,64 +73,13 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Higher Vocational Education; Investigate electronic circuit design, semiconductor devices and modern electronic systems.",
- "## Research Opportunities: Discover chip design, photonics, microwave technology and sensing systems.",
- "## Hands-on Learning: Learn practical skills from laboratory experiments, simulation and engineering projects.",
- "## Industry Connections: Learn about technologies in telecommunications, automotive electronics, and semiconductor manufacturing.",
- "## Global Job Opportunities: Get ready for careers in design, testing, research and product development in electronics."
+ "Higher Vocational Education; Investigate electronic circuit design, semiconductor devices and modern electronic systems.",
+ "Research Opportunities: Discover chip design, photonics, microwave technology and sensing systems.",
+ "Hands-on Learning: Learn practical skills from laboratory experiments, simulation and engineering projects.",
+ "Industry Connections: Learn about technologies in telecommunications, automotive electronics, and semiconductor manufacturing.",
+ "Global Job Opportunities: Get ready for careers in design, testing, research and product development in electronics."
  ]
  }
- ]
- },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Many Swedish universities offer master\u2019s programs in English in electronics engineering and related subjects. Students who want to study Ele...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Electronics & Communication (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
  ]
  },
  {
@@ -192,16 +90,16 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Electronic Circuit Design Analog and digital circuits Circuit simulation and electronic systems",
- "## Microelectronics: Microelectronics processing, microelectronic devices and microelectronics components.",
- "## IC Design: The design and verification of semiconductor chips and integrated circuits.",
- "## Embedded Electronics: Microcontrollers, programmable logic devices, and hardware-software co-design.",
- "## Signal Processing: Digital signals, measurements and telecommunications.",
- "## Wireless Communication: radio frequency electronics, antennas and communication networks.",
- "## Microwave Engineering High Frequency Circuits, Radar Systems and Electromagnetic Technologies.",
- "## Photonics : Optical devices, lasers and light-based communications systems.",
- "## Sensors and Instrumentation: Electronic measurements, sensing devices and signal acquisition",
- "## Power Electronics: Electronic converters, motor drives and energy efficient systems"
+ "Electronic Circuit Design Analog and digital circuits Circuit simulation and electronic systems",
+ "Microelectronics: Microelectronics processing, microelectronic devices and microelectronics components.",
+ "IC Design: The design and verification of semiconductor chips and integrated circuits.",
+ "Embedded Electronics: Microcontrollers, programmable logic devices, and hardware-software co-design.",
+ "Signal Processing: Digital signals, measurements and telecommunications.",
+ "Wireless Communication: radio frequency electronics, antennas and communication networks.",
+ "Microwave Engineering High Frequency Circuits, Radar Systems and Electromagnetic Technologies.",
+ "Photonics : Optical devices, lasers and light-based communications systems.",
+ "Sensors and Instrumentation: Electronic measurements, sensing devices and signal acquisition",
+ "Power Electronics: Electronic converters, motor drives and energy efficient systems"
  ]
  }
  ]

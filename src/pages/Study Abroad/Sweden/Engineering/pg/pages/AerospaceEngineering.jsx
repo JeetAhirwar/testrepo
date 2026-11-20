@@ -66,57 +66,6 @@ const page = {
  ],
  "sections": [
  {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Aerospace Engineering Masters in Sweden enables students to learn aerospace technologies and related areas such as space engineering, contro...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Aerospace Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
- {
  "slot": "eligibility",
  "eyebrow": "Eligibility Criteria",
  "title": "Key Advantages of Studying Aerospace Engineering in Sweden:",
@@ -124,11 +73,11 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## English language Master\u2019s Programs: Study postgraduate engineering taught in English.",
- "## Specialization Opportunities: aeronautics, space systems and aircraft structures studies.",
- "## Engineering Projects and Research: Gain technical knowledge through projects and research opportunities.",
- "## International Industry Exposure: Gain relevant knowledge for international engineering & technology industries.",
- "## Further Education Opportunities: Ready yourself for doctoral studies, research positions or specialized engineering careers."
+ "English language Master\u2019s Programs: Study postgraduate engineering taught in English.",
+ "Specialization Opportunities: aeronautics, space systems and aircraft structures studies.",
+ "Engineering Projects and Research: Gain technical knowledge through projects and research opportunities.",
+ "International Industry Exposure: Gain relevant knowledge for international engineering & technology industries.",
+ "Further Education Opportunities: Ready yourself for doctoral studies, research positions or specialized engineering careers."
  ]
  }
  ]
@@ -154,14 +103,14 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Flight Dynamics and Aerodynamics",
- "## Aircraft Design and Performance",
- "## Light-Weight Materials and Structures for Aerospace",
- "## Satellite and Spacecraft Systems",
- "## Flight Dynamics and Control",
- "## Computational fluid dynamics (CFD) is the application of computers to simulate fluid flow and the transfer of heat and momentum between fluids and solid surfaces.",
- "## Aerospace Propulsion and Space Technologies",
- "## Systems Engineering and Numerical Simulation"
+ "Flight Dynamics and Aerodynamics",
+ "Aircraft Design and Performance",
+ "Light-Weight Materials and Structures for Aerospace",
+ "Satellite and Spacecraft Systems",
+ "Flight Dynamics and Control",
+ "Computational fluid dynamics (CFD) is the application of computers to simulate fluid flow and the transfer of heat and momentum between fluids and solid surfaces.",
+ "Aerospace Propulsion and Space Technologies",
+ "Systems Engineering and Numerical Simulation"
  ]
  }
  ]
@@ -210,7 +159,7 @@ const page = {
  "items": [
  "**Mathematics and Programming:** Approximately 25 ECTS credits in total, including control theory and programming.",
  "**Applied Mechanics:** Approximately 20 ECTS credits in total, including solid mechanics and fluid mechanics.",
- "**English Language Proficiency:** Equivalent to Swedish English 6 or English Level 2\."
+ "**English Language Proficiency:** Equivalent to Swedish English 6 or English Level 2."
  ]
  },
  {
@@ -302,7 +251,7 @@ const page = {
  {
  "t": "p",
  "items": [
- "KTH confirms that the total tuition fee for its MSc in Aerospace Engineering is **SEK 385,000** for students required to pay tuition fees. The application fee is SEK 900\."
+ "KTH confirms that the total tuition fee for its MSc in Aerospace Engineering is **SEK 385,000** for students required to pay tuition fees. The application fee is SEK 900."
  ]
  },
  {

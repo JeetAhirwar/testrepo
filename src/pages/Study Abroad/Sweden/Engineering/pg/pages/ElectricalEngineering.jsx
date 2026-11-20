@@ -66,57 +66,6 @@ const page = {
  ],
  "sections": [
  {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "A Master's in Electrical Engineering in Sweden can help students gain expertise in areas that include electrical power systems, renewable en...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Electrical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
- {
  "slot": "eligibility",
  "eyebrow": "Eligibility Criteria",
  "title": "Key Benefits of Electrical Engineering in Sweden",
@@ -124,64 +73,13 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Advanced Technical Learning: Find out about electrical systems, circuits, signal processing and power electronics.",
- "## Research Opportunities 1 Discover areas such as wireless communication, automation, smart grids and semiconductor devices.",
- "## Sustainability Focus: Learn about renewable electricity, energy storage and efficient power systems",
- "## Industry Based Education Practical experience with lab experiments and engineering projects.",
- "## International Career Opportunities: Prepare for careers in energy, electronics, automation, telecommunications and technology research."
+ "Advanced Technical Learning: Find out about electrical systems, circuits, signal processing and power electronics.",
+ "Research Opportunities 1 Discover areas such as wireless communication, automation, smart grids and semiconductor devices.",
+ "Sustainability Focus: Learn about renewable electricity, energy storage and efficient power systems",
+ "Industry Based Education Practical experience with lab experiments and engineering projects.",
+ "International Career Opportunities: Prepare for careers in energy, electronics, automation, telecommunications and technology research."
  ]
  }
- ]
- },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Sweden is a popular destination for international students since a large number of universities offer postgraduate programs in English. Ther...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Electrical Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
  ]
  },
  {
@@ -192,15 +90,15 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Electrical Power Engineering Power generation, transmission and distribution and electricity markets.",
- "## Power Electronics: Converters, electrical drives and energy-efficient electronic systems.",
- "## Electronics Engineering: Electronic circuits, design of semiconductor devices and integrated circuits .",
- "## Control Systems: Automation, feedback control, intelligent industrial systems.",
- "## Renewable Energy Engineering Wind power Solar power Sustainable electrical systems",
- "## Telecommunications : Antennas , signal processing , wireless communications .",
- "## Embedded systems: Real-time control and hardware/software integration.",
- "## Electric Vehicle Technology: Electric motors, charging systems, batteries and electromobility",
- "## Signal processing: digital signals, measuring systems and communication technologies."
+ "Electrical Power Engineering Power generation, transmission and distribution and electricity markets.",
+ "Power Electronics: Converters, electrical drives and energy-efficient electronic systems.",
+ "Electronics Engineering: Electronic circuits, design of semiconductor devices and integrated circuits .",
+ "Control Systems: Automation, feedback control, intelligent industrial systems.",
+ "Renewable Energy Engineering Wind power Solar power Sustainable electrical systems",
+ "Telecommunications : Antennas , signal processing , wireless communications .",
+ "Embedded systems: Real-time control and hardware/software integration.",
+ "Electric Vehicle Technology: Electric motors, charging systems, batteries and electromobility",
+ "Signal processing: digital signals, measuring systems and communication technologies."
  ]
  }
  ]

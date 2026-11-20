@@ -2916,101 +2916,34 @@ export const CtaBand = ({ title, desc, bgImg}) => (
 
 
 export const EligibilityCtaCard = ({
-
-
-
   level = "UG",
-
-
-
   whatsappNumber = "919630736070",
-
-
-
 }) => {
-
-
-
   const isPG = level === "PG" || level === "Postgraduate";
 
-
-
   return (
-
-
-
-    <div className="bg-slate-900 text-white rounded-2xl p-7 sm:p-8 shadow-xl border border-slate-800">
-
-
-
-      <h3 className="text-xl sm:text-2xl font-bold mb-2.5 text-white">
-
-
-
-        Not sure if you are eligible?
-
-
-
-      </h3>
-
-
-
-      <p className="text-white/70 text-[15px] leading-relaxed mb-6">
-
-
-
-        {isPG
-
-
-
-          ? "Share your graduation marks and preferred universities. We will tell you honestly which universities and programs are realistic for your profile and budget."
-
-
-
-          : "Share your Class 12 marks and preferred countries. We will tell you honestly which universities and programs are realistic for your profile and budget."}
-
-
-
-      </p>
-
-
-
-      <a
-
-
-
-        href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=Hi%2C%20I%20want%20to%20check%20my%20eligibility%20for%20study%20abroad`}
-
-
-
-        target="_blank"
-
-
-
-        rel="noopener noreferrer"
-
-
-
-        className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-[15px] bg-blue-600 text-white hover:bg-blue-700 transition-all no-underline shadow-md shadow-blue-600/30 w-full sm:w-auto"
-
-
-
-      >
-
-
-
-        Book free eligibility check
-
-
-
-      </a>
-
-
-
+    <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div className="max-w-2xl">
+        <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white">
+          Not sure if you are eligible?
+        </h3>
+        <p className="text-white/70 text-[15px] leading-relaxed mb-0">
+          {isPG
+            ? "Share your graduation marks and preferred universities. We will tell you honestly which universities and programs are realistic for your profile and budget."
+            : "Share your Class 12 marks and preferred countries. We will tell you honestly which universities and programs are realistic for your profile and budget."}
+        </p>
+      </div>
+      <div className="shrink-0">
+        <a
+          href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=Hi%2C%20I%20want%20to%20check%20my%20eligibility%20for%20study%20abroad`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-semibold text-[15px] bg-blue-600 text-white hover:bg-blue-700 transition-all no-underline shadow-md shadow-blue-600/30 w-full sm:w-auto whitespace-nowrap"
+        >
+          Book free eligibility check
+        </a>
+      </div>
     </div>
-
-
-
   );
 
 
@@ -3932,81 +3865,22 @@ export const EngineeringBranchPage = ({
 
 
       {/* ELIGIBILITY */}
-
-
-
       <section className="py-16 sm:py-20" id="eligibility">
-
-
-
         <div className="max-w-6xl mx-auto px-6">
-
-
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-
-
-
-            <div>
-
-
-
-              <EhpHead
-
-
-
-                eyebrow="Who can apply"
-
-
-
-                title="Eligibility Requirements for Indian Students"
-
-
-
-              />
-
-
-
-              <Paragraphs
-
-
-
-                items={branch.eligibilityLead}
-
-
-
-                className="text-slate-500 text-[15px] leading-relaxed space-y-4 mb-5"
-
-
-
-              />
-
-
-
-              <CheckList items={branch.eligibility} />
-
-
-
-            </div>
-
-
-
-            <div className="lg:pt-6">
-
-
-
-              <EligibilityCtaCard level={level} />
-
-
-
-            </div>
-
-
-
+          <div>
+            <EhpHead
+              eyebrow="Who can apply"
+              title="Eligibility Requirements for Indian Students"
+            />
+            <Paragraphs
+              items={branch.eligibilityLead}
+              className="text-slate-500 text-[15px] leading-relaxed space-y-4 mb-5"
+            />
+            <CheckList items={branch.eligibility} cols={2} />
           </div>
-
-
-
+          <div className="mt-10 sm:mt-12">
+            <EligibilityCtaCard level={level} />
+          </div>
         </div>
 
 
@@ -5984,69 +5858,19 @@ export const AbroadCoursePage = ({
 
 
         if (s.slot === "eligibility") {
-
-
-
           return (
-
-
-
             <section key={idx} className={"py-16 sm:py-20 " + shade} id="eligibility">
-
-
-
               <div className="max-w-6xl mx-auto px-6">
-
-
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-
-
-
-                  <div>
-
-
-
-                    <EhpHead eyebrow={s.eyebrow} title={s.title} />
-
-
-
-                    <AbroadGroups groups={s.groups} />
-
-
-
-                  </div>
-
-
-
-                  <div className="lg:pt-6">
-
-
-
-                    <EligibilityCtaCard level={page.level} />
-
-
-
-                  </div>
-
-
-
+                <div>
+                  <EhpHead eyebrow={s.eyebrow} title={s.title} />
+                  <AbroadGroups groups={s.groups} />
                 </div>
-
-
-
+                <div className="mt-10 sm:mt-12">
+                  <EligibilityCtaCard level={page.level} />
+                </div>
               </div>
-
-
-
             </section>
-
-
-
           );
-
-
-
         }
 
 
@@ -6183,12 +6007,12 @@ export const AbroadCoursePage = ({
               {(s.items || s.paras) && (!s.groups || s.groups.length === 0) && (
                 <Paragraphs
                   items={s.items || s.paras}
-                  className="max-w-4xl text-slate-500 text-[15px] leading-relaxed space-y-4 mb-6"
+                  className="w-full text-slate-500 text-[15px] leading-relaxed space-y-4 mb-6"
                 />
               )}
               {s.groups && s.groups.length > 0 && (
                 boxed ? (
-                  <Panel className="max-w-4xl">
+                  <Panel className="w-full">
                     <AbroadGroups groups={s.groups} />
                   </Panel>
                 ) : (

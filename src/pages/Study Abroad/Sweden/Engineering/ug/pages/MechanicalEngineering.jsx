@@ -114,25 +114,21 @@ const page = {
  }
  ]
  },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Materials Science and Engineering",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Mechanical Engineering (UG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Production and manufacturing engineering",
- "location": "Production and manufacturing engineering, Sweden",
- "fee": "SEK 90,000 \u2013 160,000 / Year",
- "desc": "This area includes manufacturing methods, machining, production processes, quality control and industrial efficiency. Students are taught how to reliably and economically manufacture products. Mechanical Systems & Machine Design Students study forces, motion, mechanisms, machine elements, and structural performance. These topics will help them to get ready for jobs in product development, equipment design and industrial engineering.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
+   {
+  "slot": "curriculum",
+  "eyebrow": "Core Disciplines",
+  "title": "Materials Science, Production & Machine Design",
+  "lead": "Undergraduate mechanical engineering curricula in Sweden cover essential industry domains from advanced materials to smart manufacturing.",
+  "groups": [
+    {
+      "t": "p",
+      "items": [
+        "**Production and Manufacturing Engineering:** Covers advanced machining methods, computer-integrated manufacturing, additive fabrication, quality management, and industrial automation to ensure cost-effective and sustainable production.",
+        "**Mechanical Systems & Machine Design:** Focuses on statics, dynamics, structural analysis, mechanisms, and machine elements preparing students for hands-on roles in modern mechanical and automotive systems."
+      ]
+    }
+  ]
+  },
  {
  "slot": "universities",
  "eyebrow": "Top Institutions",

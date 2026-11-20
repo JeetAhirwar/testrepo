@@ -66,57 +66,6 @@ const page = {
  ],
  "sections": [
  {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Students who have a master\u2019s degree in Computer Engineering can specialize in computer architecture, embedded systems, operating systems, co...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Computer Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
- {
  "slot": "eligibility",
  "eyebrow": "Eligibility Criteria",
  "title": "The major advantages of this are:",
@@ -124,12 +73,12 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Higher Education in Technology: Design and manufacture of complex computer systems.",
- "## Industry applicable skills: Learn technologies used in software, telecommunication, automation and digital infrastructure.",
- "## Research Opportunities: Join projects in computer systems, networks, and emerging technologies.",
- "## International Learning Environment: Learn with students from other countries.",
- "## Career flexibility: Prepare for a career in computer engineering, systems development, cyber security or research.",
- "## Sweden offers an option to international students with the right academic qualifications, as a lot of related Master\u2019s programs are taught in English."
+ "Higher Education in Technology: Design and manufacture of complex computer systems.",
+ "Industry applicable skills: Learn technologies used in software, telecommunication, automation and digital infrastructure.",
+ "Research Opportunities: Join projects in computer systems, networks, and emerging technologies.",
+ "International Learning Environment: Learn with students from other countries.",
+ "Career flexibility: Prepare for a career in computer engineering, systems development, cyber security or research.",
+ "Sweden offers an option to international students with the right academic qualifications, as a lot of related Master\u2019s programs are taught in English."
  ]
  }
  ]
@@ -155,118 +104,16 @@ const page = {
  {
  "t": "ul",
  "items": [
- "## Computer Architecture Design of processors, digital systems and computer organization.",
- "## Embedded Systems: Hardware/Software Integration, Microcontrollers, Real-Time Systems.",
- "## Computer Networks: Communication protocols, network infrastructure, distributed systems.",
- "## Cybersecurity: Protection for systems, networks and computers.",
- "## High-Performance Computing: Advanced computing architectures and parallel processing.",
- "## Distributed Systems: Cloud platforms, scalable applications, reliable computing.",
- "## Artificial Intelligence Machine learning Intelligent systems Computational approaches",
- "## Operating Systems System software, resource management and concurrent programming."
+ "Computer Architecture Design of processors, digital systems and computer organization.",
+ "Embedded Systems: Hardware/Software Integration, Microcontrollers, Real-Time Systems.",
+ "Computer Networks: Communication protocols, network infrastructure, distributed systems.",
+ "Cybersecurity: Protection for systems, networks and computers.",
+ "High-Performance Computing: Advanced computing architectures and parallel processing.",
+ "Distributed Systems: Cloud platforms, scalable applications, reliable computing.",
+ "Artificial Intelligence Machine learning Intelligent systems Computational approaches",
+ "Operating Systems System software, resource management and concurrent programming."
  ]
  }
- ]
- },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Some universities offer titles such as Computing Systems or Computer Science instead of Computer Engineering, so students should examine the...",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Computer Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
- ]
- },
- {
- "slot": "universities",
- "eyebrow": "Top Institutions",
- "title": "Best Universities in Sweden for Master's in Computer Engineering",
- "lead": "Explore leading universities and institutions in Sweden offering accredited Computer Engineering (PG) in Sweden programmes, world-class research facilities, and international student support.",
- "unis_data": [
- {
- "name": "Karolinska Institutet",
- "location": "Stockholm, Sweden",
- "fee": "SEK 140,000 \u2013 200,000 / Year",
- "desc": "One of the world's foremost medical universities and research centers, renowned for awarding the Nobel Prize in Physiology or Medicine.",
- "image": "/uploads/study_abroad/sweden/karolinska_institutet.webp",
- "img": "/uploads/study_abroad/sweden/karolinska_institutet.webp"
- },
- {
- "name": "KTH Royal Institute of Technology",
- "location": "Stockholm, Sweden",
- "fee": "SEK 120,000 \u2013 160,000 / Year",
- "desc": "Sweden's leading technical university, ranked among Europe's top polytechnics for engineering, computer science, and innovation.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image1.png"
- },
- {
- "name": "Lund University",
- "location": "Lund, Sweden",
- "fee": "SEK 90,000 \u2013 150,000 / Year",
- "desc": "Top-100 world university offering comprehensive programs in engineering, sciences, medicine, law, and economics.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image2.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image2.png"
- },
- {
- "name": "Uppsala University",
- "location": "Uppsala, Sweden",
- "fee": "SEK 90,000 \u2013 145,000 / Year",
- "desc": "The oldest university in Sweden and the Nordic region, internationally acclaimed for scientific research, pharmacy, and humanities.",
- "image": "/uploads/study_abroad/sweden/swe_BBA_image1.png",
- "img": "/uploads/study_abroad/sweden/swe_BBA_image1.png"
- },
- {
- "name": "Chalmers University of Technology",
- "location": "Gothenburg, Sweden",
- "fee": "SEK 130,000 \u2013 170,000 / Year",
- "desc": "Globally recognized for cutting-edge engineering, sustainable technology, automotive systems, and industry partnerships.",
- "image": "/uploads/study_abroad/sweden/swe_Architecture_image3.png",
- "img": "/uploads/study_abroad/sweden/swe_Architecture_image3.png"
- }
- ],
- "note": [
- "Students should verify the exact eligibility criteria, intake periods, program accreditation, and residence permit requirements before submitting their applications."
  ]
  },
  {
@@ -410,7 +257,7 @@ const page = {
  {
  "t": "p",
  "items": [
- "The primary international application period for entry in Autumn 2027 will run from 16 October 2026 through 15 January 2027 The deadline for the supporting document and application fee is 1 February 2027 and master's admission results are expected on 1 April 2027\.",
+ "The primary international application period for entry in Autumn 2027 will run from 16 October 2026 through 15 January 2027 The deadline for the supporting document and application fee is 1 February 2027 and master's admission results are expected on 1 April 2027.",
  "Official Application Platform: University Admissions in Sweden",
  "Students interested in **studying Computer Engineering in Sweden** should follow the application instructions and deadlines carefully to complete the admission process."
  ]
