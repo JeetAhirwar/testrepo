@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: JeetAhirwar/testrepo
-  branch: master
+  branch: main
   base_url: https://eduhawkwebsite.vercel.app
   auth_endpoint: api/auth
 
