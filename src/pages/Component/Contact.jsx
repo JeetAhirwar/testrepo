@@ -213,11 +213,6 @@ export default function Contact() {
       </SeoHead>
 
       <div className="min-h-screen bg-white font-sans text-slate-800">
-        {/* Page heading visually hidden for SEO architecture */}
-        <h1 className="sr-only">
-          Contact Edu-Hawk Worldwide - MBBS Abroad Admission & Counselling
-        </h1>
-
         {/* ─── HERO HEADER ─────────────────────────────────────────────────── */}
         <section className="relative min-h-[420px] sm:min-h-[480px] lg:h-[55vh] flex items-center justify-center overflow-hidden bg-[#071d38]">
           <img
@@ -239,9 +234,9 @@ export default function Contact() {
               24/7 Student & Parent Support
             </span>
 
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 drop-shadow-2xl">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 drop-shadow-2xl">
               {contactData.hero?.title || "Get in Touch with Edu-Hawk Experts"}
-            </h2>
+            </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-teal-100/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
               {contactData.hero?.subtitle ||

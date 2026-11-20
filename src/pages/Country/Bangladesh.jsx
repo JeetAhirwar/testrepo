@@ -1,16 +1,10 @@
 import cmsData from "../../data/medical_colleges/bangladesh.json";
 import React, { useState } from "react";
 import SeoHead from "../../component/SeoHead.jsx";
-import RussiaFlag from "../../Images/Russia/russia header threejpg.webp";
 import kernal from "../../Images/top medical collages list/Bangladesh Medical College.webp";
 import Bangladeshflag2 from "../../Images/country flag png/Bangladesh-Flag-PNG-Isolated-HD.webp";
 import mhsmc from "../../assets/mhsmc.jpg";
-import MARISTATEUNIVERSITY from "../../Images/Russia/MARI STATE UNIVERSITY.webp";
-import ORELSTATEUNIVERSITY from "../../Images/Russia/OREL STATE UNIVERSITY.webp";
-import ORENBURGSTATEUNIVERSITY from "../../Images/Russia/ORENBURG STATE UNIVERSITY.webp";
-import TVERSTATEMEDICALUNIVERSITY from "../../Images/Russia/TVER STATE MEDICAL UNIVERSITY.jpeg";
-import AltaiStateMedicalUniversity from "../../Images/Russia/Altai State Medical University.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { Plus as FiPlus, Minus as FiMinus } from "lucide-react";
 const faqData = [
@@ -83,14 +77,16 @@ const Bangladesh = () => {
         <div className="absolute inset-0">
           <img
             src={cmsData?.hero?.image || "https://upload.wikimedia.org/wikipedia/commons/f/f6/2.%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE_%E0%A6%9A%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B0.jpg"}
-            alt="Kremlin Bridge City"
+            alt="Dhaka City Skyline, Bangladesh"
             className="w-full h-full object-cover brightness-75"
-                  srcSet="https://upload.wikimedia.org/wikipedia/commons/f/f6/2.%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE_%E0%A6%9A%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B0.jpg 1x, https://upload.wikimedia.org/wikipedia/commons/f/f6/2.%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE_%E0%A6%9A%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B0.jpg 2x"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+            srcSet="https://upload.wikimedia.org/wikipedia/commons/f/f6/2.%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE_%E0%A6%9A%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B0.jpg 1x, https://upload.wikimedia.org/wikipedia/commons/f/f6/2.%E0%A6%B6%E0%A6%BE%E0%A6%AA%E0%A6%B2%E0%A6%BE_%E0%A6%9A%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B0.jpg 2x"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
-              {cmsData?.hero?.title || "STUDY MBBS IN Bangladesh"}
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
+              {cmsData?.hero?.title || "STUDY MBBS IN BANGLADESH"}
             </h1>
           </div>
         </div>
@@ -108,11 +104,11 @@ const Bangladesh = () => {
               loading="lazy"
               width={512}
               height={512}
-              alt="Russia flag"
+              alt="Bangladesh flag"
               className="w-32 md:w-40  rounded shadow-lg"
-                  srcSet={`${Bangladeshflag2} 1x, ${Bangladeshflag2} 2x`}
-                  sizes="(max-width: 768px) 120px, 160px"
-                />
+              srcSet={`${Bangladeshflag2} 1x, ${Bangladeshflag2} 2x`}
+              sizes="(max-width: 768px) 120px, 160px"
+            />
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
@@ -121,7 +117,7 @@ const Bangladesh = () => {
           </div>
         </div>
 
-        {/* About Russia + Image */}
+        {/* About Bangladesh + Image */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <div>
             <h2 className="text-3xl font-bold text-center md:text-left text-blue-900 mb-6">
@@ -188,11 +184,11 @@ const Bangladesh = () => {
               loading="lazy"
               width={585}
               height={440}
-              alt="Kremlin"
+              alt="Bangladesh Medical College"
               className="rounded-xl shadow-2xl w-full h-auto object-cover"
-                  srcSet={`${kernal} 1x, ${kernal} 2x`}
-                  sizes="(max-width: 768px) 100vw, 500px"
-                />
+              srcSet={`${kernal} 1x, ${kernal} 2x`}
+              sizes="(max-width: 768px) 100vw, 500px"
+            />
           </div>
         </div>
 
@@ -429,7 +425,7 @@ const Bangladesh = () => {
             <ul className="list-disc pl-6 mt-4 space-y-2">
               <li>Beds, mattresses, bedsheets, blankets, pillows</li>
               <li>Study tables, chairs, wardrobes/cupboards</li>
-              <li>Central heating (very important in Bangladesh winters)</li>
+              <li>Air conditioning and ceiling fans (suitable for Bangladesh climate)</li>
             </ul>
 
             <p className="mt-6">Hostels typically include:</p>
@@ -805,6 +801,34 @@ const Bangladesh = () => {
 
           <div className="text-center mt-12">
             <p className="text-gray-600 text-lg"></p>
+          </div>
+        </div>
+      </div>
+
+      {/* ==================== CTA BANNER ==================== */}
+      <div className="container mx-auto px-4 max-w-6xl pb-16">
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 text-white rounded-2xl p-8 md:p-12 text-center shadow-xl">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            Plan Your Medical Journey in Bangladesh with EduHawk
+          </h2>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
+            Get 1-on-1 personalized counselling for top BMDC & NMC-recognized medical colleges in Bangladesh with 100% transparent fee structures and complete admission guidance.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="px-8 py-3.5 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold rounded-xl transition duration-200 shadow-lg text-center"
+            >
+              Get Free Counselling
+            </Link>
+            <a
+              href="https://wa.me/919630736070?text=Hi%2C%20I%20want%20to%20know%20more%20about%20MBBS%20in%20Bangladesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition duration-200 shadow-lg text-center flex items-center justify-center gap-2"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>

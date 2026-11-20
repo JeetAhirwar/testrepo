@@ -851,7 +851,11 @@ export default function Landingpage() {
 
           {/* <!-- MBBS Abroad Section --> */}
 
-          <button className="bg-white text-blue-900 hover:bg-yellow-400 hover:text-blue-950 font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95">
+          <button
+            type="button"
+            onClick={openCounseling}
+            className="bg-white text-blue-900 hover:bg-yellow-400 hover:text-blue-950 font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer"
+          >
             Book Your Free Counselling
           </button>
 

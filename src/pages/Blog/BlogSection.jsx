@@ -152,9 +152,7 @@ const BlogSection = () => {
 
               <div className="mt-12 text-center">
                 <a
-                  href="https://eduhawk.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/contact"
                   className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-lg py-5 px-12 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   Book Free Consultation Today →

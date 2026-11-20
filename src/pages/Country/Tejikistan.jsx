@@ -1,12 +1,9 @@
 import cmsData from "../../data/medical_colleges/tajikistan.json";
-
-
 import React, { useState } from "react";
-import RussiaFlag from "../../Images/Russia/russia header threejpg.webp";
-import Russianflag2 from "../../Images/country flag png/Tajikistan.svg";
-import MARISTATEUNIVERSITY from "../../Images/tajikistan/Khatlon-State-Medical-University-Tajikistan.webp";
+import TajikistanFlag from "../../Images/country flag png/Tajikistan.svg";
+import KhatlonStateMedical from "../../Images/tajikistan/Khatlon-State-Medical-University-Tajikistan.webp";
 import SeoHead from "../../component/SeoHead.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const Tajikistan = () => {
@@ -31,13 +28,15 @@ const Tajikistan = () => {
               src={cmsData?.hero?.image || "https://www.edurizon.in/_next/image?url=%2Fassets%2FImages%2Fmbbs-in-tajikistan%2Ftajik-national-university%2Ftnu.jpg&w=3840&q=75"}
               alt="Tajikistan Landscape"
               className="w-full h-full object-cover brightness-75"
-                  srcSet="https://www.edurizon.in/_next/image?url=%2Fassets%2FImages%2Fmbbs-in-tajikistan%2Ftajik-national-university%2Ftnu.jpg&w=3840&q=75 1x, https://www.edurizon.in/_next/image?url=%2Fassets%2FImages%2Fmbbs-in-tajikistan%2Ftajik-national-university%2Ftnu.jpg&w=3840&q=75 2x"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+              srcSet="https://www.edurizon.in/_next/image?url=%2Fassets%2FImages%2Fmbbs-in-tajikistan%2Ftajik-national-university%2Ftnu.jpg&w=3840&q=75 1x, https://www.edurizon.in/_next/image?url=%2Fassets%2FImages%2Fmbbs-in-tajikistan%2Ftajik-national-university%2Ftnu.jpg&w=3840&q=75 2x"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
-              {cmsData?.hero?.title || "STUDY MBBS IN TAJIKISTAN"}
-            </h1>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
+                {cmsData?.hero?.title || "STUDY MBBS IN TAJIKISTAN"}
+              </h1>
             </div>
           </div>
         </div>
@@ -48,15 +47,15 @@ const Tajikistan = () => {
           <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
             <div>
               <img
-                src={Russianflag2}
+                src={TajikistanFlag}
                 loading="lazy"
                 width={1400}
                 height={700}
                 alt="Tajikistan flag"
                 className="w-32 md:w-40 border-4 border-gray-800 rounded shadow-lg"
-                  srcSet={`${Russianflag2} 1x, ${Russianflag2} 2x`}
-                  sizes="(max-width: 768px) 120px, 160px"
-                />
+                srcSet={`${TajikistanFlag} 1x, ${TajikistanFlag} 2x`}
+                sizes="(max-width: 768px) 120px, 160px"
+              />
             </div>
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
@@ -221,7 +220,7 @@ const Tajikistan = () => {
                 },
                 {
                   name: "Khatlon State Medical University",
-                  img: MARISTATEUNIVERSITY,
+                  img: KhatlonStateMedical,
                 },
                 {
                   name: "Tajik National University",
@@ -633,6 +632,32 @@ const Tajikistan = () => {
                   </p>
                 </details>
               </div>
+            </div>
+          </div>
+
+          {/* ==================== CTA BANNER ==================== */}
+          <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 text-white rounded-2xl p-8 md:p-12 text-center shadow-xl my-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+              Plan Your Medical Journey in Tajikistan with EduHawk
+            </h2>
+            <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
+              Get 1-on-1 personalized counselling for top NMC-recognized state medical universities in Tajikistan with 100% transparent fee structures, direct admission assistance, and complete student support.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-3.5 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold rounded-xl transition duration-200 shadow-lg text-center"
+              >
+                Get Free Counselling
+              </Link>
+              <a
+                href="https://wa.me/919630736070?text=Hi%2C%20I%20want%20to%20know%20more%20about%20MBBS%20in%20Tajikistan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition duration-200 shadow-lg text-center flex items-center justify-center gap-2"
+              >
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
 

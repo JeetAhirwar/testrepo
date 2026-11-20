@@ -116,7 +116,6 @@ const routes = [
   "/courses/pg/aerospace-engineering",
   "/courses/pg/biomedical-engineering",
   "/courses/pg/automobile-engineering",
-  // Finland Routes
   "/study-abroad/finland/architecture",
   "/study-abroad/finland/bba",
   "/study-abroad/finland/bbs",
@@ -244,7 +243,6 @@ const routes = [
   "/study-abroad/italy/language-courses",
   "/study-abroad/italy/summer-courses",
   "/study-abroad/italy/winter-courses",
-  // Canada Routes
   "/study-abroad/canada/dentistry",
   "/study-abroad/canada/nursing",
   "/study-abroad/canada/pharmacy",
@@ -287,7 +285,6 @@ const routes = [
   "/study-abroad/canada/language-courses",
   "/study-abroad/canada/summer-courses",
   "/study-abroad/canada/winter-courses",
-  // Spain Routes
   "/study-abroad/spain/dentistry",
   "/study-abroad/spain/nursing",
   "/study-abroad/spain/pharmacy",
@@ -329,7 +326,6 @@ const routes = [
   "/study-abroad/spain/language-courses",
   "/study-abroad/spain/summer-courses",
   "/study-abroad/spain/winter-courses",
-// UK Routes
   "/study-abroad/uk/dentistry",
   "/study-abroad/uk/nursing",
   "/study-abroad/uk/pharmacy",
@@ -372,7 +368,6 @@ const routes = [
   "/study-abroad/uk/language-courses",
   "/study-abroad/uk/summer-courses",
   "/study-abroad/uk/winter-courses",
-  // Ireland Routes
   "/study-abroad/ireland/dentistry",
   "/study-abroad/ireland/nursing",
   "/study-abroad/ireland/pharmacy",
@@ -415,8 +410,6 @@ const routes = [
   "/study-abroad/ireland/language-courses",
   "/study-abroad/ireland/summer-courses",
   "/study-abroad/ireland/winter-courses",
-
-  // Study Abroad - France (42 Courses)
   "/study-abroad/france/dentistry",
   "/study-abroad/france/nursing",
   "/study-abroad/france/pharmacy",
@@ -459,7 +452,6 @@ const routes = [
   "/study-abroad/france/language-courses",
   "/study-abroad/france/summer-courses",
   "/study-abroad/france/winter-courses",
-  // Study Abroad - Germany (42 Courses)
   "/study-abroad/germany/dentistry",
   "/study-abroad/germany/nursing",
   "/study-abroad/germany/pharmacy",
@@ -502,8 +494,6 @@ const routes = [
   "/study-abroad/germany/language-courses",
   "/study-abroad/germany/summer-courses",
   "/study-abroad/germany/winter-courses",
-
-  // Study Abroad - Switzerland
   "/study-abroad/switzerland/dentistry",
   "/study-abroad/switzerland/biotechnology",
   "/study-abroad/switzerland/nursing",
@@ -545,8 +535,6 @@ const routes = [
   "/study-abroad/switzerland/language-courses",
   "/study-abroad/switzerland/summer-courses",
   "/study-abroad/switzerland/winter-courses",
-
-  // Study Abroad - Mauritius
   "/study-abroad/mauritius/dentistry",
   "/study-abroad/mauritius/biotechnology",
   "/study-abroad/mauritius/nursing",
@@ -588,8 +576,6 @@ const routes = [
   "/study-abroad/mauritius/language-courses",
   "/study-abroad/mauritius/summer-courses",
   "/study-abroad/mauritius/winter-courses",
-
-  // Study Abroad - Denmark
   "/study-abroad/denmark/dentistry",
   "/study-abroad/denmark/biotechnology",
   "/study-abroad/denmark/nursing",
@@ -631,8 +617,6 @@ const routes = [
   "/study-abroad/denmark/language-courses",
   "/study-abroad/denmark/summer-courses",
   "/study-abroad/denmark/winter-courses",
-
-  // Study Abroad - Sweden
   "/study-abroad/sweden/dentistry",
   "/study-abroad/sweden/biotechnology",
   "/study-abroad/sweden/nursing",
@@ -674,8 +658,6 @@ const routes = [
   "/study-abroad/sweden/language-courses",
   "/study-abroad/sweden/summer-courses",
   "/study-abroad/sweden/winter-courses",
-
-  // Tests & Common Online Exams (17 routes)
   "/tests/which-test",
   "/tests/ielts",
   "/tests/toefl",
@@ -693,8 +675,6 @@ const routes = [
   "/tests/imat",
   "/tests/ucat",
   "/tests/mcat",
-
-
   "/terms-conditions",
   "/privacy-policy",
   "/cookies-policy",

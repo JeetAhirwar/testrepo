@@ -498,7 +498,7 @@ const Blog = () => {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/landingpage")}
+                  onClick={() => navigate("/contact")}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] px-8 py-4 text-sm font-bold uppercase tracking-wider shadow-xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
                 >
                   <span>Book Free Counselling →</span>
@@ -584,7 +584,7 @@ const Blog = () => {
           </button>
           <button
             type="button"
-            onClick={() => navigate("/landingpage")}
+            onClick={() => navigate("/contact")}
             className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-extrabold text-xs rounded-xl shadow-xs transition"
           >
             <span>Apply Free</span>

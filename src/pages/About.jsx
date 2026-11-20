@@ -25,6 +25,8 @@ import {
   BookOpen,
   Users,
   Quote,
+  Target,
+  Compass,
 } from "lucide-react";
 
 const HERO_IMAGES = [aboutHero1, heroTrusted, aboutHero3];
@@ -101,13 +103,10 @@ export default function About() {
         path="/about"
         ogType="website"
       >
-        <link rel="preload" as="image" href={aboutHero1} fetchPriority="high" />
+        <link rel="preload" as="image" href={heroSlides[0]?.image || "/uploads/about/about-hero-1.webp"} fetchPriority="high" />
       </SeoHead>
 
       <div className="min-h-screen bg-white font-sans text-slate-800">
-        {/* Page heading visually hidden for SEO architecture */}
-        <h1 className="sr-only">About Edu-Hawk Worldwide - MBBS Abroad Education Consultancy</h1>
-
         {/* HERO CAROUSEL */}
         <section className="relative w-full h-[78vh] min-h-[620px] sm:min-h-[680px] lg:h-[84vh] overflow-hidden">
           {heroSlides.map((slide, idx) => (
@@ -144,9 +143,9 @@ export default function About() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
                     {slide.title}
-                  </h2>
+                  </h1>
 
                   <p className="text-sm sm:text-base md:text-xl text-white/95 font-medium mb-7 md:mb-9 max-w-3xl mx-auto drop-shadow-lg leading-relaxed">
                     {slide.subtitle}
@@ -155,7 +154,7 @@ export default function About() {
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5">
                     <button
                       type="button"
-                      onClick={() => navigate("/landingpage")}
+                      onClick={() => navigate("/contact")}
                       className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d4a853] via-[#e0b76b] to-[#f0c070] text-[#0a2342] font-bold uppercase tracking-wider px-7 sm:px-9 py-3.5 sm:py-4 rounded-xl shadow-2xl hover:shadow-3xl hover:-translate-y-0.5 transition-all duration-300 text-xs sm:text-sm cursor-pointer"
                     >
                       <span>{slide.cta || "Book Free Counselling"}</span>
@@ -329,6 +328,39 @@ export default function About() {
           </div>
         </section>
 
+        {/* MISSION & VISION */}
+        <section className="py-14 bg-gradient-to-b from-white to-slate-50 px-5 sm:px-8 lg:px-12 border-t border-slate-100">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Mission */}
+              <div className="bg-white rounded-2xl p-8 border border-amber-100 shadow-sm hover:shadow-lg hover:border-amber-300 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center mb-5 text-amber-700 shadow-2xs">
+                    <Target className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0a2342] mb-3">Our Mission</h3>
+                  <p className="text-slate-600 leading-relaxed text-base">
+                    To democratize access to world-class medical education for Indian students by providing ethical, 100% transparent, and NMC-compliant admission guidance with zero hidden costs.
+                  </p>
+                </div>
+              </div>
+
+              {/* Vision */}
+              <div className="bg-white rounded-2xl p-8 border border-blue-100 shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200/60 flex items-center justify-center mb-5 text-blue-700 shadow-2xs">
+                    <Compass className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#0a2342] mb-3">Our Vision</h3>
+                  <p className="text-slate-600 leading-relaxed text-base">
+                    To be India's most trusted international education consultancy, empowering thousands of future healthcare leaders to succeed globally and return with pride to serve the nation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* WHY CHOOSE EDU-HAWK (Core Value Pillars) */}
         <section className="py-16 md:py-24 px-5 sm:px-8 lg:px-12 bg-slate-50 border-y border-slate-200/60">
           <div className="max-w-7xl mx-auto">
@@ -464,7 +496,7 @@ export default function About() {
 
               <button
                 type="button"
-                onClick={() => navigate("/landingpage")}
+                onClick={() => navigate("/contact")}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 backdrop-blur-md px-8 py-4 text-sm sm:text-base font-bold text-white transition-all duration-300 shadow-lg cursor-pointer w-full sm:w-auto"
               >
                 <span>Book Free Counselling →</span>
@@ -580,7 +612,7 @@ export default function About() {
           </button>
           <button
             type="button"
-            onClick={() => navigate("/landingpage")}
+            onClick={() => navigate("/contact")}
             className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] font-extrabold text-xs rounded-xl shadow-xs transition"
           >
             <span>Apply Free</span>

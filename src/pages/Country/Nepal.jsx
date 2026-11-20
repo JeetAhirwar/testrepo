@@ -2,10 +2,10 @@ import cmsData from "../../data/medical_colleges/nepal.json";
 
 
 import React, { useState } from "react";
-import RussiaFlag from "../../Images/country flag png/Nepal.svg";
+import { useNavigate, Link } from "react-router-dom";
+import NepalFlag from "../../Images/country flag png/Nepal.svg";
 import SeoHead from "../../component/SeoHead.jsx";
-import { useNavigate } from "react-router-dom";
-import Kathmandu from "../../../src/Images/Kathmandu.webp";
+import Kathmandu from "../../Images/Kathmandu.webp";
 import LumbiniMedicalCollege from "../../Images/Nepal/Lumbini_Medical_College.jpg";
 
 const Nepal = () => {
@@ -15,7 +15,7 @@ const Nepal = () => {
 
   return (
     <>
-         <SeoHead
+      <SeoHead
         title={cmsData?.seo?.title || "MBBS in Nepal for Indian Students | Fees & Admission Process"}
         description={cmsData?.seo?.description || "MBBS in Nepal with affordable fees and Indian syllabus. Get complete details on admission process, eligibility and top medical colleges."}
         keywords={cmsData?.seo?.keywords || "mbbs in nepal, nepal mbbs fees, study mbbs nepal, nepal medical colleges"}
@@ -28,14 +28,17 @@ const Nepal = () => {
       <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={cmsData?.hero?.image || "https://asmi.edu.kg/wp-content/uploads/slider2/DJI_0086.jpeg"}
-            alt="Nepal Landscape / Medical Campus"
+            src={Kathmandu}
+            alt="Kathmandu Valley / Nepal Medical Campus"
             className="w-full h-full object-cover brightness-75"
-                  srcSet="https://asmi.edu.kg/wp-content/uploads/slider2/DJI_0086.jpeg 1x, https://asmi.edu.kg/wp-content/uploads/slider2/DJI_0086.jpeg 2x"
-                  sizes="100vw"
-                />
+            srcSet={`${Kathmandu} 1x, ${Kathmandu} 2x`}
+            sizes="100vw"
+            fetchPriority="high"
+          />
+          {/* Subtle dark gradient overlay for optimal text contrast & accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white drop-shadow-2xl text-center px-4 tracking-tight">
               {cmsData?.hero?.title || "STUDY MBBS IN NEPAL"}
             </h1>
           </div>
@@ -48,15 +51,15 @@ const Nepal = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div>
             <img
-              src={RussiaFlag}
+              src={NepalFlag}
               loading="lazy"
               width={72}
               height={87}
               alt="Nepal flag"
-              className="w-32 md:w-40  shadow-lg"
-                  srcSet={`${RussiaFlag} 1x, ${RussiaFlag} 2x`}
-                  sizes="(max-width: 768px) 120px, 160px"
-                />
+              className="w-32 md:w-40 shadow-lg"
+              srcSet={`${NepalFlag} 1x, ${NepalFlag} 2x`}
+              sizes="(max-width: 768px) 120px, 160px"
+            />
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
@@ -116,8 +119,8 @@ const Nepal = () => {
                 and career goals. Apart from Nepal, other popular foreign 
                 countries for MBBS abroad include Kyrgyzstan, Kazakhstan, 
                 and Georgia, making Nepal one of the best countries for MBBS 
-                abroad and home to some of the {" "}<strong>best medical colleges in abroad
-                for Indian student</strong>{" "}.
+                abroad and home to some of the {" "}<strong>best medical colleges abroad
+                for Indian students</strong>{" "}.
               </p>
             ) : null}
 
@@ -700,6 +703,32 @@ const Nepal = () => {
                 </p>
               </details>
             </div>
+          </div>
+        </div>
+
+        {/* ==================== CTA BANNER ==================== */}
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 text-white rounded-2xl p-8 md:p-12 text-center shadow-xl mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            Plan Your Medical Journey in Nepal with EduHawk
+          </h2>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
+            Get 1-on-1 personalized counselling for top NMC-recognized medical universities in Nepal with 100% transparent fee structures and direct admission assistance.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="px-8 py-3.5 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold rounded-xl transition duration-200 shadow-lg text-center"
+            >
+              Get Free Counselling
+            </Link>
+            <a
+              href="https://wa.me/919630736070?text=Hi%2C%20I%20want%20to%20know%20more%20about%20MBBS%20in%20Nepal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition duration-200 shadow-lg text-center flex items-center justify-center gap-2"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
 
