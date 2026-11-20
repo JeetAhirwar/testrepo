@@ -677,15 +677,24 @@ export const formatRichText = (content) => {
   }
   if (typeof content !== "string") return content;
 
-
+  content = content
+    .replace(/!\[.*?\](\[.*?\]|\(.*?\))/g, "")
+    .replace(/!?\[\]\[.*?\]/g, "")
+    .replace(/\*{4,}/g, "")
+    .replace(/\\([.!()#*_-])/g, "$1")
+    .replace(/^[\s\\.]*\.\s*/, "");
 
   const parts = content.split(/(\*\*\[.*?\]\(.*?\)\*\*|\*\*.*?\*\*|\[.*?\]\(.*?\)|<strong>.*?<\/strong>)/g);
 
-
-
   const cleanPartText = (txt) => {
     if (!txt || typeof txt !== "string") return txt;
-    return decodeHtmlEntities(txt.replace(/\\([.!()#*_-])/g, "$1").replace(/\*{1,3}/g, ""));
+    let s = txt
+      .replace(/!\[.*?\](\[.*?\]|\(.*?\))/g, "")
+      .replace(/!?\[\]\[.*?\]/g, "")
+      .replace(/^[\s\\.]*\.\s*/, "")
+      .replace(/\\([.!()#*_-])/g, "$1")
+      .replace(/\*{1,3}/g, "");
+    return decodeHtmlEntities(s);
   };
 
   if (parts.length === 1) return cleanPartText(content);
@@ -2011,9 +2020,6 @@ export const UniversityArtwork = ({ theme = "automotive" }) => {
         <line x1="60" y1="46" x2="160" y2="46" stroke="#38bdf8" strokeWidth="1" strokeDasharray="2 2" opacity="0.45" />
         <circle cx="60" cy="46" r="2.5" fill="#38bdf8" opacity="0.7" />
         <circle cx="160" cy="46" r="2.5" fill="#38bdf8" opacity="0.7" />
-        <text x="110" y="42" fill="#93c5fd" fontSize="9" textAnchor="middle" fontFamily="monospace" letterSpacing="1.2" opacity="0.8">
-          AUTOMOTIVE BLUEPRINT
-        </text>
       </svg>
     );
   }
@@ -2048,9 +2054,6 @@ export const UniversityArtwork = ({ theme = "automotive" }) => {
         <circle cx="105" cy="85" r="4.5" fill="#818cf8" />
         <circle cx="175" cy="115" r="3.5" fill="#c084fc" />
         <circle cx="235" cy="75" r="5" fill="#f43f5e" />
-        <text x="135" y="42" fill="#c7d2fe" fontSize="9" textAnchor="middle" fontFamily="monospace" letterSpacing="1.2" opacity="0.85">
-          INNOVATION & SYSTEMS
-        </text>
       </svg>
     );
   }
@@ -2083,9 +2086,6 @@ export const UniversityArtwork = ({ theme = "automotive" }) => {
         <circle cx="148" cy="135" r="4.5" fill="#14b8a6" stroke="#fff" strokeWidth="1.5" />
         <circle cx="198" cy="90" r="5" fill="#f59e0b" stroke="#fff" strokeWidth="1.5" />
         <path d="M233 85 L248 95 L233 105" stroke="#f59e0b" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <text x="125" y="42" fill="#a7f3d0" fontSize="9" textAnchor="middle" fontFamily="monospace" letterSpacing="1.2" opacity="0.85">
-          AUTOMATION & ROBOTICS
-        </text>
       </svg>
     );
   }
@@ -2116,17 +2116,21 @@ export const UniversityArtwork = ({ theme = "automotive" }) => {
       {/* Flow waves & clean energy traces */}
       <path d="M35 112 C85 82, 135 142, 205 102 C235 87, 265 92, 285 107" stroke="#10b981" strokeWidth="2.4" strokeLinecap="round" fill="none" opacity="0.85" />
       <path d="M45 132 C95 102, 145 152, 215 122" stroke="#34d399" strokeWidth="1.5" strokeDasharray="3 3" fill="none" opacity="0.65" />
-      <text x="130" y="42" fill="#a7f3d0" fontSize="9" textAnchor="middle" fontFamily="monospace" letterSpacing="1.2" opacity="0.85">
-        SUSTAINABLE MOBILITY
-      </text>
     </svg>
   );
 };
 
 export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
   const u = uni;
+  const cleanName = stripHeadingNumbering(u?.name || "");
+  const cleanLocation = stripHeadingNumbering(u?.location || "");
+  let imgSrc = u?.image || u?.img || u?.src;
+  if (!imgSrc || imgSrc === "null" || imgSrc === "undefined") {
+    imgSrc = resolveCampusFallback(u, index);
+  }
+
   const theme =
-    u.artTheme ||
+    u?.artTheme ||
     (index % 4 === 0
       ? "automotive"
       : index % 4 === 1
@@ -2142,27 +2146,36 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
         className
       }
     >
-      {/* Top Artwork Banner */}
-      <div className="relative h-44 w-full overflow-hidden flex items-center justify-center bg-slate-900">
-        <UniversityArtwork theme={theme} />
+      {/* Top Banner: Real campus photo or abstract artwork */}
+      <div className="relative h-48 w-full overflow-hidden flex items-center justify-center bg-slate-900">
+        {imgSrc ? (
+          <img
+            src={imgSrc}
+            alt={cleanName}
+            loading="lazy"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <UniversityArtwork theme={theme} />
+        )}
 
         {/* Floating University Initial Crest */}
         <div className="absolute top-4 left-4 z-10 w-11 h-11 rounded-xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
           <span className="text-white font-extrabold text-xl tracking-tight">
-            {u.name ? u.name.charAt(0) : "U"}
+            {cleanName ? cleanName.charAt(0) : "U"}
           </span>
         </div>
 
         {/* Official Website External Link Button */}
-        {(u.link || u.url || u.website) && (
+        {(u?.link || u?.url || u?.website) && (
           <a
             href={u.link || u.url || u.website}
             target="_blank"
             rel="noopener noreferrer"
-            title={`Visit ${u.name} official website`}
+            title={`Visit ${cleanName} official website`}
             className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/25 flex items-center justify-center text-white/90 hover:text-white hover:scale-110 transition-all duration-200 shadow-md"
             onClick={(e) => e.stopPropagation()}
-            aria-label={`Visit ${u.name} official website`}
+            aria-label={`Visit ${cleanName} official website`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -2182,7 +2195,7 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
         )}
 
         {/* Location pill on artwork banner */}
-        {u.location && (
+        {cleanLocation && (
           <div className="absolute bottom-3 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs text-white/95 font-medium shadow-sm">
             <svg
               className="w-3.5 h-3.5 text-amber-400 flex-shrink-0"
@@ -2202,7 +2215,7 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            <span className="truncate max-w-[240px]">{u.location}</span>
+            <span className="truncate max-w-[240px]">{cleanLocation}</span>
           </div>
         )}
       </div>
@@ -2212,18 +2225,18 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
         <div>
           {/* University Name */}
           <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-            {u.name}
+            {cleanName}
           </h3>
 
           {/* Description */}
-          {u.desc && (
+          {u?.desc && (
             <p className="text-slate-600 text-[13.5px] leading-relaxed mt-2.5">
               {formatRichText(u.desc)}
             </p>
           )}
 
           {/* Key Metrics / Badges */}
-          {(u.duration || u.fee) && (
+          {(u?.duration || u?.fee) && (
             <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-xs">
               {u.duration && (
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 font-medium border border-blue-100">
@@ -2246,7 +2259,7 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
           )}
 
           {/* Features / Highlights */}
-          {Array.isArray(u.features) && u.features.length > 0 && (
+          {Array.isArray(u?.features) && u.features.length > 0 && (
             <div className="mt-4 pt-3 border-t border-slate-100">
               <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
                 Programme Highlights
@@ -2264,7 +2277,7 @@ export const SolidUniversityCard = ({ uni, index = 0, className = "" }) => {
         </div>
 
         {/* Footer / Official Portal Link */}
-        {(u.link || u.url || u.website) && (
+        {(u?.link || u?.url || u?.website) && (
           <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
             <span className="text-xs text-slate-400 font-medium">Official Portal</span>
             <a
@@ -2298,6 +2311,9 @@ const CAMPUS_FALLBACK_IMAGES = [
   "/uploads/study_abroad/sweden/swe_BBA_image1.png",
   "/uploads/study_abroad/sweden/swe_BBA_image2.png",
   "/uploads/study_abroad/sweden/swe_BBA_image3.png",
+  "/uploads/study_abroad/sweden/swe_InformationTechnology_image1.png",
+  "/uploads/study_abroad/sweden/swe_InformationTechnology_image2.png",
+  "/uploads/study_abroad/sweden/swe_InformationTechnology_image3.png",
   "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png",
   "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png",
   "/uploads/study_abroad/uk/uk_computer_science_London_s_Imperial_College-image2.png",
@@ -2310,15 +2326,20 @@ const CAMPUS_FALLBACK_IMAGES = [
 
 const resolveCampusFallback = (u, index = 0) => {
   const name = String(u?.name || u?.title || "").toLowerCase();
+  // Sweden universities
   if (name.includes("karolinska")) return "/uploads/study_abroad/sweden/karolinska_institutet.webp";
-  if (name.includes("kth")) return "/uploads/study_abroad/sweden/swe_Architecture_image1.png";
-  if (name.includes("lund")) return "/uploads/study_abroad/sweden/swe_Architecture_image2.png";
-  if (name.includes("chalmers")) return "/uploads/study_abroad/sweden/swe_Architecture_image3.png";
-  if (name.includes("uppsala")) return "/uploads/study_abroad/sweden/swe_BBA_image1.png";
+  if (name.includes("kth")) return "/uploads/study_abroad/sweden/swe_InformationTechnology_image1.png";
   if (name.includes("gothenburg")) return "/uploads/study_abroad/sweden/university_of_gothenburg.webp";
+  if (name.includes("borås") || name.includes("boras")) return "/uploads/study_abroad/sweden/swe_InformationTechnology_image3.png";
+  if (name.includes("lund")) return "/uploads/study_abroad/sweden/swe_Biotechnology_image2.png";
+  if (name.includes("chalmers")) return "/uploads/study_abroad/sweden/swe_Architecture_image3.png";
+  if (name.includes("uppsala")) return "/uploads/study_abroad/sweden/swe_Biotechnology_image3.png";
   if (name.includes("malmo") || name.includes("malmö")) return "/uploads/study_abroad/sweden/malmo_university.webp";
   if (name.includes("umeå") || name.includes("umea")) return "/uploads/study_abroad/sweden/swe_Architecture_image1.png";
   if (name.includes("linköping") || name.includes("linkoping")) return "/uploads/study_abroad/sweden/swe_ComputerScience_image1.png";
+  if (name.includes("stockholm")) return "/uploads/study_abroad/sweden/swe_BusinessManagement_image1.png";
+
+  // UK universities
   if (name.includes("oxford brookes")) return "/uploads/study_abroad/uk/uk_architecture_Oxford_Brookes_University-image1.png";
   if (name.includes("oxford")) return "/uploads/study_abroad/uk/uk_computer_science_University_of_Oxford-image4.png";
   if (name.includes("cambridge")) return "/uploads/study_abroad/uk/uk_computer_science_Cambridge_University-image1.png";
@@ -2367,33 +2388,36 @@ export const UniversityGrid = ({ unis, alt, className = "" }) => {
     <div className={gridLayout + className}>
       {Array.isArray(unis) &&
         unis.map((u, i) => {
-          let imgSrc = u.image || u.img || u.src;
+          let imgSrc = u?.image || u?.img || u?.src;
           if (!imgSrc || imgSrc === "null" || imgSrc === "undefined") {
             imgSrc = resolveCampusFallback(u, i);
           }
+          const cleanName = stripHeadingNumbering(u?.name || "");
+          const cleanLocation = stripHeadingNumbering(u?.location || "");
+
           if (imgSrc) {
             return (
               <div
-                key={u.name ?? i}
+                key={cleanName || i}
                 className="relative rounded-2xl overflow-hidden h-64 group shadow-sm hover:shadow-xl transition-all duration-300"
               >
                 <img
                   src={imgSrc}
-                  alt={(typeof alt === "function" ? alt(u) : alt) ?? u.name}
+                  alt={(typeof alt === "function" ? alt(u) : alt) ?? cleanName}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   srcSet={`${imgSrc} 1x, ${imgSrc} 2x`}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                {(u.link || u.url || u.website) && (
+                {(u?.link || u?.url || u?.website) && (
                   <a
                     href={u.link || u.url || u.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title={`Visit ${u.name} official website`}
+                    title={`Visit ${cleanName} official website`}
                     className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:scale-110 transition-all duration-200 shadow-md"
                     onClick={(e) => e.stopPropagation()}
-                    aria-label={`Visit ${u.name} official website`}
+                    aria-label={`Visit ${cleanName} official website`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2414,11 +2438,11 @@ export const UniversityGrid = ({ unis, alt, className = "" }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-end p-5">
                   <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
                     <h3 className="text-white font-semibold text-lg leading-snug">
-                      {u.name}
+                      {cleanName}
                     </h3>
-                    {(u.desc || u.location) && (
+                    {(u?.desc || cleanLocation) && (
                       <p className="text-white/85 text-sm line-clamp-3 mt-1">
-                        {formatRichText(u.desc || u.location)}
+                        {formatRichText(u.desc || cleanLocation)}
                       </p>
                     )}
                   </div>
@@ -2428,7 +2452,7 @@ export const UniversityGrid = ({ unis, alt, className = "" }) => {
           }
 
           // If no campus image, render solid background card with artwork banner
-          return <SolidUniversityCard key={u.name ?? i} uni={u} index={i} />;
+          return <SolidUniversityCard key={cleanName || i} uni={u} index={i} />;
         })}
     </div>
   );
