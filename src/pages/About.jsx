@@ -317,7 +317,6 @@ export default function About() {
 
             {/* Quote Banner */}
             <div className="text-center bg-gradient-to-r from-amber-50/70 via-amber-100/40 to-amber-50/70 border border-amber-200/60 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto shadow-sm">
-              <Quote className="w-8 h-8 text-[#d4a853] mx-auto mb-2 opacity-70" />
               <p className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#0a2342] italic leading-snug">
                 {aboutData.welcome?.quote ||
                   '"Where Dreams Take Flight – College Counselling Done Right"'}
