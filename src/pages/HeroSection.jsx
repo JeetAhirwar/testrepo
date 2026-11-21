@@ -336,7 +336,7 @@ export default function HeroSection() {
         {/* POPUP MODAL */}
         {isOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 sm:p-6 backdrop-blur-xs">
-            <div className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden flex flex-col border border-slate-100">
+            <div className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] rounded-2xl bg-[#071d38] shadow-2xl overflow-hidden flex flex-col border-0">
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-30 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-slate-100/90 hover:bg-slate-200 text-slate-600 hover:text-slate-900 shadow-sm transition-all duration-200 cursor-pointer"
@@ -464,7 +464,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* RIGHT – form (enhanced modern UI inputs, button and labels) */}
-                <div className="flex-1 overflow-y-auto modal-no-scrollbar px-6 py-6 sm:px-9 sm:py-6 flex flex-col justify-center bg-slate-50/50">
+                <div className="flex-1 overflow-y-auto modal-no-scrollbar px-6 py-6 sm:px-9 sm:py-6 flex flex-col justify-center bg-white">
                   <div className="lg:hidden text-center mb-4">
                     <h2 className="text-2xl font-bold text-slate-800 mb-1">
                       MBBS Abroad Counselling
