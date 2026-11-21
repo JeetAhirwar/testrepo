@@ -354,13 +354,13 @@ export default function HeroSection() {
 
                   <div className="relative z-10">
                     {/* Logo in Frosted Glass Container */}
-                    <div className="mb-4 rounded-2xl border border-white/15 bg-white/10 p-3.5 shadow-lg backdrop-blur-md">
+                    <div className="mb-5 rounded-2xl border border-white/15 bg-white/10 p-3.5 shadow-lg backdrop-blur-md">
                       <img
                         src={Eduhawk}
                         alt="MBBS Abroad"
                         width={244}
                         height={72}
-                        className="mx-auto h-16 sm:h-18 w-auto object-contain brightness-110 drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
+                        className="mx-auto h-13 w-auto object-contain brightness-110 drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
                         srcSet={`${Eduhawk} 1x, ${Eduhawk} 2x`}
                         sizes="100vw"
                       />
@@ -452,11 +452,8 @@ export default function HeroSection() {
                   </div>
 
                   {/* Trust Footer in Left Panel */}
-                  <div className="relative z-10 pt-3.5 border-t border-white/15 flex items-center justify-between text-xs text-teal-200/90">
-                    <div className="flex items-center gap-1.5 font-medium">
-                      <span className="text-white font-semibold">1000+ Students Placed</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-[11px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/20 px-2.5 py-0.5 rounded-full">
+                  <div className="relative z-10 pt-3.5 border-t border-white/15 flex items-center justify-center text-xs text-teal-200/90">
+                    <div className="flex items-center gap-1 text-[11px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/20 px-3 py-1 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                       100% NMC &amp; WHO Recognized
                     </div>
