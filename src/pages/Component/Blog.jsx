@@ -452,7 +452,7 @@ const Blog = () => {
           )}
 
           {/* ─── CALL TO ACTION BANNER ─────────────────────────────────────── */}
-          <section className="relative mb-20 overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
+          <section className="relative mb-20 overflow-hidden rounded-3xl border border-slate-200/80 shadow-xl">
             <div className="absolute inset-0">
               <img
                 src={BannerCTA}
@@ -464,24 +464,19 @@ const Blog = () => {
                 srcSet={`${BannerCTA} 1x, ${BannerCTA} 2x`}
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#071d38]/95 via-[#0a2b52]/90 to-[#0c3666]/85" />
+              <div className="absolute inset-0 bg-white/20 backdrop-blur-[0.5px]" />
             </div>
 
-            <div className="relative z-10 flex min-h-[340px] flex-col items-center justify-center px-6 py-14 text-center text-white">
-              <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-amber-300/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-amber-300 backdrop-blur-md">
-                <Sparkles size={14} className="text-amber-400" />
-                Free Admission Evaluation
-              </span>
-
-              <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl leading-tight mb-3">
-                Need Guidance on Selecting the Right Medical University?
+            <div className="relative z-10 flex min-h-[300px] sm:min-h-[340px] flex-col items-center justify-center px-6 py-12 sm:py-16 text-center">
+              <h3 className="max-w-3xl text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl leading-tight mb-2">
+                Start Your Global Journey Today
               </h3>
 
-              <p className="max-w-2xl text-sm sm:text-base md:text-lg text-teal-100/90 mb-8 font-light leading-relaxed">
-                Speak directly with certified MBBS counsellors. We help you choose the best country and university based on your NEET score and budget.
+              <p className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-700 font-medium mb-6">
+                Free profile evaluation • No-obligation consultation
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <div className="flex items-center justify-center">
                 <button
                   type="button"
                   onClick={() =>
@@ -490,18 +485,9 @@ const Blog = () => {
                       "_blank",
                     )
                   }
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-8 py-4 text-sm font-bold text-white shadow-xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#10b981] hover:bg-[#059669] px-8 py-3.5 text-sm sm:text-base font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  <MessageCircle size={18} />
-                  <span>Chat on WhatsApp</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => navigate("/contact")}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4a853] to-[#f0c070] text-[#0a2342] px-8 py-4 text-sm font-bold uppercase tracking-wider shadow-xl transition-all hover:scale-105 active:scale-95 cursor-pointer"
-                >
-                  <span>Book Free Counselling →</span>
+                  <span>Talk to an Expert →</span>
                 </button>
               </div>
             </div>
