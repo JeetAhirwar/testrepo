@@ -881,7 +881,8 @@ export default function HeroSection() {
           </div>
         </section>
 
-        {/* TOP MBBS DESTINATIONS GRID (Dynamic - auto-hides if empty in CMS) */}
+        {/* TOP MBBS DESTINATIONS GRID (Dynamic - auto-hides if empty in CMS) - COMMENTED OUT */}
+        {/*
         {COUNTRIES && COUNTRIES.length > 0 && (
         <section id="destinations" className="py-16 md:py-24 px-5 sm:px-8 lg:px-12 bg-gradient-to-b from-white via-slate-50 to-white">
           <div className="max-w-7xl mx-auto">
@@ -973,6 +974,7 @@ export default function HeroSection() {
           </div>
         </section>
         )}
+        */}
 
         {/* ABOUT SECTION - (kept as in original) */}
         <section className="py-8 md:py-10 px-5 sm:px-6 lg:px-10 bg-[#faf8f4]">
@@ -1531,7 +1533,8 @@ export default function HeroSection() {
         </section>
 
         
-        {/* STUDENT TESTIMONIALS SECTION (Dynamic - auto-hides if empty in CMS) */}
+        {/* STUDENT TESTIMONIALS SECTION (Dynamic - auto-hides if empty in CMS) - COMMENTED OUT */}
+        {/*
         {TESTIMONIALS && TESTIMONIALS.length > 0 && (
         <section className="py-20 md:py-24 px-5 sm:px-8 lg:px-12 bg-gradient-to-br from-[#071d38] via-[#0a2a4e] to-[#0d3460] text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
@@ -1586,6 +1589,7 @@ export default function HeroSection() {
           </div>
         </section>
         )}
+        */}
 
         <section className="py-16 md:py-20 px-5 sm:px-8 lg:px-12 bg-white">
           <div className="max-w-4xl mx-auto">
