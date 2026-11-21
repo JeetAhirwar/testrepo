@@ -354,16 +354,16 @@ export default function HeroSection() {
 
                   <div className="relative z-10">
                     {/* Logo in Frosted Glass Container */}
-                    <div className="mb-5 rounded-2xl border border-white/15 bg-white/10 p-3.5 shadow-lg backdrop-blur-md">
+                    <div className="mb-4 rounded-2xl border border-white/15 bg-white/10 p-3.5 shadow-lg backdrop-blur-md">
                       <img
                         src={Eduhawk}
                         alt="MBBS Abroad"
                         width={244}
                         height={72}
-                        className="mx-auto h-13 w-auto object-contain brightness-110 drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
-                  srcSet={`${Eduhawk} 1x, ${Eduhawk} 2x`}
-                  sizes="100vw"
-                />
+                        className="mx-auto h-16 sm:h-18 w-auto object-contain brightness-110 drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]"
+                        srcSet={`${Eduhawk} 1x, ${Eduhawk} 2x`}
+                        sizes="100vw"
+                      />
                     </div>
 
                     {/* Admissions Badge */}
@@ -458,7 +458,7 @@ export default function HeroSection() {
                     </div>
                     <div className="flex items-center gap-1 text-[11px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/20 px-2.5 py-0.5 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      100% NMC Verified
+                      100% NMC &amp; WHO Recognized
                     </div>
                   </div>
                 </div>
@@ -690,15 +690,12 @@ export default function HeroSection() {
                       </span>
                     </button>
 
-                    <p className="text-center text-xs sm:text-sm text-teal-700 font-semibold mt-2">
-                      Worth ₹4,999 – 100% Free Today!
-                    </p>
-                    <p className="text-center text-xs text-slate-500 mt-1">
+                    <p className="text-center text-[10px] text-slate-400 mt-2.5 leading-tight">
                       By submitting, you agree to our Terms &amp; Privacy Policy
                     </p>
                   </form>
 
-                  <div className="mt-2 text-center text-xs text-slate-500">
+                  <div className="mt-1 text-center text-[10px] text-slate-400">
                     <p>Secure &amp; Confidential • We never spam</p>
                   </div>
                 </div>
