@@ -28,6 +28,7 @@ import {
   Target,
   Compass,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const HERO_IMAGES = [aboutHero1, heroTrusted, aboutHero3];
 
@@ -286,7 +287,7 @@ export default function About() {
 
               {/* Right Image with Floating Badge */}
               <div className="lg:col-span-5 relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+                <div className="relative rounded-3xl overflow-hidden shadow-xl bg-slate-100">
                   <img
                     src={aboutData.welcome?.image || AboutImage}
                     loading="lazy"
@@ -297,11 +298,10 @@ export default function About() {
                     srcSet={`${AboutImage} 1x, ${AboutImage} 2x`}
                     sizes="(max-width: 640px) 100vw, 500px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 {/* Floating Experience Badge */}
-                <div className="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-6 bg-white/95 backdrop-blur-md border border-amber-200/80 rounded-2xl p-4 sm:p-5 shadow-2xl flex items-center gap-3.5 max-w-[260px]">
+                <div className="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 shadow-lg flex items-center gap-3.5 max-w-[260px]">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0a2342] to-[#1a4a7a] flex items-center justify-center text-amber-400 shadow-md flex-shrink-0">
                     <Award size={24} />
                   </div>
@@ -398,52 +398,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* STUDENT TESTIMONIALS (Restored & Dynamic from CMS) */}
-        {aboutData.testimonials && aboutData.testimonials.length > 0 && (
-          <section className="py-16 md:py-24 px-5 sm:px-8 lg:px-12 bg-white">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center max-w-3xl mx-auto mb-14">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-200/70">
-                  <Star size={14} className="text-amber-600 fill-amber-500" />
-                  Student Stories
-                </span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a2342] leading-tight mb-4">
-                  What Our Students Say About Us
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg">
-                  Real experiences from Indian medical aspirants who turned their dream of becoming doctors into reality.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                {aboutData.testimonials.map((test, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-md hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between"
-                  >
-                    <div>
-                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6 italic">
-                        "{test.text}"
-                      </p>
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                      <div>
-                        <div className="font-bold text-slate-900 text-base">{test.name}</div>
-                        <div className="text-xs font-semibold text-amber-700 mt-0.5">{test.loc}</div>
-                      </div>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-200">
-                        <CheckCircle2 size={12} />
-                        Verified
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* CTA / WHATSAPP BANNER */}
         <section
           className="relative py-20 md:py-24 px-5 sm:px-8 lg:px-12 bg-cover bg-center text-center text-white"
@@ -482,8 +436,8 @@ export default function About() {
                 }
                 className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-8 py-4 text-sm sm:text-base font-bold text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer w-full sm:w-auto"
               >
-                <MessageCircle size={20} />
-                <span>{aboutData.banner?.ctaText || "Chat on WhatsApp"}</span>
+                <FaWhatsapp size={20} />
+                <span>{aboutData.banner?.ctaText || "Talk to an Expert →"}</span>
               </button>
 
               <button
@@ -502,8 +456,8 @@ export default function About() {
           <section className="py-20 md:py-28 px-5 sm:px-8 lg:px-12 bg-slate-50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-14 max-w-3xl mx-auto">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-200">
-                  <BookOpen size={14} className="text-amber-700" />
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-wider mb-3 border border-slate-200">
+                  <BookOpen size={14} className="text-slate-700" />
                   Have Questions?
                 </span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a2342] leading-tight mb-4">
@@ -525,7 +479,7 @@ export default function About() {
                         key={index}
                         className={`rounded-2xl transition-all duration-300 border ${
                           isOpen
-                            ? "bg-white border-amber-300 shadow-lg ring-1 ring-amber-200/50"
+                            ? "bg-white border-slate-300 shadow-md"
                             : "bg-white border-slate-200 shadow-xs hover:border-slate-300"
                         }`}
                       >
@@ -534,13 +488,11 @@ export default function About() {
                           className="w-full px-6 py-5 text-left flex justify-between items-center cursor-pointer gap-4"
                           onClick={() => toggleFaq(index)}
                         >
-                          <span className={`text-base sm:text-lg font-bold pr-2 transition-colors ${
-                            isOpen ? "text-amber-700" : "text-[#0a2342]"
-                          }`}>
+                          <span className="text-base sm:text-lg font-bold pr-2 text-black transition-colors">
                             {item.question}
                           </span>
                           <span className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-lg font-bold transition-all ${
-                            isOpen ? "bg-amber-100 text-amber-800 rotate-180" : "bg-slate-100 text-slate-600"
+                            isOpen ? "bg-slate-200 text-slate-800 rotate-180" : "bg-slate-100 text-slate-600"
                           }`}>
                             <ChevronDown size={18} />
                           </span>
@@ -558,7 +510,7 @@ export default function About() {
 
                 {/* Image + Tagline */}
                 <div className="w-full lg:w-2/5 flex flex-col items-center lg:items-start gap-6">
-                  <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-200">
+                  <div className="rounded-3xl overflow-hidden shadow-xl bg-slate-200">
                     <img
                       src={aboutData.faq?.sidebarImage || imageAbout2}
                       loading="lazy"
